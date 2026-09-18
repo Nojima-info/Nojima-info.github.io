@@ -35,12 +35,25 @@
   <script src="menu.js"></script>
 <script>
 const infoButton=document.querySelector(".info-button");
-const siteInfo=document.querySelector("#site-info");
-if(infoButton&&siteInfo){
+const infoModal=document.querySelector("#site-info");
+const infoCloseButton=document.querySelector(".info-modal-close");
+if(infoButton&&infoModal&&infoCloseButton){
   infoButton.addEventListener("click",()=>{
-    const isHidden=siteInfo.hidden;
-    siteInfo.hidden=!isHidden;
-    infoButton.setAttribute("aria-expanded",String(isHidden));
+    infoModal.hidden=false;
+    infoButton.setAttribute("aria-expanded","true");
+    infoCloseButton.focus();
+  });
+  infoCloseButton.addEventListener("click",()=>{
+    infoModal.hidden=true;
+    infoButton.setAttribute("aria-expanded","false");
+    infoButton.focus();
+  });
+  infoModal.addEventListener("click",(event)=>{
+    if(event.target===infoModal){
+      infoModal.hidden=true;
+      infoButton.setAttribute("aria-expanded","false");
+      infoButton.focus();
+    }
   });
 }
 </script>
