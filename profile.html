@@ -22,30 +22,44 @@
     <section class="profile-list">
       <article class="profile-card">
         <h3>野島昭生さん</h3>
-        <p>プロフィール準備中</p>
+        <p>プロフィール</p>
+        <button class="profile-button" type="button" data-profile="akio">詳しく見る</button>
       </article>
       <article class="profile-card">
         <h3>野島裕史さん</h3>
-        <p>プロフィール準備中</p>
+        <p>プロフィール</p>
+        <button class="profile-button" type="button" data-profile="hirofumi">詳しく見る</button>
       </article>
       <article class="profile-card">
         <h3>野島健児さん</h3>
-        <p>プロフィール準備中</p>
+        <p>プロフィール</p>
+        <button class="profile-button" type="button" data-profile="kenji">詳しく見る</button>
       </article>
       <article class="profile-card">
         <h3>野島透也さん</h3>
-        <p>プロフィール準備中</p>
+        <p>プロフィール</p>
+        <button class="profile-button" type="button" data-profile="touya">詳しく見る</button>
       </article>
       <article class="profile-card">
         <h3>野島悠生さん</h3>
-        <p>プロフィール準備中</p>
+        <p>プロフィール</p>
+        <button class="profile-button" type="button" data-profile="yuki">詳しく見る</button>
       </article>
       <article class="profile-card">
         <h3>野島瑠玖さん</h3>
-        <p>プロフィール準備中</p>
+        <p>プロフィール</p>
+        <button class="profile-button" type="button" data-profile="ruku">詳しく見る</button>
       </article>
     </section>
   </main>
+  <div class="profile-modal" id="profile-modal" hidden>
+    <div class="profile-modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" type="button" aria-label="閉じる">×</button>
+      <h2 id="modal-title">プロフィール</h2>
+      <div id="modal-body"></div>
+    </div>
+  </div>
   <script src="menu.js"></script>
+  <script src="profile.js"></script>
 </body>
 </html>
