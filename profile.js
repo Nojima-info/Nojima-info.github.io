@@ -10,13 +10,16 @@ const profileData={
     introduction:"ここに管理人からの個人的な紹介文を掲載します。"
   },
   hirofumi:{
-    name:"野島 裕史<br>Hirofumi Nojima",
+    name:"野島 裕史 / Hirofumi Nojima",
     birth:"1973年4月16日",
     birthplace:"東京都",
     agency:"青二プロダクション",
     height:"166cm",
     blood:"A型",
-    sns:"確認中",
+    sns:[
+  {name:"X",url:"https://x.com/nojimahirofumi?s=11"},
+  {name:"Instagram",url:"https://www.instagram.com/nojimahirofumi?stkn=cm1oMmk3ZG12bzZ6"}
+],
     introduction:"ここに管理人からの個人的な紹介文を掲載します。"
   },
   kenji:{
