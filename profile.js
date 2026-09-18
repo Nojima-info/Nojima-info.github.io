@@ -10,7 +10,7 @@ const profileData={
     introduction:"ここに管理人からの個人的な紹介文を掲載します。"
   },
   hirofumi:{
-    name:"野島 裕史 / Hirofumi Nojima",
+    name:"野島 裕史<br>Hirofumi Nojima",
     birth:"1973年4月16日",
     birthplace:"東京都",
     agency:"青二プロダクション",
