@@ -1,3 +1,11 @@
+:root{
+  --main-color:#356ac3;
+  --main-color-light:#eaf1ff;
+  --text-color:#333;
+  --background-color:#f7f7f7;
+  --surface-color:#fff;
+  --border-color:#ddd;
+}
 *{box-sizing:border-box}
 html{font-size:16px}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;background:#f7f7f7;color:#333;line-height:1.7}
