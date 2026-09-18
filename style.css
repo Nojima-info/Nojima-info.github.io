@@ -78,3 +78,4 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--main-color);outline
 .info-modal-content p{margin:0 0 12px}
 .info-modal-close{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;background:transparent;color:var(--text-color);font-size:1.8rem;line-height:1;cursor:pointer}
 .info-modal-close:focus-visible{outline:3px solid var(--main-color);outline-offset:3px}
+.info-button{margin-bottom:24px}
