@@ -1,6 +1,6 @@
 :root{
-  --main-color:#356ac3;
-  --main-color-light:#eaf1ff;
+  --main-color:#BED501;
+  --main-color-light:#f4f8d6;
   --text-color:#333;
   --background-color:#f7f7f7;
   --surface-color:#fff;
@@ -9,8 +9,8 @@
 }
 @media(prefers-color-scheme:dark){
   :root{
-    --main-color:#8fb5ff;
-    --main-color-light:#263754;
+    --main-color:#FFD745;
+    --main-color-light:#4a411f;
     --text-color:#eeeeee;
     --background-color:#17191d;
     --surface-color:#24272d;
