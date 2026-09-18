@@ -68,3 +68,6 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--main-color);outline
   font-weight:normal;
   color:var(--text-color);
 }
+.info-button{display:inline-block;padding:10px 20px;border:1px solid var(--main-color);border-radius:8px;background:var(--main-color);color:#333;font-size:1rem;font-weight:bold;cursor:pointer}
+.info-button:hover{opacity:.85}
+.info-button:focus-visible{outline:3px solid var(--main-color);outline-offset:3px}
