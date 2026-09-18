@@ -46,3 +46,13 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--main-color);outline
 .profile-modal-content dt{font-weight:bold}
 .profile-modal-content h3{margin:0 0 8px;font-size:1.05rem}
 .profile-modal-content p{margin:0}
+#modal-title{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.english-name{
+  font-size:0.85rem;
+  font-weight:normal;
+  color:var(--text-color);
+}
