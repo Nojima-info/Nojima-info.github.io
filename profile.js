@@ -15,15 +15,13 @@ const profileData={
     birth:"1973年4月16日",
     birthplace:"東京都",
     agency:"青二プロダクション",
-    height:"166cm",
-    blood:"A型",
     sns:[
   {name:"X",url:"https://x.com/nojimahirofumi?s=11"},
   {name:"Instagram",url:"https://www.instagram.com/nojimahirofumi?stkn=cm1oMmk3ZG12bzZ6"},
       {name:"Threads",url:"https://www.threads.com/@nojimahirofumi?igshid=NTc4MTIwNjQ2YQ=="},
       {name:"Facebook",url:"https://www.facebook.com/share/1KNmhMd3Bk/?mibextid=wwXIfr"}
 ],
-    introduction:"ここに管理人からの個人的な紹介文を掲載します。"
+    introduction:"温かみのある優しい声で、幅広い年代を演じる。情報番組やバラエティー番組のナレーションなどでも活躍。パーソナリティーを務めるラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」は今年で放送11年目に突入。"
   },
   kenji:{
     name:"野島健児さん",
