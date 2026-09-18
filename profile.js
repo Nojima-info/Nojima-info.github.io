@@ -5,7 +5,7 @@ const profileData={
     birth:"1945年4月6日",
     agency:"シグマ・セブン",
     sns:"-",
-    introduction:"子役として芸能界に入り、以後声優・ナレーター・声優養成所の講師と活躍の幅を広げる。役者仲間と結成した、自身がリーダーを務めるバンド「スラップスティック」ではギター・ベースを担当。"
+    introduction:"子役として芸能界に入り、以後声優・ナレーター・声優養成所の講師と活躍の場を広げる。役者仲間と結成した、自身がリーダーを務めるバンド「スラップスティック」ではギター・ベースを担当。"
   },
   hirofumi:{
     name:"野島 裕史",
@@ -21,44 +21,41 @@ const profileData={
     introduction:"温かみのある優しい声で、幅広い年代を演じる。情報番組やバラエティー番組のナレーションなどでも活躍。パーソナリティーを務めるラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」は今年で放送11年目に突入。"
   },
   kenji:{
-    name:"野島健児さん",
-    birth:"確認中",
-    birthplace:"確認中",
-    agency:"確認中",
-    height:"確認中",
-    blood:"確認中",
-    sns:"確認中",
-    introduction:"ここに管理人からの個人的な紹介文を掲載します。"
+    name:"野島健児",
+    englishName:"Kenji Nojima",
+    birth:"1976年3月16日",
+    agency:"青二プロダクション",
+    sns:[
+  {name:"X",url:"https://x.com/nojimakenji?s=11"},
+  {name:"Instagram",url:"https://www.instagram.com/nojima_kenji?stkn=bWYxbGpzcm80Zno3"}
+],
+    introduction:"爽やかな涼しい声が特徴。自ら企画するイベントや生配信などでは独特の空気感でファンを楽しませる。2026年には「踊る大捜査線 N.E.W. メトロポリスを駆け抜けろ！」にて俳優にも挑戦。"
   },
   touya:{
-    name:"野島透也さん",
-    birth:"確認中",
-    birthplace:"確認中",
-    agency:"確認中",
-    height:"確認中",
-    blood:"確認中",
-    sns:"確認中",
-    introduction:"ここに管理人からの個人的な紹介文を掲載します。"
+    name:"野島透也",
+    englishName:"Toya Nojima",
+    birth:"2003年5月18日",
+    agency:"松竹エンタテインメント",
+    sns:[
+  {name:"X",url:"https://x.com/nojimatoya?s=11"}
+],
+    introduction:"映画・舞台・吹き替え・ラジオドラマなど、様々な形で俳優・声優として活躍。所属事務所の公式プロフィールページでボイスサンプルを聴くことができる。歌唱力も高く、父・健児と共にオリジナル曲「君と出会うとき」をリリースしている。"
   },
   rui:{
-    name:"野島悠生さん",
-    birth:"確認中",
-    birthplace:"確認中",
-    agency:"確認中",
-    height:"確認中",
-    blood:"確認中",
-    sns:"確認中",
-    introduction:"ここに管理人からの個人的な紹介文を掲載します。"
+    name:"野島悠生,
+      englishName:"Rui Nojima",
+    birth:"-",
+    agency:"劇団ひまわり",
+    sns:"-",
+    introduction:"ミュージカル「忍たま乱太郎」(第16弾)では、主人公である猪名寺乱太郎を演じ注目を集める。ほかにアパレルのキッズモデルやラジオドラマの声優としても活躍。"
   },
   ruku:{
-    name:"野島瑠玖さん",
-    birth:"確認中",
-    birthplace:"確認中",
-    agency:"確認中",
-    height:"確認中",
-    blood:"確認中",
-    sns:"確認中",
-    introduction:"ここに管理人からの個人的な紹介文を掲載します。"
+    name:"野島瑠玖",
+      englishName:"Ruku Nojima",
+    birth:"-",
+    agency:"劇団ひまわり",
+    sns:"-",
+    introduction:"2026年、24時間テレビのドラマ「幸せはある」にメインキャラクターとして出演。所属事務所の公式プロフィールページにある「特技」欄は空欄になっており、これからなにが入るのかなぁと管理人が勝手にワクワクしている。"
   }
 };
 const profileButtons=document.querySelectorAll(".profile-button");
