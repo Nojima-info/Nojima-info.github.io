@@ -41,3 +41,8 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--main-color);outline
 .profile-modal-content{position:relative;width:100%;max-width:520px;max-height:80vh;overflow:auto;padding:24px;border-radius:12px;background:var(--surface-color);color:var(--text-color)}
 .profile-modal-content h2{margin:0 36px 16px 0}
 .modal-close{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;background:transparent;color:var(--text-color);font-size:1.8rem;line-height:1;cursor:pointer}
+.profile-modal-content dl{display:grid;grid-template-columns:7em 1fr;margin:0 0 24px}
+.profile-modal-content dt,.profile-modal-content dd{margin:0;padding:8px 0;border-bottom:1px solid var(--border-light-color)}
+.profile-modal-content dt{font-weight:bold}
+.profile-modal-content h3{margin:0 0 8px;font-size:1.05rem}
+.profile-modal-content p{margin:0}
