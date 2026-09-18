@@ -84,13 +84,10 @@ function createProfileContent(profile){
     table.appendChild(term);
     table.appendChild(description);
   });
-  const heading=document.createElement("h3");
-  heading.textContent="管理人からの個人的な紹介文";
   const introduction=document.createElement("p");
-  introduction.textContent=profile.introduction;
-  wrapper.appendChild(table);
-  wrapper.appendChild(heading);
-  wrapper.appendChild(introduction);
+introduction.textContent=profile.introduction;
+wrapper.appendChild(table);
+wrapper.appendChild(introduction);
   return wrapper;
 }
 profileButtons.forEach(button=>{
