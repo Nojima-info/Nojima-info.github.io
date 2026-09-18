@@ -28,3 +28,10 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--main-color);outline
   .page-content{padding:40px 24px}
   .page-content h2{font-size:1.6rem}
 }
+.profile-list{display:grid;grid-template-columns:1fr;gap:16px}
+.profile-card{padding:20px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface-color)}
+.profile-card h3{margin:0 0 8px;font-size:1.1rem}
+.profile-card p{margin:0;color:var(--text-color)}
+@media(min-width:600px){
+  .profile-list{grid-template-columns:repeat(2,1fr)}
+}
