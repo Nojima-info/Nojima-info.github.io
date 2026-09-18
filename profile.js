@@ -10,7 +10,8 @@ const profileData={
     introduction:"ここに管理人からの個人的な紹介文を掲載します。"
   },
   hirofumi:{
-    name:"野島 裕史 / Hirofumi Nojima",
+    name:"野島 裕史",
+    englishName:"Hirofumi Nojima",
     birth:"1973年4月16日",
     birthplace:"東京都",
     agency:"青二プロダクション",
@@ -111,8 +112,15 @@ profileButtons.forEach(button=>{
   button.addEventListener("click",()=>{
     const profile=profileData[button.dataset.profile];
     if(!profile||!profileModal||!modalTitle||!modalBody)return;
-    modalTitle.textContent=profile.name;
-    modalBody.replaceChildren(createProfileContent(profile));
+    modalTitle.replaceChildren();
+const japaneseName=document.createElement("span");
+japaneseName.textContent=profile.name;
+const englishName=document.createElement("span");
+englishName.textContent=profile.englishName;
+englishName.className="english-name";
+modalTitle.appendChild(japaneseName);
+modalTitle.appendChild(englishName);
+modalBody.replaceChildren(createProfileContent(profile));
     profileModal.hidden=false;
   });
 });
