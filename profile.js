@@ -19,7 +19,9 @@ const profileData={
     blood:"A型",
     sns:[
   {name:"X",url:"https://x.com/nojimahirofumi?s=11"},
-  {name:"Instagram",url:"https://www.instagram.com/nojimahirofumi?stkn=cm1oMmk3ZG12bzZ6"}
+  {name:"Instagram",url:"https://www.instagram.com/nojimahirofumi?stkn=cm1oMmk3ZG12bzZ6"},
+      {name:"Threads",url:"https://www.threads.com/@nojimahirofumi?igshid=NTc4MTIwNjQ2YQ=="},
+      {name:"Facebook",url:"https://www.facebook.com/share/1KNmhMd3Bk/?mibextid=wwXIfr"}
 ],
     introduction:"ここに管理人からの個人的な紹介文を掲載します。"
   },
