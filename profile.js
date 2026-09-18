@@ -18,7 +18,7 @@ const profileData={
       {name:"Threads",url:"https://www.threads.com/@nojimahirofumi?igshid=NTc4MTIwNjQ2YQ=="},
       {name:"Facebook",url:"https://www.facebook.com/share/1KNmhMd3Bk/?mibextid=wwXIfr"}
 ],
-    introduction:"温かみのある優しい声で、幅広い年代を演じる。情報番組やバラエティー番組のナレーションなどでも活躍。パーソナリティーを務めるラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」は今年で放送11年目に突入。"
+    introduction:"温かみのある優しい声で、幅広い年代のキャラクターを演じる。情報番組やバラエティー番組のナレーションなどでも活躍。パーソナリティーを務めるラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」は今年で放送11年目に突入。"
   },
   kenji:{
     name:"野島健児",
