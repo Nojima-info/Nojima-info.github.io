@@ -10,12 +10,12 @@ const profileData={
     introduction:"ここに管理人からの個人的な紹介文を掲載します。"
   },
   hirofumi:{
-    name:"野島裕史さん",
-    birth:"確認中",
-    birthplace:"確認中",
-    agency:"確認中",
-    height:"確認中",
-    blood:"確認中",
+    name:"野島 裕史 / Hirofumi Nojima",
+    birth:"1973年4月16日",
+    birthplace:"東京都",
+    agency:"青二プロダクション",
+    height:"166cm",
+    blood:"A型",
     sns:"確認中",
     introduction:"ここに管理人からの個人的な紹介文を掲載します。"
   },
