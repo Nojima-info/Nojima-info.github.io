@@ -1,19 +1,16 @@
 const profileData={
   akio:{
-    name:"野島昭生さん",
-    birth:"確認中",
-    birthplace:"確認中",
-    agency:"確認中",
-    height:"確認中",
-    blood:"確認中",
-    sns:"確認中",
-    introduction:"ここに管理人からの個人的な紹介文を掲載します。"
+    name:"野島昭生",
+    englishName:"Akio Nojima",
+    birth:"1945年4月6日",
+    agency:"シグマ・セブン",
+    sns:"-",
+    introduction:"子役として芸能界に入り、以後声優・ナレーター・声優養成所の講師と活躍の幅を広げる。役者仲間と結成した、自身がリーダーを務めるバンド「スラップスティック」ではギター・ベースを担当。"
   },
   hirofumi:{
     name:"野島 裕史",
     englishName:"Hirofumi Nojima",
     birth:"1973年4月16日",
-    birthplace:"東京都",
     agency:"青二プロダクション",
     sns:[
   {name:"X",url:"https://x.com/nojimahirofumi?s=11"},
@@ -74,7 +71,6 @@ function createProfileContent(profile){
   const table=document.createElement("dl");
   const fields=[
     ["生年月日",profile.birth],
-    ["出身地",profile.birthplace],
     ["所属事務所",profile.agency],
     ["SNS",profile.sns]
   ];
