@@ -80,13 +80,27 @@ function createProfileContent(profile){
     ["SNS",profile.sns]
   ];
   fields.forEach(([label,value])=>{
-    const term=document.createElement("dt");
-    const description=document.createElement("dd");
-    term.textContent=label;
+  const term=document.createElement("dt");
+  const description=document.createElement("dd");
+  term.textContent=label;
+  if(label==="SNS"&&Array.isArray(value)){
+    value.forEach((sns,index)=>{
+      const link=document.createElement("a");
+      link.href=sns.url;
+      link.textContent=sns.name;
+      link.target="_blank";
+      link.rel="noopener noreferrer";
+      description.appendChild(link);
+      if(index<value.length-1){
+        description.appendChild(document.createTextNode(" / "));
+      }
+    });
+  }else{
     description.textContent=value;
-    table.appendChild(term);
-    table.appendChild(description);
-  });
+  }
+  table.appendChild(term);
+  table.appendChild(description);
+});
   const introduction=document.createElement("p");
 introduction.textContent=profile.introduction;
 wrapper.appendChild(table);
