@@ -30,5 +30,16 @@
   </section>
 </main>
   <script src="menu.js"></script>
+<script>
+const infoButton=document.querySelector(".info-button");
+const siteInfo=document.querySelector("#site-info");
+if(infoButton&&siteInfo){
+  infoButton.addEventListener("click",()=>{
+    const isHidden=siteInfo.hidden;
+    siteInfo.hidden=!isHidden;
+    infoButton.setAttribute("aria-expanded",String(isHidden));
+  });
+}
+</script>
 </body>
 </html>
