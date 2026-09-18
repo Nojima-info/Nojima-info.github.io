@@ -7,6 +7,17 @@
   --border-color:#ddd;
   --border-light-color:#eee;
 }
+@media(prefers-color-scheme:dark){
+  :root{
+    --main-color:#8fb5ff;
+    --main-color-light:#263754;
+    --text-color:#eeeeee;
+    --background-color:#17191d;
+    --surface-color:#24272d;
+    --border-color:#454a54;
+    --border-light-color:#353a43;
+  }
+}
 *{box-sizing:border-box}
 html{font-size:16px}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;background:var(--background-color);color:var(--text-color);line-height:1.7}
