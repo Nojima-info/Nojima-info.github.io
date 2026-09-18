@@ -76,8 +76,6 @@ function createProfileContent(profile){
     ["生年月日",profile.birth],
     ["出身地",profile.birthplace],
     ["所属事務所",profile.agency],
-    ["身長",profile.height],
-    ["血液型",profile.blood],
     ["SNS",profile.sns]
   ];
   fields.forEach(([label,value])=>{
