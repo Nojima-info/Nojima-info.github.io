@@ -84,3 +84,8 @@ color:var(--text-color);
 .info-button{margin-bottom:24px}
 .profile-page-title{margin:0 0 16px;font-size:2.2rem!important;line-height:1.3;color:var(--text-color);border-bottom:4px solid var(--main-color);padding-bottom:8px}
 .profile-page-description{margin:0 0 24px}
+.profile-page-title{display:inline-block}
+.profile-list{max-width:760px;margin-left:auto;margin-right:auto}
+@media(max-width:599px){
+  .profile-list{width:100%}
+}
