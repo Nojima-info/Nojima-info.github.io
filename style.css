@@ -31,7 +31,12 @@ header h1{margin:0;font-size:1.25rem;letter-spacing:.03em;color:#333}
 .menu-button{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface-color);color:var(--text-color);font-size:1.6rem;line-height:1;cursor:pointer}
 .menu{position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--main-color);padding:80px 24px 40px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s ease}
 .menu.open{opacity:1;visibility:visible;pointer-events:auto}
-.menu a{display:block;padding:14px 32px;color:#fff;text-decoration:none;font-size:1.3rem;font-weight:bold;text-align:center;border:0}
+.menu a{display:block;padding:14px 32px;color:#fff;text-decoration:none;font-size:1.3rem;font-weight:bold;text-align:center;border:0;opacity:0;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease}
+.menu.open a{opacity:1;transform:translateY(0)}
+.menu.open a:nth-child(1){transition-delay:.08s}
+.menu.open a:nth-child(2){transition-delay:.14s}
+.menu.open a:nth-child(3){transition-delay:.20s}
+.menu.open a:nth-child(4){transition-delay:.26s}
 .menu a:last-child
 .page-content{width:100%;max-width:900px;margin:0 auto;padding:24px 16px}
 .page-content h2{margin:0 0 16px;font-size:1.35rem;line-height:1.5}
