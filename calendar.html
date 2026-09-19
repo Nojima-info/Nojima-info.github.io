@@ -21,15 +21,14 @@
 <h2 class="calendar-page-title">Calendar</h2>
 <section class="calendar-controls">
 <button id="prev-month" type="button" aria-label="前の月">‹</button>
-<h3 id="calendar-title">2026年9月</h3>
+<label class="calendar-month-picker">
+<input id="month-picker" type="month" aria-label="表示する年月">
+<span id="calendar-title">2026年9月</span>
+</label>
 <button id="next-month" type="button" aria-label="次の月">›</button>
 </section>
-<div class="calendar-jump">
-<label for="month-picker">年月を指定</label>
-<input id="month-picker" type="month">
-</div>
 <section class="calendar" aria-label="カレンダー">
-<div class="calendar-weekdays">
+  <div class="calendar-weekdays">
 <div>日</div>
 <div>月</div>
 <div>火</div>
