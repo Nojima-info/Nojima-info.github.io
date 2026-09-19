@@ -29,6 +29,7 @@ const events = [
   }
 ];
 let currentDate = new Date();
+let selectedDateString = "";
 function renderCalendar(){
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -56,6 +57,9 @@ function renderCalendar(){
     if(hasEvent){
       day.classList.add("has-event");
     }
+    if(day.dataset.date === selectedDateString){
+  day.classList.add("selected");
+}
     day.addEventListener("click",() => {
       showSelectedDate(day.dataset.date);
     });
@@ -73,8 +77,16 @@ function renderCalendar(){
   }
 }
 function showSelectedDate(dateString){
+  selectedDateString = dateString;
+  document.querySelectorAll(".calendar-day.selected").forEach(day => {
+    day.classList.remove("selected");
+  });
+  const selectedDay = document.querySelector(`.calendar-day[data-date="${dateString}"]`);
+  if(selectedDay){
+    selectedDay.classList.add("selected");
+  }
   const [year,month,date] = dateString.split("-").map(Number);
-  const dayEvents = events.filter(event => event.date === dateString);
+const dayEvents = events.filter(event => event.date === dateString);
   selectedDate.hidden = false;
   selectedDate.innerHTML = `<h3>${year}年${month}月${date}日</h3>`;
   if(dayEvents.length === 0){
