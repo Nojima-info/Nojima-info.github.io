@@ -89,4 +89,4 @@ color:var(--text-color);
 @media(max-width:599px){
   .profile-list{width:100%}
 }
-.profile-page{max-width:760px;padding-left:24px;padding-right:24px}
+.profile-page{max-width:760px;padding-left:24px;padding-right:24px;padding-top:40px}
