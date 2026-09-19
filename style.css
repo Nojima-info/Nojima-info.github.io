@@ -19,6 +19,9 @@
 --border-color:#454a54;
 --border-light-color:#353a43;
 }
+    .menu a{
+    color:#333;
+  }
 }
 *{box-sizing:border-box}
 html{font-size:16px}
