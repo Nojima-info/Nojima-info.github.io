@@ -117,6 +117,29 @@ function showEventDetail(event){
     <p>${event.description}</p>
   `;
   selectedDate.appendChild(detail);
+  const memoLabel = document.createElement("label");
+memoLabel.className = "event-memo-label";
+memoLabel.textContent = "メモ";
+const memo = document.createElement("textarea");
+memo.className = "event-memo";
+memo.placeholder = "このメモは自分以外には表示されません";
+memo.rows = 5;
+const memoKey = `calendar-memo-${event.date}-${event.title}`;
+memo.value = localStorage.getItem(memoKey) || "";
+const saveMemoButton = document.createElement("button");
+saveMemoButton.type = "button";
+saveMemoButton.className = "event-memo-save";
+saveMemoButton.textContent = "保存";
+saveMemoButton.addEventListener("click",() => {
+  localStorage.setItem(memoKey,memo.value);
+  saveMemoButton.textContent = "保存しました";
+  setTimeout(() => {
+    saveMemoButton.textContent = "保存";
+  },1500);
+});
+selectedDate.appendChild(memoLabel);
+selectedDate.appendChild(memo);
+selectedDate.appendChild(saveMemoButton);
   const backButton = document.createElement("button");
   backButton.type = "button";
   backButton.className = "event-back-button";
