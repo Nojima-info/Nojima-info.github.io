@@ -20,8 +20,8 @@
 --border-light-color:#353a43;
 }
     .menu a{
-    color:#333;
-  }
+  color:#333!important;
+}
 }
 *{box-sizing:border-box}
 html{font-size:16px}
