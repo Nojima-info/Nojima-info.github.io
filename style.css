@@ -91,3 +91,4 @@ color:var(--text-color);
 }
 .profile-page{max-width:760px;padding-left:24px;padding-right:24px;padding-top:40px}
 .top-page{max-width:760px;padding-left:24px;padding-right:24px;padding-top:40px}
+.menu{flex-direction:column}
