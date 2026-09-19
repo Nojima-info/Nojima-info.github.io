@@ -120,7 +120,7 @@ function showEventDetail(event){
   const backButton = document.createElement("button");
   backButton.type = "button";
   backButton.className = "event-back-button";
-  backButton.textContent = "予定一覧に戻る";
+  backButton.textContent = "閉じる";
   backButton.addEventListener("click",() => {
     showSelectedDate(event.date);
   });
