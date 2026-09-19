@@ -97,3 +97,29 @@ color:var(--text-color);
 }
 .profile-page{max-width:760px;padding-left:24px;padding-right:24px;padding-top:40px}
 .top-page{max-width:760px;padding-left:24px;padding-right:24px;padding-top:40px}
+.calendar-page{max-width:760px;padding-left:24px;padding-right:24px;padding-top:40px}
+.calendar-page-title{margin:0 0 24px;font-size:2.2rem!important;line-height:1.3;color:var(--text-color);border-bottom:4px solid var(--main-color);padding-bottom:8px;display:inline-block}
+.calendar-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.calendar-controls h3{margin:0;font-size:1.3rem;text-align:center}
+.calendar-controls button{width:44px;height:44px;border:1px solid var(--main-color);border-radius:8px;background:var(--surface-color);color:var(--text-color);font-size:1.8rem;line-height:1;cursor:pointer}
+.calendar-controls button:hover{background:var(--main-color-light)}
+.calendar-jump{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
+.calendar-jump label{font-weight:bold}
+.calendar-jump input{padding:8px 10px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface-color);color:var(--text-color);font-size:1rem}
+.calendar{width:100%;overflow:hidden;border:1px solid var(--border-color);border-radius:10px;background:var(--surface-color)}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,1fr)}
+.calendar-weekdays div{padding:8px 2px;text-align:center;font-weight:bold;background:var(--main-color);color:#333}
+.calendar-day{min-height:58px;padding:8px 4px;border:0;border-right:1px solid var(--border-light-color);border-top:1px solid var(--border-light-color);background:var(--surface-color);color:var(--text-color);font-size:1rem;text-align:center;cursor:pointer}
+.calendar-day:nth-child(7n){border-right:0}
+.calendar-day:hover{background:var(--main-color-light)}
+.calendar-day.other-month{color:#aaa;background:var(--background-color);cursor:default}
+.calendar-day:disabled{cursor:default}
+.selected-date{margin-top:24px;padding:20px;border:1px solid var(--main-color);border-radius:10px;background:var(--surface-color)}
+.selected-date h3{margin:0 0 12px;font-size:1.2rem}
+.selected-date p{margin:0}
+@media(max-width:599px){
+.calendar-page{padding-left:16px;padding-right:16px}
+.calendar-day{min-height:52px;padding:7px 2px}
+.calendar-controls h3{font-size:1.15rem}
+.calendar-jump{flex-direction:column;gap:6px}
+}
