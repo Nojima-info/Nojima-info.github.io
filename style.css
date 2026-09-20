@@ -138,7 +138,7 @@ color:var(--text-color);
 .calendar-month-picker{position:relative;display:flex;align-items:center;justify-content:center;min-width:140px;min-height:44px;cursor:pointer}
 .calendar-month-picker input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
 .calendar-month-picker span{font-size:1.3rem;font-weight:bold;text-align:center}
-.calendar-page-title{margin-bottom:48px!important}
+.calendar-page-description{margin:0 0 24px}
 .event-memo-label{display:block;margin:20px 0 8px;font-weight:bold}
 .event-memo{display:block;width:100%;padding:10px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface-color);color:var(--text-color);font:inherit;line-height:1.6;resize:vertical}
 .event-memo:focus{outline:3px solid var(--main-color);outline-offset:2px}
