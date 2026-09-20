@@ -39,6 +39,8 @@ function renderCalendar(){
   const firstDay = new Date(year,month,1).getDay();
   const lastDate = new Date(year,month + 1,0).getDate();
   const previousLastDate = new Date(year,month,0).getDate();
+  const today = new Date();
+  const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
   for(let i = firstDay - 1;i >= 0;i--){
     const day = document.createElement("button");
     day.type = "button";
@@ -51,15 +53,19 @@ function renderCalendar(){
     const day = document.createElement("button");
     day.type = "button";
     day.className = "calendar-day";
-    day.textContent = date;
     day.dataset.date = `${year}-${String(month + 1).padStart(2,"0")}-${String(date).padStart(2,"0")}`;
+    day.innerHTML = `<span class="calendar-day-number">${date}</span>`;
+    if(day.dataset.date === todayString){
+      day.classList.add("today");
+      day.innerHTML += `<span class="calendar-today">Today</span>`;
+    }
     const hasEvent = events.some(event => event.date === day.dataset.date);
     if(hasEvent){
       day.classList.add("has-event");
     }
     if(day.dataset.date === selectedDateString){
-  day.classList.add("selected");
-}
+      day.classList.add("selected");
+    }
     day.addEventListener("click",() => {
       showSelectedDate(day.dataset.date);
     });
@@ -71,13 +77,7 @@ function renderCalendar(){
     const day = document.createElement("button");
     day.type = "button";
     day.className = "calendar-day other-month";
-day.innerHTML = `<span class="calendar-day-number">${date}</span>`;
-    const today = new Date();
-const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
-if(day.dataset.date === todayString){
-  day.classList.add("today");
-  day.innerHTML += `<span class="calendar-today">Today</span>`;
-}
+    day.textContent = date;
     day.disabled = true;
     calendarDays.appendChild(day);
   }
@@ -92,7 +92,7 @@ function showSelectedDate(dateString){
     selectedDay.classList.add("selected");
   }
   const [year,month,date] = dateString.split("-").map(Number);
-const dayEvents = events.filter(event => event.date === dateString);
+  const dayEvents = events.filter(event => event.date === dateString);
   selectedDate.hidden = false;
   selectedDate.innerHTML = `<h3>${year}年${month}月${date}日</h3>`;
   if(dayEvents.length === 0){
@@ -136,28 +136,28 @@ function showEventDetail(event){
   `;
   selectedDate.appendChild(detail);
   const memoLabel = document.createElement("label");
-memoLabel.className = "event-memo-label";
-memoLabel.textContent = "メモ";
-const memo = document.createElement("textarea");
-memo.className = "event-memo";
-memo.placeholder = "このメモは自分以外には表示されません";
-memo.rows = 5;
-const memoKey = `calendar-memo-${event.date}-${event.title}`;
-memo.value = localStorage.getItem(memoKey) || "";
-const saveMemoButton = document.createElement("button");
-saveMemoButton.type = "button";
-saveMemoButton.className = "event-memo-save";
-saveMemoButton.textContent = "保存";
-saveMemoButton.addEventListener("click",() => {
-  localStorage.setItem(memoKey,memo.value);
-  saveMemoButton.textContent = "保存しました";
-  setTimeout(() => {
-    saveMemoButton.textContent = "保存";
-  },1500);
-});
-selectedDate.appendChild(memoLabel);
-selectedDate.appendChild(memo);
-selectedDate.appendChild(saveMemoButton);
+  memoLabel.className = "event-memo-label";
+  memoLabel.textContent = "メモ";
+  const memo = document.createElement("textarea");
+  memo.className = "event-memo";
+  memo.placeholder = "このメモは自分以外には表示されません";
+  memo.rows = 5;
+  const memoKey = `calendar-memo-${event.date}-${event.title}`;
+  memo.value = localStorage.getItem(memoKey) || "";
+  const saveMemoButton = document.createElement("button");
+  saveMemoButton.type = "button";
+  saveMemoButton.className = "event-memo-save";
+  saveMemoButton.textContent = "保存";
+  saveMemoButton.addEventListener("click",() => {
+    localStorage.setItem(memoKey,memo.value);
+    saveMemoButton.textContent = "保存しました";
+    setTimeout(() => {
+      saveMemoButton.textContent = "保存";
+    },1500);
+  });
+  selectedDate.appendChild(memoLabel);
+  selectedDate.appendChild(memo);
+  selectedDate.appendChild(saveMemoButton);
   const backButton = document.createElement("button");
   backButton.type = "button";
   backButton.className = "event-back-button";
