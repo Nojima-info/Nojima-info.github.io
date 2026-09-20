@@ -71,7 +71,13 @@ function renderCalendar(){
     const day = document.createElement("button");
     day.type = "button";
     day.className = "calendar-day other-month";
-    day.textContent = date;
+day.innerHTML = `<span class="calendar-day-number">${date}</span>`;
+    const today = new Date();
+const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+if(day.dataset.date === todayString){
+  day.classList.add("today");
+  day.innerHTML += `<span class="calendar-today">Today</span>`;
+}
     day.disabled = true;
     calendarDays.appendChild(day);
   }
