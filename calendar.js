@@ -184,3 +184,12 @@ monthPicker.addEventListener("change",() => {
   renderCalendar();
 });
 renderCalendar();
+const searchToggle = document.querySelector("#search-toggle");
+const searchPanel = document.querySelector("#calendar-search-panel");
+const searchToggleIcon = document.querySelector("#search-toggle-icon");
+searchToggle.addEventListener("click",() => {
+  const isOpen = searchPanel.hidden;
+  searchPanel.hidden = !isOpen;
+  searchToggle.setAttribute("aria-expanded",String(isOpen));
+  searchToggleIcon.textContent = isOpen ? "－" : "＋";
+});
