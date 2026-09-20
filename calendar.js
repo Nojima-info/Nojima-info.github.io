@@ -193,3 +193,59 @@ searchToggle.addEventListener("click",() => {
   searchToggle.setAttribute("aria-expanded",String(isOpen));
   searchToggleIcon.textContent = isOpen ? "－" : "＋";
 });
+const searchButtons = document.querySelectorAll(".search-button");
+const clearButtons = document.querySelectorAll(".clear-button");
+const searchResults = document.querySelector("#search-results");
+const searchResultCount = document.querySelector("#search-result-count");
+const searchResultList = document.querySelector("#search-result-list");
+function performSearch(){
+  const selectedMembers = Array.from(document.querySelectorAll('input[name="member"]:checked')).map(input => input.value);
+  const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).map(input => input.value);
+  const keyword = document.querySelector("#search-keyword").value.trim().toLowerCase();
+  const results = events.filter(event => {
+    const memberMatch = selectedMembers.length === 0 || selectedMembers.some(member => event.members.includes(member));
+    const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(event.type);
+    const keywordMatch = keyword === "" || [event.title,event.description,event.venue,event.members.join(" "),event.type].some(value => value.toLowerCase().includes(keyword));
+    return memberMatch && typeMatch && keywordMatch;
+  });
+  searchResults.hidden = false;
+  searchResultCount.textContent = `ヒット数・${results.length}件`;
+  searchResultList.innerHTML = "";
+  if(results.length === 0){
+    searchResultList.innerHTML = "<p>条件に一致する予定はありません。</p>";
+  }else{
+    results.forEach(event => {
+      const eventItem = document.createElement("button");
+      eventItem.type = "button";
+      eventItem.className = "event-item";
+      eventItem.innerHTML = `<strong>${event.title}</strong><span>${event.type}</span>`;
+      eventItem.addEventListener("click",() => {
+        showEventDetail(event);
+      });
+      searchResultList.appendChild(eventItem);
+    });
+  }
+  searchResults.scrollIntoView({behavior:"smooth",block:"start"});
+}
+searchButtons.forEach(button => {
+  button.addEventListener("click",performSearch);
+});
+clearButtons.forEach(button => {
+  button.addEventListener("click",() => {
+    const searchGroup = button.closest(".search-group");
+    if(searchGroup.querySelectorAll('input[name="member"]').length > 0){
+      searchGroup.querySelectorAll('input[name="member"]').forEach(input => {
+        input.checked = false;
+      });
+    }
+    if(searchGroup.querySelectorAll('input[name="type"]').length > 0){
+      searchGroup.querySelectorAll('input[name="type"]').forEach(input => {
+        input.checked = false;
+      });
+    }
+    const keywordInput = searchGroup.querySelector("#search-keyword");
+    if(keywordInput){
+      keywordInput.value = "";
+    }
+  });
+});
