@@ -50,8 +50,51 @@
 <span>検索</span>
 </button>
 <div id="calendar-search-panel" class="calendar-search-panel" hidden>
-<p>ここに検索条件を追加します。</p>
+<div class="search-group">
+<h3>出演者で検索</h3>
+<div class="search-options">
+<label><input type="checkbox" name="member" value="野島昭生さん">昭生さん</label>
+<label><input type="checkbox" name="member" value="野島裕史さん">裕史さん</label>
+<label><input type="checkbox" name="member" value="野島健児さん">健児さん</label>
+<label><input type="checkbox" name="member" value="野島透也さん">透也さん</label>
+<label><input type="checkbox" name="member" value="野島悠生さん">悠生さん</label>
+<label><input type="checkbox" name="member" value="野島瑠玖さん">瑠玖さん</label>
 </div>
+<div class="search-actions">
+<button class="search-button" type="button">検索</button>
+<button class="clear-button" type="button">クリア</button>
+</div>
+</div>
+<div class="search-group">
+<h3>予定の種類で検索</h3>
+<div class="search-options">
+<label><input type="checkbox" name="type" value="アニメ">アニメ</label>
+<label><input type="checkbox" name="type" value="CD">CD</label>
+<label><input type="checkbox" name="type" value="イベント">イベント</label>
+<label><input type="checkbox" name="type" value="ラジオ">ラジオ</label>
+<label><input type="checkbox" name="type" value="その他">その他</label>
+</div>
+<div class="search-actions">
+<button class="search-button" type="button">検索</button>
+<button class="clear-button" type="button">クリア</button>
+</div>
+</div>
+<div class="search-group">
+<h3>キーワードで検索</h3>
+<div class="search-keyword">
+<input id="search-keyword" type="text" placeholder="イベント名などを入力">
+</div>
+<div class="search-actions">
+<button class="search-button" type="button">検索</button>
+<button class="clear-button" type="button">クリア</button>
+</div>
+</div>
+</div>
+</section>
+<section class="search-results" id="search-results" hidden>
+<h3>検索結果</h3>
+<p id="search-result-count">ヒット数・0件</p>
+<div id="search-result-list"></div>
 </section>
 </main>
 <script src="menu.js"></script>
