@@ -149,3 +149,7 @@ color:var(--text-color);
 .calendar-page-description{margin:0 0 24px}
 .profile-page-description{margin-bottom:32px!important}
 .calendar-page-description{margin-bottom:32px!important}
+.calendar-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.calendar-day-number{line-height:1.2}
+.calendar-today{font-size:.65rem;font-weight:bold;line-height:1;color:var(--main-color-dark)}
+.calendar-day.today{font-weight:bold}
