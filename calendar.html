@@ -19,7 +19,7 @@
 </nav>
 <main class="page-content calendar-page">
 <h2 class="calendar-page-title">Calendar</h2>
-  <p class="calendar-page-description">野島家の皆さんが出演されるメディアの情報や、イベントの開催日などの予定をまとめています。</p>
+<p class="calendar-page-description">野島家の皆さんが出演されるメディアの情報や、イベントの開催日などの予定をまとめています。</p>
 <section class="calendar-controls">
 <button id="prev-month" type="button" aria-label="前の月">‹</button>
 <label class="calendar-month-picker">
@@ -29,7 +29,7 @@
 <button id="next-month" type="button" aria-label="次の月">›</button>
 </section>
 <section class="calendar" aria-label="カレンダー">
-  <div class="calendar-weekdays">
+<div class="calendar-weekdays">
 <div>日</div>
 <div>月</div>
 <div>火</div>
@@ -43,6 +43,15 @@
 <section class="selected-date" id="selected-date" hidden>
 <h3 id="selected-date-title"></h3>
 <p>この日の予定はありません。</p>
+</section>
+<section class="calendar-search">
+<button id="search-toggle" class="calendar-search-toggle" type="button" aria-expanded="false" aria-controls="calendar-search-panel">
+<span id="search-toggle-icon">＋</span>
+<span>検索</span>
+</button>
+<div id="calendar-search-panel" class="calendar-search-panel" hidden>
+<p>ここに検索条件を追加します。</p>
+</div>
 </section>
 </main>
 <script src="menu.js"></script>
