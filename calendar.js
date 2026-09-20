@@ -193,6 +193,103 @@ searchToggle.addEventListener("click",() => {
   searchToggle.setAttribute("aria-expanded",String(isOpen));
   searchToggleIcon.textContent = isOpen ? "－" : "＋";
 });
+const searchResults = document.querySelector("#search-results");
+const searchResultCount = document.querySelector("#search-result-count");
+const searchResultList = document.querySelector("#search-result-list");
+const memberCheckboxes = document.querySelectorAll('input[name="member"]');
+const typeCheckboxes = document.querySelectorAll('input[name="type"]');
+const keywordInput = document.querySelector("#search-keyword");
+const searchGroups = document.querySelectorAll(".search-group");
+let committedKeyword = "";
+function updateSearchResults(){
+  const selectedMembers = [...memberCheckboxes].filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+  const selectedTypes = [...typeCheckboxes].filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+  const keyword = committedKeyword.toLowerCase();
+  const filteredEvents = events.filter(event => {
+    const memberMatch = selectedMembers.length === 0 || selectedMembers.some(member => event.members.includes(member));
+    const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(event.type);
+    const searchableText = [
+      event.title,
+      event.type,
+      event.members.join(" "),
+      event.venue,
+      event.description
+    ].join(" ").toLowerCase();
+    const keywordMatch = keyword === "" || searchableText.includes(keyword);
+    return memberMatch && typeMatch && keywordMatch;
+  });
+  searchResults.hidden = false;
+  searchResultCount.textContent = `ヒット数・${filteredEvents.length}件`;
+  searchResultList.innerHTML = "";
+  if(filteredEvents.length === 0){
+    searchResultList.innerHTML = "<p>条件に一致する予定はありません。</p>";
+    return;
+  }
+  filteredEvents.forEach(event => {
+    const [year,month,date] = event.date.split("-").map(Number);
+    const eventItem = document.createElement("button");
+    eventItem.type = "button";
+    eventItem.className = "event-item";
+    eventItem.innerHTML = `
+      <div>
+        <small>${year}年${month}月${date}日</small>
+        <strong>${event.title}</strong>
+      </div>
+      <span>${event.type}</span>
+    `;
+    eventItem.addEventListener("click",() => {
+      showEventDetail(event);
+    });
+    searchResultList.appendChild(eventItem);
+  });
+}
+memberCheckboxes.forEach(checkbox => {
+  checkbox.addEventListener("change",() => {
+    updateSearchResults();
+  });
+});
+typeCheckboxes.forEach(checkbox => {
+  checkbox.addEventListener("change",() => {
+    updateSearchResults();
+  });
+});
+searchGroups[0].querySelector(".clear-button").addEventListener("click",() => {
+  memberCheckboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  });
+  updateSearchResults();
+});
+searchGroups[1].querySelector(".clear-button").addEventListener("click",() => {
+  typeCheckboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  });
+  updateSearchResults();
+});
+searchGroups[2].querySelector(".search-button").addEventListener("click",() => {
+  committedKeyword = keywordInput.value.trim();
+  updateSearchResults();
+  searchResults.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+});
+searchGroups[2].querySelector(".clear-button").addEventListener("click",() => {
+  keywordInput.value = "";
+  committedKeyword = "";
+  updateSearchResults();
+});
+searchGroups[0].querySelector(".search-button").addEventListener("click",() => {
+  searchGroups[2].scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+});
+searchGroups[1].querySelector(".search-button").addEventListener("click",() => {
+  searchGroups[2].scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+});
 const searchButtons = document.querySelectorAll(".search-button");
 const clearButtons = document.querySelectorAll(".clear-button");
 const searchResults = document.querySelector("#search-results");
