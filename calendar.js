@@ -28,6 +28,21 @@ const events = [
     description:"こちらもテスト用の予定です。"
   }
 ];
+const regularSchedules = [
+  {
+    title:"テスト用レギュラー",
+    type:"ラジオ",
+    members:["野島裕史さん"],
+    startDate:"2026-09-01",
+    endDate:"",
+    broadcastDay:"",
+    startTime:"",
+    endTime:"",
+    venue:"",
+    url:"",
+    description:"これはテスト用のレギュラー予定です。"
+  }
+];
 let currentDate = new Date();
 let selectedDateString = "";
 function renderCalendar(){
@@ -81,6 +96,39 @@ function renderCalendar(){
     day.disabled = true;
     calendarDays.appendChild(day);
   }
+  const regularScheduleList = document.querySelector("#regular-schedule-list");
+
+regularScheduleList.innerHTML = "";
+
+const currentMonthStart = `${year}-${String(month + 1).padStart(2,"0")}-01`;
+const currentMonthEnd = `${year}-${String(month + 1).padStart(2,"0")}-${String(lastDate).padStart(2,"0")}`;
+
+const activeRegularSchedules = regularSchedules.filter(schedule => {
+  const startsBeforeMonthEnd = schedule.startDate <= currentMonthEnd;
+  const hasNotEnded = !schedule.endDate || schedule.endDate >= currentMonthStart;
+  return startsBeforeMonthEnd && hasNotEnded;
+});
+
+if(activeRegularSchedules.length === 0){
+  regularScheduleList.innerHTML = "<p>この月のレギュラー予定はありません。</p>";
+}else{
+  activeRegularSchedules.forEach(schedule => {
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = "event-item";
+
+    item.innerHTML = `
+      <strong>${schedule.title}</strong>
+      <span>${schedule.type}</span>
+    `;
+
+    item.addEventListener("click",() => {
+      showEventDetail(schedule);
+    });
+
+    regularScheduleList.appendChild(item);
+  });
+}
 }
 function showSelectedDate(dateString){
   selectedDateString = dateString;
