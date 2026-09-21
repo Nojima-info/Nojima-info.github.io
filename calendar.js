@@ -123,9 +123,89 @@ if(activeRegularSchedules.length === 0){
     `;
 
     item.addEventListener("click",() => {
-      showEventDetail(schedule);
+  showRegularScheduleDetail(schedule);
+});
+    function showRegularScheduleDetail(schedule){
+  const panel = document.querySelector("#regular-schedule-panel");
+
+  const existingDetail = document.querySelector(".regular-schedule-detail");
+
+  if(existingDetail){
+    existingDetail.remove();
+    return;
+  }
+
+  const detail = document.createElement("div");
+  detail.className = "regular-schedule-detail";
+
+  const title = document.createElement("h3");
+  title.textContent = schedule.title;
+  detail.appendChild(title);
+
+  const info = document.createElement("div");
+  info.className = "event-detail";
+
+  const rows = [];
+
+  if(schedule.type){
+    rows.push(["種類",schedule.type]);
+  }
+
+  if(Array.isArray(schedule.members) && schedule.members.length > 0){
+    rows.push(["出演者",schedule.members.join("、")]);
+  }
+
+  if(schedule.broadcastDay){
+    rows.push(["放送日",schedule.broadcastDay]);
+  }
+
+  if(schedule.startDate){
+    rows.push(["初回",schedule.startDate]);
+  }
+
+  if(schedule.endDate){
+    rows.push(["最終回",schedule.endDate]);
+  }
+
+  if(schedule.startTime){
+    rows.push(["開始時刻",schedule.startTime]);
+  }
+
+  if(schedule.endTime){
+    rows.push(["終了時刻",schedule.endTime]);
+  }
+
+  if(schedule.venue){
+    rows.push(["場所",schedule.venue]);
+  }
+
+  if(rows.length > 0){
+    const dl = document.createElement("dl");
+
+    rows.forEach(([label,value]) => {
+      const dt = document.createElement("dt");
+      dt.textContent = label;
+
+      const dd = document.createElement("dd");
+      dd.textContent = value;
+
+      dl.appendChild(dt);
+      dl.appendChild(dd);
     });
 
+    info.appendChild(dl);
+  }
+
+  if(schedule.description){
+    const description = document.createElement("p");
+    description.textContent = schedule.description;
+    info.appendChild(description);
+  }
+
+  detail.appendChild(info);
+
+  panel.appendChild(detail);
+}
     regularScheduleList.appendChild(item);
   });
 }
