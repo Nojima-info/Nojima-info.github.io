@@ -182,3 +182,44 @@ color:var(--text-color);
 .search-options{grid-template-columns:repeat(2,1fr);gap:8px 10px}
 .search-options label{font-size:.95rem}
 }
+.search-result-info{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+  min-width:0;
+}
+
+.search-result-info small{
+  font-size:.85rem;
+}
+
+.search-result-info strong{
+  line-height:1.5;
+}
+
+.search-result-tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:6px;
+  flex-shrink:0;
+}
+
+.search-result-tags span{
+  padding:3px 8px;
+  border-radius:4px;
+  background:var(--main-color-light);
+  font-size:.8rem;
+  white-space:nowrap;
+}
+
+@media(max-width:599px){
+  .event-item{
+    align-items:flex-start;
+  }
+
+  .search-result-tags{
+    justify-content:flex-start;
+  }
+}
