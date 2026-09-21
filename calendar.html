@@ -28,10 +28,16 @@
 </label>
 <button id="next-month" type="button" aria-label="次の月">›</button>
 </section>
-  <section class="regular-schedules" id="regular-schedules">
-<h3>今月のレギュラー予定</h3>
+  <section class="regular-schedules">
+<button id="regular-schedule-toggle" class="calendar-search-toggle" type="button" aria-expanded="false" aria-controls="regular-schedule-panel">
+<span id="regular-schedule-toggle-icon">＋</span>
+<span>今月のレギュラー予定</span>
+</button>
+
+<div id="regular-schedule-panel" class="calendar-search-panel" hidden>
 <div id="regular-schedule-list" class="event-list">
 <p>この月のレギュラー予定はありません。</p>
+</div>
 </div>
 </section>
 <section class="calendar" aria-label="カレンダー">
