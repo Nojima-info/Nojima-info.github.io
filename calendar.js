@@ -230,13 +230,20 @@ function updateSearchResults(){
     const eventItem = document.createElement("button");
     eventItem.type = "button";
     eventItem.className = "event-item";
-    eventItem.innerHTML = `
-      <div>
-        <small>${year}年${month}月${date}日</small>
-        <strong>${event.title}</strong>
-      </div>
-      <span>${event.type}</span>
-    `;
+    const memberTags = event.members
+  .map(member => `<span>${member.replace("野島", "").replace("さん", "")}</span>`)
+  .join("");
+
+eventItem.innerHTML = `
+  <div class="search-result-info">
+    <small>${year}年${month}月${date}日</small>
+    <strong>${event.title}</strong>
+  </div>
+  <div class="search-result-tags">
+    ${memberTags}
+    <span>${event.type}</span>
+  </div>
+`;
     eventItem.addEventListener("click",() => {
       showEventDetail(event);
     });
