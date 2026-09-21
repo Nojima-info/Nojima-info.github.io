@@ -230,8 +230,18 @@ function updateSearchResults(){
     const eventItem = document.createElement("button");
     eventItem.type = "button";
     eventItem.className = "event-item";
-    const memberTags = event.members
-  .map(member => `<span>${member.replace("野島", "").replace("さん", "")}</span>`)
+    const memberOrder = [
+  "野島昭生さん",
+  "野島裕史さん",
+  "野島健児さん",
+  "野島透也さん",
+  "野島悠生さん",
+  "野島瑠玖さん"
+];
+
+const memberTags = memberOrder
+  .filter(member => event.members.includes(member))
+  .map(member => `<span>${member.replace("野島", "")}</span>`)
   .join("");
 
 eventItem.innerHTML = `
