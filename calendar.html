@@ -28,6 +28,12 @@
 </label>
 <button id="next-month" type="button" aria-label="次の月">›</button>
 </section>
+  <section class="regular-schedules" id="regular-schedules">
+<h3>今月のレギュラー予定</h3>
+<div id="regular-schedule-list" class="event-list">
+<p>この月のレギュラー予定はありません。</p>
+</div>
+</section>
 <section class="calendar" aria-label="カレンダー">
 <div class="calendar-weekdays">
 <div>日</div>
@@ -80,6 +86,10 @@
   <label><input type="checkbox" name="type" value="DVD">DVD</label>
 <label><input type="checkbox" name="type" value="その他">その他</label>
 </div>
+  <label class="regular-search-option">
+<input type="checkbox" id="search-regular">
+レギュラーの予定を表示する
+</label>
 <div class="search-actions">
 <button class="search-button" type="button">検索</button>
 <button class="clear-button" type="button">クリア</button>
