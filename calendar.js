@@ -160,12 +160,14 @@ if(activeRegularSchedules.length === 0){
   }
 
   if(schedule.startDate){
-    rows.push(["初回",schedule.startDate]);
-  }
+  const [year,month,date] = schedule.startDate.split("-").map(Number);
+  rows.push(["初回",`${year}年${month}月${date}日`]);
+}
 
-  if(schedule.endDate){
-    rows.push(["最終回",schedule.endDate]);
-  }
+if(schedule.endDate){
+  const [year,month,date] = schedule.endDate.split("-").map(Number);
+  rows.push(["最終回",`${year}年${month}月${date}日`]);
+}
 
   if(schedule.startTime){
     rows.push(["開始時刻",schedule.startTime]);
