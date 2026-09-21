@@ -355,3 +355,14 @@ searchGroups[1].querySelector(".search-button").addEventListener("click",() => {
     block:"center"
   });
 });
+const regularScheduleToggle = document.querySelector("#regular-schedule-toggle");
+const regularSchedulePanel = document.querySelector("#regular-schedule-panel");
+const regularScheduleToggleIcon = document.querySelector("#regular-schedule-toggle-icon");
+
+regularScheduleToggle.addEventListener("click",() => {
+  const isOpen = regularSchedulePanel.hidden;
+
+  regularSchedulePanel.hidden = !isOpen;
+  regularScheduleToggle.setAttribute("aria-expanded",String(isOpen));
+  regularScheduleToggleIcon.textContent = isOpen ? "－" : "＋";
+});
