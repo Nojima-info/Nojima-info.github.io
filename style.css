@@ -264,3 +264,25 @@ color:var(--text-color);
 .regular-schedules{
   margin-bottom:8px;
 }
+.search-regular-result{
+  width:100%;
+}
+
+.search-regular-detail{
+  width:100%;
+  padding:16px;
+  border:1px solid var(--border-color);
+  border-top:none;
+  border-radius:0 0 8px 8px;
+  background:var(--surface-color);
+  color:var(--text-color);
+}
+
+.search-regular-detail .regular-schedule-detail{
+  width:100%;
+}
+
+.search-regular-detail h3{
+  margin:0 0 16px;
+  font-size:1rem;
+}
