@@ -68,12 +68,43 @@ function formatDate(dateString){
   return `${year}年${month}月${date}日`;
 }
 
-function getRegularUrls(schedule){
-  if(Array.isArray(schedule.urls)){ return schedule.urls.filter(url => url); }
-  if(schedule.url){ return [schedule.url]; }
+function getScheduleLinks(schedule){
+
+  if(Array.isArray(schedule.links)){
+    return schedule.links
+      .filter(link =>
+        link &&
+        link.name &&
+        link.url
+      )
+      .map(link => ({
+        name: link.name,
+        url: link.url
+      }));
+  }
+
+  /* 古いレギュラー予定データとの互換用 */
+  if(Array.isArray(schedule.urls)){
+    return schedule.urls
+      .filter(url => url)
+      .map(url => ({
+        name: "公式サイト",
+        url
+      }));
+  }
+
+  /* さらに古い1本だけのリンクとの互換用 */
+  if(schedule.url){
+    return [
+      {
+        name: "公式サイト",
+        url: schedule.url
+      }
+    ];
+  }
+
   return [];
 }
-
 function getRegularSearchableText(schedule){
   return [
     schedule.title, schedule.type,
@@ -219,25 +250,50 @@ function createRegularScheduleDetail(schedule,closeCallback){
     info.appendChild(dl);
   }
 
-  const urls = getRegularUrls(schedule);
-  if(urls.length){
-    const dl = info.querySelector("dl") || document.createElement("dl");
-    urls.forEach((url,index) => {
-      const dt = document.createElement("dt");
-      dt.textContent = urls.length === 1 ? "公式リンク" : `公式リンク${index + 1}`;
-      const dd = document.createElement("dd");
-      const link = document.createElement("a");
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = "公式サイトを見る";
-      dd.appendChild(link);
-      dl.appendChild(dt);
-      dl.appendChild(dd);
-    });
-    if(!info.querySelector("dl")){ info.appendChild(dl); }
-  }
+  const links = getScheduleLinks(schedule);
 
+if(links.length){
+
+  const dl =
+    info.querySelector("dl") ||
+    document.createElement("dl");
+
+  const dt =
+    document.createElement("dt");
+
+  dt.textContent =
+    "公式リンク";
+
+  const dd =
+    document.createElement("dd");
+
+  links.forEach(linkData => {
+
+    const link =
+      document.createElement("a");
+
+    link.href =
+      linkData.url;
+
+    link.target =
+      "_blank";
+
+    link.rel =
+      "noopener noreferrer";
+
+    link.textContent =
+      linkData.name;
+
+    dd.appendChild(link);
+  });
+
+  dl.appendChild(dt);
+  dl.appendChild(dd);
+
+  if(!info.querySelector("dl")){
+    info.appendChild(dl);
+  }
+}
   if(schedule.description){
     const description = document.createElement("p");
     description.textContent = schedule.description;
@@ -439,7 +495,7 @@ function showEventDetail(event){
       <dt>出演者</dt><dd>${event.members.join("、")}</dd>
       ${event.startTime || event.endTime ? `<dt>時間</dt><dd>${event.startTime || ""}${event.startTime || event.endTime ? "〜" : ""}${event.endTime || ""}</dd>` : ""}
       ${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
-      ${event.url ? `<dt>関連リンク</dt><dd><a href="${event.url}" target="_blank" rel="noopener noreferrer">公式サイトを見る</a></dd>` : ""}
+      ${eventLinksHtml}
     </dl>
     ${event.description ? `<p>${event.description}</p>` : ""}
   `;
@@ -617,6 +673,24 @@ function updateSearchResults(){
 
         info.className =
           "event-detail";
+        const eventLinks =
+  getScheduleLinks(event);
+
+const eventLinksHtml =
+  eventLinks.length
+    ? `
+      <dt>公式リンク</dt>
+      <dd>
+        ${eventLinks.map(link => `
+          <a
+            href="${link.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >${link.name}</a>
+        `).join("")}
+      </dd>
+    `
+    : "";
 
         const dl =
           document.createElement("dl");
