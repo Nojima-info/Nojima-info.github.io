@@ -502,6 +502,25 @@ function showEventDetail(event){
 
   const detail = document.createElement("div");
   detail.className = "event-detail";
+
+  const eventLinks = getScheduleLinks(event);
+
+  const eventLinksHtml =
+    eventLinks.length
+      ? `
+        <dt>公式リンク</dt>
+        <dd>
+          ${eventLinks.map(link => `
+            <a
+              href="${link.url}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >${link.name}</a>
+          `).join("")}
+        </dd>
+      `
+      : "";
+
   detail.innerHTML = `
     <dl>
       <dt>種類</dt><dd>${event.type}</dd>
@@ -512,6 +531,7 @@ function showEventDetail(event){
     </dl>
     ${event.description ? `<p>${event.description}</p>` : ""}
   `;
+
   selectedDate.appendChild(detail);
 
   const memoLabel = document.createElement("label");
@@ -547,7 +567,6 @@ function showEventDetail(event){
   backButton.addEventListener("click",() => { showSelectedDate(event.date); });
   selectedDate.appendChild(backButton);
 }
-
 prevMonthButton.addEventListener("click",() => {
   currentDate.setMonth(currentDate.getMonth() - 1);
   renderCalendar();
@@ -783,38 +802,40 @@ const eventLinksHtml =
           dl.appendChild(venueDd);
         }
 
-        if(event.url){
+        if(eventLinks.length){
 
-          const urlDt =
-            document.createElement("dt");
+  const linkDt =
+    document.createElement("dt");
 
-          urlDt.textContent =
-            "関連リンク";
+  linkDt.textContent =
+    "公式リンク";
 
-          const urlDd =
-            document.createElement("dd");
+  const linkDd =
+    document.createElement("dd");
 
-          const link =
-            document.createElement("a");
+  eventLinks.forEach(linkData => {
 
-          link.href =
-            event.url;
+    const link =
+      document.createElement("a");
 
-          link.target =
-            "_blank";
+    link.href =
+      linkData.url;
 
-          link.rel =
-            "noopener noreferrer";
+    link.target =
+      "_blank";
 
-          link.textContent =
-            "公式サイトを見る";
+    link.rel =
+      "noopener noreferrer";
 
-          urlDd.appendChild(link);
+    link.textContent =
+      linkData.name;
 
-          dl.appendChild(urlDt);
-          dl.appendChild(urlDd);
-        }
+    linkDd.appendChild(link);
+  });
 
+  dl.appendChild(linkDt);
+  dl.appendChild(linkDd);
+}
         info.appendChild(dl);
 
         if(event.description){
