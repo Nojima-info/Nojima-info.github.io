@@ -287,10 +287,13 @@ color:var(--text-color);
   font-size:1rem;
 }
 .regular-search-option{
+  margin-bottom:20px;
+}
+
+.regular-search-option label{
   display:flex;
   align-items:center;
   gap:6px;
-  min-width:0;
   padding:4px 0;
   cursor:pointer;
 }
