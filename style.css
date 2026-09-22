@@ -264,28 +264,3 @@ color:var(--text-color);
 .regular-schedules{
   margin-bottom:8px;
 }
-/* =========================
-   検索結果のレギュラー詳細
-========================= */
-
-.search-regular-result{
-  width:100%;
-}
-
-.search-regular-detail{
-  width:100%;
-  padding:16px;
-  border:1px solid var(--main-color-light);
-  border-top:none;
-  background:var(--sub-color);
-  box-sizing:border-box;
-}
-
-.search-regular-detail .regular-schedule-detail{
-  width:100%;
-}
-
-.search-regular-detail h3{
-  margin:0 0 16px;
-  font-size:1rem;
-}
