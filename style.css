@@ -305,3 +305,25 @@ color:var(--text-color);
   margin:0;
   accent-color:var(--main-color-dark);
 }
+.search-normal-result{
+  width:100%;
+}
+
+.search-normal-detail{
+  width:100%;
+  padding:16px;
+  border:1px solid var(--border-color);
+  border-top:none;
+  border-radius:0 0 8px 8px;
+  background:var(--surface-color);
+  color:var(--text-color);
+}
+
+.search-normal-detail h3{
+  margin:0 0 16px;
+  font-size:1rem;
+}
+
+.search-normal-detail .event-detail{
+  width:100%;
+}
