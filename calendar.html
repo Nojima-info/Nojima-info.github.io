@@ -62,9 +62,16 @@
 <span>検索</span>
 </button>
 <div id="calendar-search-panel" class="calendar-search-panel" hidden>
+<div class="regular-search-option">
+<label>
+<input type="checkbox" id="search-regular">
+レギュラーの予定を表示する
+</label>
+</div>
+
 <div class="search-group">
 <h3>出演者で検索</h3>
-<div class="search-options">
+  <div class="search-options">
 <label><input type="checkbox" name="member" value="野島昭生さん">昭生さん</label>
 <label><input type="checkbox" name="member" value="野島裕史さん">裕史さん</label>
 <label><input type="checkbox" name="member" value="野島健児さん">健児さん</label>
@@ -92,10 +99,6 @@
   <label><input type="checkbox" name="type" value="DVD">DVD</label>
 <label><input type="checkbox" name="type" value="その他">その他</label>
 </div>
-  <label class="regular-search-option">
-<input type="checkbox" id="search-regular">
-レギュラーの予定を表示する
-</label>
 <div class="search-actions">
 <button class="search-button" type="button">検索</button>
 <button class="clear-button" type="button">クリア</button>
