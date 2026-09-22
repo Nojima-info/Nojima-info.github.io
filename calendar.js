@@ -15,7 +15,20 @@ const events = [
     startTime:"18:00",
     endTime:"20:00",
     venue:"○○ホール",
-    url:"https://example.com",
+    links:[
+  {
+    name:"ホームページ",
+    url:"https://example.com"
+  },
+  {
+    name:"X",
+    url:"https://x.com"
+  },
+  {
+    name:"YouTube",
+    url:"https://www.youtube.com"
+  }
+],
     description:"これはテスト用の予定です。"
   },
   {
