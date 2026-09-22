@@ -554,23 +554,326 @@ function updateSearchResults(){
     return;
   }
 
-  filteredEvents.forEach(event => {
-    const [year,month,date] = event.date.split("-").map(Number);
-    const eventItem = document.createElement("button");
+    filteredEvents.forEach(event => {
+
+    const [year,month,date] =
+      event.date
+        .split("-")
+        .map(Number);
+
+    const wrapper =
+      document.createElement("div");
+
+    wrapper.className =
+      "search-normal-result";
+
+    const eventItem =
+      document.createElement("button");
+
     eventItem.type = "button";
-    eventItem.className = "event-item";
-    const memberTags = getMemberTags(event.members);
+
+    eventItem.className =
+      "event-item";
+
+    const memberTags =
+      getMemberTags(event.members);
 
     eventItem.innerHTML = `
       <div class="search-result-info">
         <small>${year}年${month}月${date}日</small>
         <strong>${event.title}</strong>
       </div>
-      <div class="search-result-tags">${memberTags}<span>${event.type}</span></div>
+
+      <div class="search-result-tags">
+        ${memberTags}
+        <span>${event.type}</span>
+      </div>
     `;
 
-    eventItem.addEventListener("click",() => { showEventDetail(event); });
-    searchResultList.appendChild(eventItem);
+    const detail =
+      document.createElement("div");
+
+    detail.className =
+      "search-normal-detail";
+
+    detail.hidden = true;
+
+    eventItem.addEventListener("click",() => {
+
+      if(detail.hidden){
+
+        detail.innerHTML = "";
+
+        const title =
+          document.createElement("h3");
+
+        title.textContent =
+          event.title;
+
+        detail.appendChild(title);
+
+        const info =
+          document.createElement("div");
+
+        info.className =
+          "event-detail";
+
+        const dl =
+          document.createElement("dl");
+
+        const typeDt =
+          document.createElement("dt");
+
+        typeDt.textContent =
+          "種類";
+
+        const typeDd =
+          document.createElement("dd");
+
+        typeDd.textContent =
+          event.type;
+
+        dl.appendChild(typeDt);
+        dl.appendChild(typeDd);
+
+        if(
+          Array.isArray(event.members) &&
+          event.members.length > 0
+        ){
+
+          const memberDt =
+            document.createElement("dt");
+
+          memberDt.textContent =
+            "出演者";
+
+          const memberDd =
+            document.createElement("dd");
+
+          memberDd.textContent =
+            event.members.join("、");
+
+          dl.appendChild(memberDt);
+          dl.appendChild(memberDd);
+        }
+
+        if(
+          event.startTime ||
+          event.endTime
+        ){
+
+          const timeDt =
+            document.createElement("dt");
+
+          timeDt.textContent =
+            "時間";
+
+          const timeDd =
+            document.createElement("dd");
+
+          timeDd.textContent =
+            `${event.startTime || ""}${event.startTime || event.endTime ? "〜" : ""}${event.endTime || ""}`;
+
+          dl.appendChild(timeDt);
+          dl.appendChild(timeDd);
+        }
+
+        if(event.venue){
+
+          const venueDt =
+            document.createElement("dt");
+
+          venueDt.textContent =
+            "会場";
+
+          const venueDd =
+            document.createElement("dd");
+
+          venueDd.textContent =
+            event.venue;
+
+          dl.appendChild(venueDt);
+          dl.appendChild(venueDd);
+        }
+
+        if(event.url){
+
+          const urlDt =
+            document.createElement("dt");
+
+          urlDt.textContent =
+            "関連リンク";
+
+          const urlDd =
+            document.createElement("dd");
+
+          const link =
+            document.createElement("a");
+
+          link.href =
+            event.url;
+
+          link.target =
+            "_blank";
+
+          link.rel =
+            "noopener noreferrer";
+
+          link.textContent =
+            "公式サイトを見る";
+
+          urlDd.appendChild(link);
+
+          dl.appendChild(urlDt);
+          dl.appendChild(urlDd);
+        }
+
+        info.appendChild(dl);
+
+        if(event.description){
+
+          const description =
+            document.createElement("p");
+
+          description.textContent =
+            event.description;
+
+          info.appendChild(
+            description
+          );
+        }
+
+        detail.appendChild(info);
+
+        /* =========================
+           メモ
+        ========================= */
+
+        const memoLabel =
+          document.createElement("label");
+
+        memoLabel.className =
+          "event-memo-label";
+
+        memoLabel.textContent =
+          "メモ";
+
+        const memo =
+          document.createElement("textarea");
+
+        memo.className =
+          "event-memo";
+
+        memo.placeholder =
+          "このメモは自分以外には表示されません";
+
+        memo.rows = 5;
+
+        const memoKeys =
+          getEventMemoKeys(event);
+
+        memo.value =
+          loadMemo(
+            memoKeys.primary,
+            memoKeys.legacy
+          );
+
+        const saveMemoButton =
+          document.createElement("button");
+
+        saveMemoButton.type =
+          "button";
+
+        saveMemoButton.className =
+          "event-memo-save";
+
+        saveMemoButton.textContent =
+          "保存";
+
+        saveMemoButton.addEventListener(
+          "click",
+          () => {
+
+            localStorage.setItem(
+              memoKeys.primary,
+              memo.value
+            );
+
+            saveMemoButton.textContent =
+              "保存しました";
+
+            setTimeout(() => {
+
+              saveMemoButton.textContent =
+                "保存";
+
+            },1500);
+          }
+        );
+
+        detail.appendChild(
+          memoLabel
+        );
+
+        detail.appendChild(
+          memo
+        );
+
+        detail.appendChild(
+          saveMemoButton
+        );
+
+        /* =========================
+           閉じる
+        ========================= */
+
+        const closeButton =
+          document.createElement("button");
+
+        closeButton.type =
+          "button";
+
+        closeButton.className =
+          "event-back-button";
+
+        closeButton.textContent =
+          "閉じる";
+
+        closeButton.addEventListener(
+          "click",
+          () => {
+
+            detail.hidden = true;
+
+          }
+        );
+
+        detail.appendChild(
+          closeButton
+        );
+
+        detail.hidden = false;
+
+      }else{
+
+        detail.hidden = true;
+
+      }
+
+    });
+
+    wrapper.appendChild(
+      eventItem
+    );
+
+    wrapper.appendChild(
+      detail
+    );
+
+    searchResultList.appendChild(
+      wrapper
+    );
+
   });
 
   filteredRegularSchedules.forEach(schedule => {
