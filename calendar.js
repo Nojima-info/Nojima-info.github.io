@@ -54,21 +54,6 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
-  id: "event_20260923141315_hc0iv",
-  title: "ミヤリサン製薬 ラジオ劇場「下町やぶさか診療所」",
-  type: "ラジオ",
-  members: ["野島裕史さん"],
-  isRegular: true,
-  startTime: "18:30",
-  endTime: "18:45",
-  station: "KBC九州朝日放送",
-  startDate: "2026-03-30",
-  links: [
-    { name: "公式サイト", url: "https://kbc.co.jp/r-radio/yabusaka-shinryojo/" },
-    { name: "X", url: "https://x.com/yabusaka_kbc?s=11" }
-  ]
-},
-  {
   id: "event_20260923140444_1al1k",
   title: "「下町やぶさか診療所」トークライブ",
   type: "イベント",
@@ -116,6 +101,21 @@ const events = [
 ];
 
 const regularSchedules = [
+  {
+  id: "event_20260923141315_hc0iv",
+  title: "ミヤリサン製薬 ラジオ劇場「下町やぶさか診療所」",
+  type: "ラジオ",
+  members: ["野島裕史さん"],
+  isRegular: true,
+  startTime: "18:30",
+  endTime: "18:45",
+  station: "KBC九州朝日放送",
+  startDate: "2026-03-30",
+  links: [
+    { name: "公式サイト", url: "https://kbc.co.jp/r-radio/yabusaka-shinryojo/" },
+    { name: "X", url: "https://x.com/yabusaka_kbc?s=11" }
+  ]
+},
   {
   id: "event_20260923110920_sdoyj",
   title: "サイクリスト・ステーション ツアー・オブ・ジャパン",
