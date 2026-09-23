@@ -728,6 +728,7 @@ function updateSearchResults(){
     eventItem.addEventListener("click",() => {
 
       if(detail.hidden){
+        eventItem.classList.add("selected-search-event");
 
         detail.innerHTML = "";
 
