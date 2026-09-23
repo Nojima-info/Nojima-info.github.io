@@ -4,7 +4,50 @@ const selectedDate = document.querySelector("#selected-date");
 const monthPicker = document.querySelector("#month-picker");
 const prevMonthButton = document.querySelector("#prev-month");
 const nextMonthButton = document.querySelector("#next-month");
-
+const birthdays = [
+  {
+    id:"birthday_syo",
+    member:"野島昭生さん",
+    month:4,
+    day:6,
+    birthYear:1945
+  },
+  {
+    id:"birthday_hiro",
+    member:"野島裕史さん",
+    month:4,
+    day:16,
+    birthYear:1973
+  },
+  {
+    id:"birthday_kenji",
+    member:"野島健児さん",
+    month:3,
+    day:16,
+    birthYear:1976
+  },
+  {
+    id:"birthday_toya",
+    member:"野島透也さん",
+    month:5,
+    day:18,
+    birthYear:2003
+  }
+];
+function createBirthdayEvents(year){
+  return birthdays.map(birthday => {
+    const age = year - birthday.birthYear;
+    const date = `${year}-${String(birthday.month).padStart(2,"0")}-${String(birthday.day).padStart(2,"0")}`;
+    return {
+      id:`${birthday.id}_${year}`,
+      date:date,
+      title:`${birthday.member}のお誕生日（${age}歳）`,
+      type:"誕生日",
+      members:[birthday.member],
+      isBirthday:true
+    };
+  });
+}
 const events = [
   {
   id: "event_20260923103252_lgry9",
@@ -427,6 +470,7 @@ function showRegularScheduleDetail(schedule){
 function renderCalendar(){
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
+  const birthdayEvents = createBirthdayEvents(year);
   calendarTitle.textContent = `${year}年${month + 1}月`;
   monthPicker.value = `${year}-${String(month + 1).padStart(2,"0")}`;
   calendarDays.innerHTML = "";
