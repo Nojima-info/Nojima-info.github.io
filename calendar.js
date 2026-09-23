@@ -695,6 +695,9 @@ function updateSearchResults(){
   const includeRegular = searchRegular ? searchRegular.checked : false;
 
   const filteredEvents = events.filter(event => {
+    if(event.isBirthday){
+  return false;
+}
     const memberMatch = selectedMembers.length === 0 || selectedMembers.some(member => event.members.includes(member));
     const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(event.type);
     const searchableText = [event.title,event.type,event.members.join(" "),event.venue,event.description].filter(value => value).join(" ").toLowerCase();
