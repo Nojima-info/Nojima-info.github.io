@@ -406,13 +406,27 @@ function renderRegularSchedules(year,month,lastDate){
   }
 
   activeRegularSchedules.forEach(schedule => {
-    const item = document.createElement("button");
-    item.type = "button";
-    item.className = "event-item";
-    item.innerHTML = `<strong>${schedule.title}</strong><span>${schedule.type}</span>`;
-    item.addEventListener("click",() => { showRegularScheduleDetail(schedule); });
-    regularScheduleList.appendChild(item);
+  const item = document.createElement("button");
+  item.type = "button";
+  item.className = "event-item";
+  item.innerHTML = `<strong>${schedule.title}</strong><span>${schedule.type}</span>`;
+  item.addEventListener("click",() => {
+    if(item.classList.contains("selected-search-event")){
+      item.classList.remove("selected-search-event");
+      const detail = regularScheduleList.querySelector(".regular-schedule-detail");
+      if(detail){ detail.remove(); }
+      return;
+    }
+    regularScheduleList.querySelectorAll(".event-item.selected-search-event").forEach(selectedItem => {
+      selectedItem.classList.remove("selected-search-event");
+    });
+    const existingDetail = regularScheduleList.querySelector(".regular-schedule-detail");
+    if(existingDetail){ existingDetail.remove(); }
+    item.classList.add("selected-search-event");
+    showRegularScheduleDetail(schedule);
   });
+  regularScheduleList.appendChild(item);
+});
 }
 
 function showRegularScheduleDetail(schedule){
