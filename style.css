@@ -327,3 +327,10 @@ color:var(--text-color);
 .search-normal-detail .event-detail{
   width:100%;
 }
+.event-detail dd a{
+  display:block;
+  margin-bottom:6px;
+}
+.event-detail dd a:last-child{
+  margin-bottom:0;
+}
