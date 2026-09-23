@@ -642,7 +642,7 @@ if(!event.isBirthday){
       ${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
       ${eventLinksHtml}
     </dl>
-    ${event.description ? `<p>${event.description}</p>` : ""}
+    ${event.description ? `<p class="event-description">${event.description}</p>` : ""}
   `;
 
   selectedDate.appendChild(detail);
