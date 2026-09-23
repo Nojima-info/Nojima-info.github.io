@@ -61,6 +61,18 @@ const events = [
 
 const regularSchedules = [
   {
+  id: "event_20260923110920_sdoyj",
+  title: "サイクリスト・ステーション ツアー・オブ・ジャパン",
+  type: "ラジオ",
+  members: ["野島裕史さん"],
+  isRegular: true,
+  startDate: "2015-10-01",
+  links: [
+    { name: "公式サイト", url: "https://jfn-pods.com/program/24662" },
+    { name: "X", url: "https://x.com/toj_info?s=11" }
+  ]
+},
+  {
     id:"regular_test_001",
     title:"テスト用レギュラー",
     type:"ラジオ",
