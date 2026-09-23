@@ -400,10 +400,11 @@ if(links.length){
   }
 }
   if(schedule.description){
-    const description = document.createElement("p");
-    description.textContent = schedule.description;
-    info.appendChild(description);
-  }
+  const description = document.createElement("p");
+  description.className = "event-description";
+  description.textContent = schedule.description;
+  info.appendChild(description);
+}
 
   detail.appendChild(info);
 
@@ -954,10 +955,13 @@ const eventLinksHtml =
 }
         info.appendChild(dl);
 
-        if(event.description){
+                if(event.description){
 
           const description =
             document.createElement("p");
+
+          description.className =
+            "event-description";
 
           description.textContent =
             event.description;
@@ -966,7 +970,6 @@ const eventLinksHtml =
             description
           );
         }
-
         detail.appendChild(info);
 
         /* =========================
