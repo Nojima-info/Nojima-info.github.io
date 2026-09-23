@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260923220330_adxcx",
+  title: "超訳文学 太宰治 ～一人芝居、あるいは二人芝居～",
+  type: "イベント",
+  members: ["野島裕史さん", "沼倉愛美さん"],
+  isRegular: false,
+  date: "2026-10-08",
+  openTime: "19:00",
+  startTime: "19:30",
+  venue: "アニメイトシアター(アニメイト池袋本店 B2F)",
+  prices: ["現地・6000円(税込、全席指定)", "配信・3500円(税込)"],
+  links: [
+    { name: "公式サイト", url: "https://www.fwinc.co.jp/rabbit-note-project/archive/ws-dazai/" },
+    { name: "X", url: "https://x.com/rabbit_note_p?s=11" }
+  ],
+},
+  {
   id: "event_20260923215826_vjnii",
   title: "秋の夜長のゆったり配信",
   type: "配信",
@@ -84,22 +100,6 @@ const events = [
     { name: "X", url: "https://x.com/stone_anime_off?s=11" }
   ],
   description: "チケット料金\n【現地】9000～15000円\n【配信】3800円\n\n現地チケット一般販売(先着)\n9月19日 12 : 00 ～",
-},
-  {
-  id: "event_20260923143325_jcsaa",
-  title: "超訳文学 太宰治 ～一人芝居、あるいは二人芝居～",
-  type: "イベント",
-  members: ["野島裕史さん", "沼倉愛美さん"],
-  isRegular: false,
-  date: "2026-10-08",
-  openTime: "19:00",
-  startTime: "19:30",
-  venue: "アニメイトシアター(アニメイト池袋本店 B2F)",
-  links: [
-    { name: "公式サイト", url: "https://www.fwinc.co.jp/rabbit-note-project/archive/ws-dazai/" },
-    { name: "X", url: "https://x.com/rabbit_note_p?s=11" }
-  ],
-  description: "チケット料金\n【現地】6000円(税込・全席指定)\n【配信】3500円(税込)\n\n現地チケット一般先着販売期間\n9月19日 12 : 00 ～ 10月8日 19 : 30\n\n配信チケット販売期間\n9月19日 12 : 00 ～ 10月20日 23 : 59",
 },
   {
   id: "event_20260923140444_1al1k",
