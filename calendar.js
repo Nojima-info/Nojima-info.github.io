@@ -54,6 +54,21 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260923135425_ay7uo",
+  title: "秋の夜長のゆったり配信",
+  type: "配信",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-09-22",
+  startTime: "20:00",
+  endTime: "21:30",
+  deliveryPlace: "Peatix",
+  links: [
+    { name: "公式サイト", url: "https://peatix.com/event/5190220" },
+    { name: "X", url: "https://x.com/nojimakyodai?s=11" }
+  ]
+},
+  {
   id: "event_20260923103252_lgry9",
   title: "野島兄弟のくじメイト",
   type: "配信",
