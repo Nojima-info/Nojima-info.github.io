@@ -7,6 +7,20 @@ const nextMonthButton = document.querySelector("#next-month");
 
 const events = [
   {
+  id: "event_20260923103252_lgry9",
+  title: "野島兄弟のくじメイト",
+  type: "配信",
+  members: ["野島昭生さん", "野島裕史さん", "野島健児さん", "野島透也さん", "野島悠生さん", "野島瑠玖さん", "野島智司さん"],
+  isRegular: false,
+  date: "2026-09-21",
+  startTime: "19:30",
+  deliveryPlace: "ニコニコ生放送",
+  links: [
+    { name: "X", url: "https://x.com/animelo_staff?s=11" },
+    { name: "配信ページ", url: "https://live.nicovideo.jp/watch/lv351304304?ref=lvapp_tanzaku_share_copy" }
+  ]
+  },
+  {
     id:"event_test_001",
     date:"2026-09-18",
     title:"テスト予定",
