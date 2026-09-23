@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260923140444_1al1k",
+  title: "「下町やぶさか診療所」トークライブ",
+  type: "イベント",
+  members: ["野島裕史さん", "橋爪功さん", "日髙のり子さん", "置鮎龍太郎さん", "保村真さん"],
+  isRegular: false,
+  date: "2026-09-27",
+  startTime: "15:00",
+  endTime: "16:15",
+  venue: "NCBホール 福岡市博多区博多駅前3-1-1 西日本シティビル地下2階",
+  links: [
+    { name: "HP", url: "https://kbc.co.jp/r-radio/yabusaka-shinryojo/form.php" },
+    { name: "X", url: "https://x.com/yabusaka_kbc?s=11" },
+    { name: "配信ページ", url: "https://www.youtube.com/live/yrFazI40C2U?si=wc-NTzQpsVLGI9H_" }
+  ]
+},
+  {
   id: "event_20260923135425_ay7uo",
   title: "秋の夜長のゆったり配信",
   type: "配信",
