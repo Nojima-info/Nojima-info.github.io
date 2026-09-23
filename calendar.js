@@ -1005,6 +1005,7 @@ const eventLinksHtml =
       }else{
 
         detail.hidden = true;
+        eventItem.classList.remove("selected-search-event");
 
       }
 
