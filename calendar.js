@@ -502,10 +502,12 @@ function renderCalendar(){
       day.innerHTML += `<span class="calendar-today">Today</span>`;
     }
 
-    if(events.some(event => event.date === day.dataset.date)){
-      day.classList.add("has-event");
-    }
+    const hasEvent = events.some(event => event.date === day.dataset.date);
+const hasBirthday = birthdayEvents.some(event => event.date === day.dataset.date);
 
+if(hasEvent || hasBirthday){
+  day.classList.add("has-event");
+}
     if(day.dataset.date === selectedDateString){
       day.classList.add("selected");
     }
@@ -536,7 +538,10 @@ function showSelectedDate(dateString){
   if(selectedDay){ selectedDay.classList.add("selected"); }
 
   const [year,month,date] = dateString.split("-").map(Number);
-  const dayEvents = events.filter(event => event.date === dateString);
+const dayEvents = [
+  ...events.filter(event => event.date === dateString),
+  ...createBirthdayEvents(year).filter(event => event.date === dateString)
+];
 
   selectedDate.hidden = false;
   selectedDate.innerHTML = `<h3>${year}年${month}月${date}日</h3>`;
