@@ -66,43 +66,6 @@ const events = [
     { name: "X", url: "https://x.com/animelo_staff?s=11" },
     { name: "配信ページ", url: "https://live.nicovideo.jp/watch/lv351304304?ref=lvapp_tanzaku_share_copy" }
   ]
-  },
-  {
-    id:"event_test_001",
-    date:"2026-09-18",
-    title:"テスト予定",
-    type:"予定",
-    members:["野島裕史さん"],
-    startTime:"18:00",
-    endTime:"20:00",
-    venue:"○○ホール",
-    links:[
-  {
-    name:"ホームページ",
-    url:"https://example.com"
-  },
-  {
-    name:"X",
-    url:"https://x.com"
-  },
-  {
-    name:"YouTube",
-    url:"https://www.youtube.com"
-  }
-],
-    description:"これはテスト用の予定です。"
-  },
-  {
-    id:"event_test_002",
-    date:"2026-09-25",
-    title:"もうひとつのテスト予定",
-    type:"イベント",
-    members:["野島健児さん","野島裕史さん"],
-    startTime:"14:00",
-    endTime:"16:00",
-    venue:"○○会館",
-    url:"",
-    description:"こちらもテスト用の予定です。"
   }
 ];
 
@@ -118,22 +81,7 @@ const regularSchedules = [
     { name: "公式サイト", url: "https://jfn-pods.com/program/24662" },
     { name: "X", url: "https://x.com/toj_info?s=11" }
   ]
-},
-  {
-    id:"regular_test_001",
-    title:"テスト用レギュラー",
-    type:"ラジオ",
-    members:["野島裕史さん"],
-    startDate:"2026-09-01",
-    endDate:"",
-    broadcastDay:"",
-    startTime:"",
-    endTime:"",
-    venue:"",
-    url:"",
-    urls:[],
-    description:"これはテスト用のレギュラー予定です。"
-  }
+}
 ];
 
 let currentDate = new Date();
