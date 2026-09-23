@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260923215826_vjnii",
+  title: "秋の夜長のゆったり配信",
+  type: "配信",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-09-22",
+  startTime: "20:00",
+  endTime: "21:30",
+  deliveryPlace: "Peatix",
+  prices: ["野島健児2027年オリジナルカレンダー付・5888円", "通常・1500円"],
+  links: [
+    { name: "公式サイト", url: "https://peatix.com/event/5190220" },
+    { name: "X", url: "https://x.com/nojimakyodai?s=11" }
+  ],
+},
+  {
   id: "event_20260923144337_zs8va",
   title: "STONE FES. 2026",
   type: "イベント",
@@ -99,21 +115,6 @@ const events = [
     { name: "公式サイト", url: "https://kbc.co.jp/r-radio/yabusaka-shinryojo/form.php" },
     { name: "X", url: "https://x.com/yabusaka_kbc?s=11" },
     { name: "配信ページ", url: "https://www.youtube.com/live/yrFazI40C2U?si=wc-NTzQpsVLGI9H_" }
-  ]
-},
-  {
-  id: "event_20260923135425_ay7uo",
-  title: "秋の夜長のゆったり配信",
-  type: "配信",
-  members: ["野島健児さん"],
-  isRegular: false,
-  date: "2026-09-22",
-  startTime: "20:00",
-  endTime: "21:30",
-  deliveryPlace: "Peatix",
-  links: [
-    { name: "公式サイト", url: "https://peatix.com/event/5190220" },
-    { name: "X", url: "https://x.com/nojimakyodai?s=11" }
   ]
 },
   {
