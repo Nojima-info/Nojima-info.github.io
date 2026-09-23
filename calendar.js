@@ -1049,18 +1049,20 @@ const eventLinksHtml =
     detail.hidden = true;
 
     eventItem.addEventListener("click",() => {
-      if(detail.hidden){
-        const newDetail = createRegularScheduleDetail(schedule,() => {
-          detail.hidden = true;
-        });
-        detail.innerHTML = "";
-        detail.appendChild(newDetail);
-        detail.hidden = false;
-      }else{
-        detail.hidden = true;
-      }
+  if(detail.hidden){
+    eventItem.classList.add("selected-search-event");
+    const newDetail = createRegularScheduleDetail(schedule,() => {
+      detail.hidden = true;
+      eventItem.classList.remove("selected-search-event");
     });
-
+    detail.innerHTML = "";
+    detail.appendChild(newDetail);
+    detail.hidden = false;
+  }else{
+    detail.hidden = true;
+    eventItem.classList.remove("selected-search-event");
+  }
+});
     wrapper.appendChild(eventItem);
     wrapper.appendChild(detail);
     searchResultList.appendChild(wrapper);
