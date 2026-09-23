@@ -337,3 +337,7 @@ color:var(--text-color);
 .calendar-day.today.selected .calendar-today{
   color:#333;
 }
+.search-results .event-item.selected-search-event{
+  background:var(--surface-color);
+  border-color:var(--main-color-dark);
+}
