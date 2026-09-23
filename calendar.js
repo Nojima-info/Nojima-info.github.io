@@ -132,10 +132,14 @@ function getRegularSearchableText(schedule){
 
 function getMemberTags(members){
   if(!Array.isArray(members)){ return ""; }
-  return memberOrder.filter(member => members.includes(member))
-    .map(member => `<span>${member.replace("野島","")}</span>`).join("");
+  const orderedMembers = [
+    ...memberOrder.filter(member => members.includes(member)),
+    ...members.filter(member => !memberOrder.includes(member))
+  ];
+  return orderedMembers
+    .map(member => `<span>${member.replace("野島","")}</span>`)
+    .join("");
 }
-
 /* IDを優先してメモを保存。古い予定のメモも引き継ぐ */
 function getEventMemoKeys(event){
   const legacyKey = `calendar-memo-${event.date}-${event.title}`;
