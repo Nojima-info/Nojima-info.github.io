@@ -365,3 +365,6 @@ background:var(--main-color-light);
 .event-detail-description{
 white-space:pre-wrap;
 }
+.event-description{
+white-space:pre-wrap;
+}
