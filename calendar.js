@@ -59,7 +59,7 @@ const events = [
   type: "配信",
   members: ["野島昭生さん", "野島裕史さん", "野島健児さん", "野島透也さん", "野島悠生さん", "野島瑠玖さん", "野島智司さん"],
   isRegular: false,
-  date: "2026-09-21",
+  date: "2026-09-20",
   startTime: "19:30",
   deliveryPlace: "ニコニコ生放送",
   links: [
