@@ -158,7 +158,12 @@ function getMemberTags(members){
     ...members.filter(member => !memberOrder.includes(member))
   ];
   return orderedMembers
-    .map(member => `<span>${member.replace("野島","")}</span>`)
+    .map(member => {
+      const displayName = memberOrder.includes(member)
+        ? member.replace("野島","")
+        : member;
+      return `<span>${displayName}</span>`;
+    })
     .join("");
 }
 /* IDを優先してメモを保存。古い予定のメモも引き継ぐ */
