@@ -357,7 +357,13 @@ function createRegularScheduleDetail(schedule,closeCallback){
       if(schedule.endTime){ rows.push(["終了時刻",schedule.endTime]); }
       if(schedule.venue){ rows.push(["場所",schedule.venue]); }
   }
-
+if(Array.isArray(schedule.prices) && schedule.prices.length){
+  const priceLabel =
+    schedule.type === "舞台" || schedule.type === "イベント"
+      ? "チケット価格"
+      : "価格";
+  rows.push([priceLabel,schedule.prices.join("\n")]);
+}
   if(rows.length){
     const dl = document.createElement("dl");
     rows.forEach(([label,value]) => {
@@ -656,6 +662,7 @@ if(!event.isBirthday){
       <dt>出演者</dt><dd>${event.members.join("、")}</dd>
       ${event.startTime || event.endTime ? `<dt>時間</dt><dd>${event.startTime || ""}${event.startTime || event.endTime ? "〜" : ""}${event.endTime || ""}</dd>` : ""}
       ${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
+      ${Array.isArray(event.prices) && event.prices.length ? `<dt>${event.type === "舞台" || event.type === "イベント" ? "チケット価格" : "価格"}</dt><dd>${event.prices.map(price => String(price).replace(/\n/g,"<br>")).join("<br>")}</dd>` : ""}
       ${eventLinksHtml}
     </dl>
     ${event.description ? `<p class="event-description">${event.description}</p>` : ""}
@@ -750,7 +757,7 @@ function updateSearchResults(){
 }
     const memberMatch = selectedMembers.length === 0 || selectedMembers.some(member => event.members.includes(member));
     const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(event.type);
-    const searchableText = [event.title,event.type,event.members.join(" "),event.venue,event.description].filter(value => value).join(" ").toLowerCase();
+   const searchableText = [event.title,event.type,event.members.join(" "),event.venue,event.description,Array.isArray(event.prices) ? event.prices.join(" ") : ""].filter(value => value).join(" ").toLowerCase();
     const keywordMatch = keyword === "" || searchableText.includes(keyword);
     return memberMatch && typeMatch && keywordMatch;
   });
@@ -934,7 +941,27 @@ const eventLinksHtml =
           dl.appendChild(venueDt);
           dl.appendChild(venueDd);
         }
+if(Array.isArray(event.prices) && event.prices.length){
 
+  const priceDt =
+    document.createElement("dt");
+
+  priceDt.textContent =
+    event.type === "舞台" || event.type === "イベント"
+      ? "チケット価格"
+      : "価格";
+
+  const priceDd =
+    document.createElement("dd");
+
+  priceDd.innerHTML =
+    event.prices
+      .map(price => String(price).replace(/\n/g,"<br>"))
+      .join("<br>");
+
+  dl.appendChild(priceDt);
+  dl.appendChild(priceDd);
+}
         if(eventLinks.length){
 
   const linkDt =
