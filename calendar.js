@@ -535,7 +535,7 @@ function showEventDetail(event){
   title.style.fontWeight = "bold";
   title.style.marginBottom = "16px";
   selectedDate.appendChild(title);
-
+if(!event.isBirthday){
   const detail = document.createElement("div");
   detail.className = "event-detail";
 
@@ -569,7 +569,7 @@ function showEventDetail(event){
   `;
 
   selectedDate.appendChild(detail);
-
+}
   const memoLabel = document.createElement("label");
   memoLabel.className = "event-memo-label";
   memoLabel.textContent = "メモ";
