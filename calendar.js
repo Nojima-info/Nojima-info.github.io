@@ -66,7 +66,7 @@ const events = [
   links: [
     { name: "公式サイト", url: "https://www.fwinc.co.jp/rabbit-note-project/archive/ws-dazai/" },
     { name: "X", url: "https://x.com/rabbit_note_p?s=11" }
-  ]
+  ],
   description: "チケット料金\n【現地】6000円(税込・全席指定)\n【配信】3500円(税込)\n\n現地チケット一般先着販売期間\n9月19日 12 : 00 ～ 10月8日 19 : 30\n\n配信チケット販売期間\n9月19日 12 : 00 ～10月20日 23 : 59",
 },
   {
