@@ -341,3 +341,27 @@ color:var(--text-color);
   background:var(--surface-color);
   border-color:var(--main-color-dark);
 }
+#page-top-button{
+position:fixed;
+right:16px;
+bottom:16px;
+width:48px;
+height:48px;
+border:1px solid var(--main-color-dark);
+border-radius:50%;
+background:var(--main-color);
+color:#333;
+font-size:1.4rem;
+font-weight:bold;
+cursor:pointer;
+opacity:0;
+visibility:hidden;
+transform:translateY(8px);
+transition:opacity .2s,visibility .2s,transform .2s;
+z-index:1000;
+}
+#page-top-button.show{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
