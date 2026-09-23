@@ -9,9 +9,6 @@ if (menuButton && menu) {
 }
 const pageTopButton = document.querySelector("#page-top-button");
 if(pageTopButton){
-  window.addEventListener("scroll",() => {
-    pageTopButton.classList.toggle("show",window.scrollY > 300);
-  });
   pageTopButton.addEventListener("click",() => {
     window.scrollTo({
       top:0,
