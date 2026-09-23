@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260923220815_kvr9o",
+  title: "STONE FES. 2026",
+  type: "イベント",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-10-10",
+  openTime: "12:00",
+  startTime: "13:00",
+  venue: "横浜BUNTAI (〒 231-0032 神奈川県横浜市中区不老町2丁目7番1)",
+  prices: ["SS席・15000円(税込)", "S席・13000円(税込)", "A席・11000円(税込)", "注釈付きSS席・15000円(税込)", "注釈付きA席・11000円(税込)", "見切れ席・9000円(税込)", "配信・3800円(税込)"],
+  links: [
+    { name: "公式サイト", url: "https://dr-stone.jp/stonefes2026/" },
+    { name: "X", url: "https://x.com/stone_anime_off?s=11" }
+  ],
+},
+  {
   id: "event_20260923220330_adxcx",
   title: "超訳文学 太宰治 ～一人芝居、あるいは二人芝居～",
   type: "イベント",
@@ -84,22 +100,6 @@ const events = [
     { name: "公式サイト", url: "https://peatix.com/event/5190220" },
     { name: "X", url: "https://x.com/nojimakyodai?s=11" }
   ],
-},
-  {
-  id: "event_20260923144337_zs8va",
-  title: "STONE FES. 2026",
-  type: "イベント",
-  members: ["野島健児さん"],
-  isRegular: false,
-  date: "2026-10-10",
-  openTime: "12:00",
-  startTime: "13:00",
-  venue: "横浜BUNTAI (〒 231-0032 神奈川県横浜市中区不老町2丁目7番1)",
-  links: [
-    { name: "公式サイト", url: "https://dr-stone.jp/stonefes2026/" },
-    { name: "X", url: "https://x.com/stone_anime_off?s=11" }
-  ],
-  description: "チケット料金\n【現地】9000～15000円\n【配信】3800円\n\n現地チケット一般販売(先着)\n9月19日 12 : 00 ～",
 },
   {
   id: "event_20260923140444_1al1k",
