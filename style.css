@@ -334,3 +334,6 @@ color:var(--text-color);
 .event-detail dd a:last-child{
   margin-bottom:0;
 }
+.calendar-day.today.selected .calendar-today{
+  color:#333;
+}
