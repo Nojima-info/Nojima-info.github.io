@@ -361,7 +361,7 @@ function createRegularScheduleDetail(schedule,closeCallback){
 if(Array.isArray(schedule.prices) && schedule.prices.length){
   const priceLabel =
     schedule.type === "舞台" || schedule.type === "イベント"
-      ? "チケット価格"
+      ? "価格"
       : "価格";
   rows.push([priceLabel,schedule.prices.join("\n")]);
 }
@@ -665,7 +665,7 @@ if(!event.isBirthday){
 ${event.startTime || event.endTime ? `<dt>時間</dt><dd>${event.startTime || ""}${event.startTime || event.endTime ? "〜" : ""}${event.endTime || ""}</dd>` : ""}
 ${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
 ${event.deliveryPlace ? `<dt>配信場所</dt><dd>${event.deliveryPlace}</dd>` : ""}
-      ${Array.isArray(event.prices) && event.prices.length ? `<dt>${event.type === "舞台" || event.type === "イベント" ? "チケット価格" : "価格"}</dt><dd>${event.prices.map(price => String(price).replace(/\n/g,"<br>")).join("<br>")}</dd>` : ""}
+      ${Array.isArray(event.prices) && event.prices.length ? `<dt>${event.type === "舞台" || event.type === "イベント" ? "価格" : "価格"}</dt><dd>${event.prices.map(price => String(price).replace(/\n/g,"<br>")).join("<br>")}</dd>` : ""}
       ${eventLinksHtml}
     </dl>
     ${event.description ? `<p class="event-description">${event.description}</p>` : ""}
@@ -951,7 +951,7 @@ if(Array.isArray(event.prices) && event.prices.length){
 
   priceDt.textContent =
     event.type === "舞台" || event.type === "イベント"
-      ? "チケット価格"
+      ? "価格"
       : "価格";
 
   const priceDd =
