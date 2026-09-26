@@ -524,7 +524,15 @@ function showRegularScheduleDetail(schedule,wrapper){
   spacer.style.minHeight="20px";
   spacer.style.flex="0 0 20px";
   spacer.setAttribute("aria-hidden","true");
-  const detail=createRegularScheduleDetail(schedule);
+  let detail;
+  detail=createRegularScheduleDetail(schedule,()=>{
+    detail.remove();
+    const item=wrapper.querySelector(".event-item");
+    if(item){
+      item.classList.remove("selected-search-event");
+    }
+    spacer.remove();
+  });
   wrapper.appendChild(detail);
   wrapper.after(spacer);
 }
