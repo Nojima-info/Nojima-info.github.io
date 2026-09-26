@@ -492,6 +492,8 @@ function renderRegularSchedules(year,month,lastDate){
   }
 
   activeRegularSchedules.forEach(schedule => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "regular-schedule-item";
   const item = document.createElement("button");
   item.type = "button";
   item.className = "event-item";
@@ -499,26 +501,21 @@ function renderRegularSchedules(year,month,lastDate){
   item.addEventListener("click",() => {
     if(item.classList.contains("selected-search-event")){
       item.classList.remove("selected-search-event");
-      const detail = regularScheduleList.querySelector(".regular-schedule-detail");
+      const detail = wrapper.querySelector(".regular-schedule-detail");
       if(detail){ detail.remove(); }
       return;
     }
-    regularScheduleList.querySelectorAll(".event-item.selected-search-event").forEach(selectedItem => {
-      selectedItem.classList.remove("selected-search-event");
-    });
-    const existingDetail = regularScheduleList.querySelector(".regular-schedule-detail");
-    if(existingDetail){ existingDetail.remove(); }
     item.classList.add("selected-search-event");
-    showRegularScheduleDetail(schedule);
+    showRegularScheduleDetail(schedule,wrapper);
   });
-  regularScheduleList.appendChild(item);
+  wrapper.appendChild(item);
+  regularScheduleList.appendChild(wrapper);
 });
 }
 
-function showRegularScheduleDetail(schedule){
-  const panel = document.querySelector("#regular-schedule-panel");
-  if(!panel){ return; }
-  panel.appendChild(createRegularScheduleDetail(schedule));
+function showRegularScheduleDetail(schedule,wrapper){
+  if(!wrapper){ return; }
+  wrapper.appendChild(createRegularScheduleDetail(schedule));
 }
 /* カレンダー */
 function renderCalendar(){
