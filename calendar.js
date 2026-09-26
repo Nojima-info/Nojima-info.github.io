@@ -515,7 +515,9 @@ function renderRegularSchedules(year,month,lastDate){
 
 function showRegularScheduleDetail(schedule,wrapper){
   if(!wrapper){ return; }
-  wrapper.appendChild(createRegularScheduleDetail(schedule));
+  const detail=createRegularScheduleDetail(schedule);
+  detail.style.marginBottom="30px";
+  wrapper.appendChild(detail);
 }
 /* カレンダー */
 function renderCalendar(){
