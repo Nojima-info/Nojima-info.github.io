@@ -500,11 +500,15 @@ function renderRegularSchedules(year,month,lastDate){
   item.innerHTML = `<strong>${schedule.title}</strong><span>${schedule.type}</span>`;
   item.addEventListener("click",() => {
     if(item.classList.contains("selected-search-event")){
-      item.classList.remove("selected-search-event");
-      const detail = wrapper.querySelector(".regular-schedule-detail");
-      if(detail){ detail.remove(); }
-      return;
-    }
+  item.classList.remove("selected-search-event");
+  const detail = wrapper.querySelector(".regular-schedule-detail");
+  if(detail){ detail.remove(); }
+  const nextWrapper=wrapper.nextElementSibling;
+  if(nextWrapper){
+    nextWrapper.style.marginTop="";
+  }
+  return;
+}
     item.classList.add("selected-search-event");
     showRegularScheduleDetail(schedule,wrapper);
   });
@@ -517,6 +521,10 @@ function showRegularScheduleDetail(schedule,wrapper){
   if(!wrapper){ return; }
   const detail=createRegularScheduleDetail(schedule);
   wrapper.appendChild(detail);
+  const nextWrapper=wrapper.nextElementSibling;
+  if(nextWrapper){
+    nextWrapper.style.marginTop="10px";
+  }
 }
 /* カレンダー */
 function renderCalendar(){
