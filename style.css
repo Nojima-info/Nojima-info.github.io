@@ -128,6 +128,7 @@ color:var(--text-color);
 .event-item{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:12px 14px;border:1px solid var(--main-color);border-radius:8px;background:var(--surface-color);color:var(--text-color);text-align:left;font-size:1rem;cursor:pointer}
 .event-item:hover{background:var(--main-color-light)}
 .regular-schedules .event-item:hover{background:var(--surface-color)}
+.search-results .event-item:hover{background:var(--surface-color)}
 .event-item span{flex-shrink:0;padding:3px 8px;border-radius:4px;background:var(--main-color-light);font-size:.8rem}
 .event-detail dl{display:grid;grid-template-columns:6em 1fr;margin:0 0 16px}
 .event-detail dt,.event-detail dd{margin:0;padding:8px 0;border-bottom:1px solid var(--border-light-color)}
