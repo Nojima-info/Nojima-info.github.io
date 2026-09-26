@@ -516,15 +516,17 @@ function renderRegularSchedules(year,month,lastDate){
   regularScheduleList.appendChild(wrapper);
 });
 }
-
 function showRegularScheduleDetail(schedule,wrapper){
   if(!wrapper){ return; }
+  const spacer=document.createElement("div");
+  spacer.className="regular-schedule-spacer";
+  spacer.style.height="20px";
+  spacer.style.minHeight="20px";
+  spacer.style.flex="0 0 20px";
+  spacer.setAttribute("aria-hidden","true");
   const detail=createRegularScheduleDetail(schedule);
   wrapper.appendChild(detail);
-  const nextWrapper=wrapper.nextElementSibling;
-  if(nextWrapper){
-    nextWrapper.style.marginTop="10px";
-  }
+  wrapper.after(spacer);
 }
 /* カレンダー */
 function renderCalendar(){
