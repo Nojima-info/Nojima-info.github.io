@@ -518,11 +518,8 @@ function renderRegularSchedules(year,month,lastDate){
 function showRegularScheduleDetail(schedule){
   const panel = document.querySelector("#regular-schedule-panel");
   if(!panel){ return; }
-  const existingDetail = panel.querySelector(".regular-schedule-detail");
-  if(existingDetail){ existingDetail.remove(); }
   panel.appendChild(createRegularScheduleDetail(schedule));
 }
-
 /* カレンダー */
 function renderCalendar(){
   const year = currentDate.getFullYear();
