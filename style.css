@@ -370,3 +370,4 @@ white-space:pre-wrap;
 .event-description{
 white-space:pre-wrap;
 }
+.regular-schedule-item:has(.regular-schedule-detail) + .regular-schedule-item{margin-top:10px}
