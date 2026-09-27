@@ -1,128 +1,364 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music｜Nojima-info</title>
-  <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夢追翔 歌唱曲データベース</title>
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="夢追翔 歌唱曲データベース">
+<meta property="og:description" content="夢追翔さんの歌唱楽曲をまとめた非公式ファンサイトです。">
+<meta property="og:image" content="https://kakeru-portal.github.io/YUMEO-RECORD/ogp.jpg">
+<meta property="og:url" content="https://kakeru-portal.github.io/YUMEO-RECORD/">
+<meta property="og:site_name" content="YUMEO-RECORD">
+<!-- X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="夢追翔 歌唱曲データベース">
+<meta name="twitter:description" content="夢追翔さんの歌唱楽曲をまとめた非公式ファンサイトです。">
+<meta name="twitter:image" content="https://kakeru-portal.github.io/YUMEO-RECORD/ogp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Nojima-info</h1>
-    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-  </header>
-
-  <nav class="menu">
-    <a href="index.html">Top</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="music.html">Music</a>
-    <a href="profile.html">Profile</a>
-  </nav>
-
-  <main class="page-content music-page">
-    <h2>Music</h2>
-    <p>野島家の皆さんの楽曲をまとめています。</p>
-
-```
-<section class="music-controls">
-  <div class="song-tabs">
-    <button type="button" id="allSongsTab" class="song-tab active">すべて</button>
-    <button type="button" id="favoriteSongsTab" class="song-tab">お気に入り</button>
-  </div>
-
-  <button type="button" id="pageShuffleButton" class="shuffle-button">
-    🔀 シャッフル再生
-  </button>
-
-  <section class="search-area">
-    <button type="button" id="searchToggle" class="search-toggle">
-      <span>＋</span>
-      <span>検索・絞り込み</span>
-      <span id="searchToggleIcon">＋</span>
-    </button>
-
-    <div class="search-content">
-      <div class="search-keyword">
-        <label for="songSearch">キーワード検索</label>
-        <div class="search-keyword-row">
-          <input type="search" id="songSearch" placeholder="曲名・歌唱者など">
-          <button type="button" id="searchButton">検索</button>
-          <button type="button" id="clearSearchButton">クリア</button>
-        </div>
-      </div>
-
-      <div class="filter-group">
-        <div class="filter-group-header">
-          <span>歌唱人数</span>
-          <button type="button" class="clear-filter-button" data-filter="memberCount">クリア</button>
-        </div>
-        <label><input type="checkbox" name="memberCount" value="1"> ソロ</label>
-        <label><input type="checkbox" name="memberCount" value="2"> 2人</label>
-        <label><input type="checkbox" name="memberCount" value="3"> 3人</label>
-        <label><input type="checkbox" name="memberCount" value="4"> 4人</label>
-        <label><input type="checkbox" name="memberCount" value="5"> 5人以上</label>
-      </div>
-
-      <div class="filter-group">
-        <div class="filter-group-header">
-          <span>楽曲形態</span>
-          <button type="button" class="clear-filter-button" data-filter="songType">クリア</button>
-        </div>
-        <label><input type="checkbox" name="songType" value="original"> オリジナル</label>
-        <label><input type="checkbox" name="songType" value="cover"> カバー</label>
-      </div>
-
-      <div class="filter-group">
-        <div class="filter-group-header">
-          <span>歌唱ユニット</span>
-          <button type="button" class="clear-filter-button" data-filter="unit">クリア</button>
-        </div>
-        <div id="unitFilters"></div>
-      </div>
-    </div>
-  </section>
-</section>
-
+<header>
+  <button type="button" id="infoButton">i</button>
+<h1>YUMEO-RECORD</h1>
+<h2>夢追翔 歌唱曲データベース</h2>
+<p class="site-description">夢追翔さんがこれまでに歌った楽曲を検索・再生できる非公式ファンサイトです。</p>
+<p class="site-notice">ANYCOLOR株式会社様及びにじさんじプロジェクト・各種関係会社様とは一切関係ありません。</p>
+</header>
+<main>
+<!-- =========================
+    情報提供のお願い
+    ========================= -->
+  <div id="informationRequest">
+<button type="button" id="informationRequestToggle">
+       【至急】情報提供のお願い
+<span id="informationRequestIcon">▽</span>
+</button>
+<div id="informationRequestContent">
+<p>
+           チャンネル名：夢追翔のJUKE BOX
+</p>
+<p>
+           アーカイブ名：
+<a href="https://www.youtube.com/live/_5XX4eBAxGE?si=Blm1_G_W16p_1uJ7" target="_blank" rel="noopener">
+               「【生活音垂れ流し】とあるバーチャルシンガーソングライターの日常【にじさんじ/夢追翔】」
+</a>
+</p>
+<p>
+           〜5:21:39までの範囲で、夢追さんが口ずさまれている楽曲たちの情報を募集しています。<br>
+           一曲だけでも構いません。
+</p>
+<p>
+           ご存知の方は、<a href="https://marshmallow-qa.com/fy3sx3fx9lh51qc" target="_blank" rel="noopener">管理人</a>までご連絡いただけますと幸いです。
+</p>
+<p>
+           よろしくお願いいたします。
+</p>
+</div>
+</div>
+<section>
+<div id="themeSelector">
+<label for="themeSelect">テーマ：</label>
+<select id="themeSelect">
+<option value="normal">通常</option>
+<option value="noble">貴族</option>
+<option value="casual">カジュアルライブ</option>
+</select>
+</div>
+<h2>歌唱曲一覧</h2>
+<div id="songTabs">
+<button type="button" id="allSongsTab" class="active">すべて</button>
+<button type="button" id="favoriteSongsTab">♡ お気に入り</button>
+</div>
+  <button type="button" id="pageShuffleButton">
+   🔀 シャッフル再生
+</button>
+<button type="button" id="searchToggle">
+🔍 検索・絞り込み
+<span id="searchToggleIcon">＋</span>
+</button>
+  <div class="search-area">
+<div class="search-box">
+<h3>曲を検索</h3>
+<input
+               type="text"
+               id="songSearch"
+               placeholder="曲名・アーティスト名・歌唱者名など"
+>
+<button type="button" id="searchButton">検索</button>
+  <button type="button" id="clearSearchButton">クリア</button>
+</div>
+<div class="search-box">
+<h3>歌唱人数</h3>
+<label>
+<input type="checkbox" name="memberCount" value="1">
+              ソロ
+</label>
+<label>
+<input type="checkbox" name="memberCount" value="2">
+              2人
+</label>
+<label>
+<input type="checkbox" name="memberCount" value="3">
+              3人
+</label>
+<label>
+<input type="checkbox" name="memberCount" value="4">
+              4人
+</label>
+<label>
+<input type="checkbox" name="memberCount" value="5">
+              5人以上
+</label>
+<button type="button" class="clear-filter-button" data-filter="memberCount">
+  すべて解除
+</button>
+</div>
+<div class="search-box">
+<h3>楽曲形態</h3>
+<label>
+<input type="checkbox" name="songType" value="original">
+              オリジナル
+</label>
+<label>
+<input type="checkbox" name="songType" value="cover">
+              カバー
+</label>
+<button type="button" class="clear-filter-button" data-filter="songType">
+  すべて解除
+</button>
+</div>
+<div class="search-box">
+<h3>ユニット</h3>
+  <label>
+<input type="checkbox" name="unit" value="にじロック">
+ にじロック
+</label>
+  <label>
+<input type="checkbox" name="unit" value="le jouet">
+ le jouet
+</label>
+  <label>
+<input type="checkbox" name="unit" value="NZMN">
+ NZMN
+</label>
+  <label>
+<input type="checkbox" name="unit" value="にじさんじアオハル部">
+ にじさんじアオハル部
+</label>
+  <label>
+<input type="checkbox" name="unit" value="夢星家">
+              夢星家
+</label>
+  <label>
+<input type="checkbox" name="unit" value="VACHSS">
+              VACHSS
+</label>
+  <label>
+<input type="checkbox" name="unit" value="黒夢町">
+              黒夢町
+</label>
+  <label>
+<input type="checkbox" name="unit" value="元SEEDs2期生第3弾組">
+              元SEEDs2期生第3弾組
+</label>
+  <label>
+<input type="checkbox" name="unit" value="ゆめおいまちた">
+              ゆめおいまちた
+</label>
+  <label>
+<input type="checkbox" name="unit" value="共通衣装SPユニット">
+              共通衣装SPユニット
+</label>
+  <label>
+<input type="checkbox" name="unit" value="紫男">
+              紫男
+</label>
+  <label>
+<input type="checkbox" name="unit" value="実は同期なんです">
+              実は同期なんです
+</label>
+<button type="button" class="clear-filter-button" data-filter="unit">
+  すべて解除
+</button>
+</div>
+<div class="search-box">
+<h3>年代</h3>
+<label>
+<input type="checkbox" name="year" value="2018">
+              2018年
+</label>
+<label>
+<input type="checkbox" name="year" value="2019">
+              2019年
+</label>
+<label>
+<input type="checkbox" name="year" value="2020">
+              2020年
+</label>
+<label>
+<input type="checkbox" name="year" value="2021">
+              2021年
+</label>
+<label>
+<input type="checkbox" name="year" value="2022">
+              2022年
+</label>
+<label>
+<input type="checkbox" name="year" value="2023">
+              2023年
+</label>
+<label>
+<input type="checkbox" name="year" value="2024">
+              2024年
+</label>
+<label>
+<input type="checkbox" name="year" value="2025">
+              2025年
+</label>
+<label>
+<input type="checkbox" name="year" value="2026">
+              2026年
+</label>
+<button type="button" class="clear-filter-button" data-filter="year">
+  すべて解除
+</button>
+</div>
+</div>
 <div id="searchResultCount"></div>
-<div id="activeSearchConditions"></div>
-
-<div class="sort-area">
-  <label for="sortSelect">並べ替え</label>
-  <select id="sortSelect">
-    <option value="date-asc">日付の古い順</option>
-    <option value="date-desc">日付の新しい順</option>
-    <option value="title-asc">曲名順</option>
-    <option value="title-desc">曲名逆順</option>
-  </select>
+  <div id="sortArea">
+<label for="sortSelect">並べ替え：</label>
+<select id="sortSelect">
+<option value="date-asc">古い順</option>
+<option value="date-desc">新しい順</option>
+<option value="title-asc">名前順</option>
+<option value="title-desc">名前順（逆）</option>
+</select>
 </div>
-
-<div id="searchEmptyMessage" class="empty-message" style="display:none;">
-  条件に一致する楽曲がありません。
+  <h2>検索結果</h2>
+  <div id="favoriteEmptyMessage" style="display: none;">
+お気に入りに登録した曲はありません。<br>
+曲一覧から♡ボタンを押して、お気に入りに追加できます。
 </div>
-
-<div id="favoriteEmptyMessage" class="empty-message" style="display:none;">
-  お気に入り登録された楽曲がありません。
+  <div id="searchEmptyMessage" style="display: none;">
+条件に一致する楽曲はありません。
 </div>
+<div id="songList">
+</div>
+</section>
+  <!-- ミニプレイヤー -->
+<div id="miniPlayer">
+<div id="miniPlayerThumbnail">
+<img id="miniPlayerImage" src="" alt="">
+</div>
+<div id="miniPlayerInfo">
+<div id="miniPlayerTitle">
+           曲を選択してください
+</div>
+<div id="miniPlayerControls">
+<button type="button" id="previousButton"></button>
+<button type="button" id="playPauseButton"></button>
+<button type="button" id="nextButton"></button>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<p class="site-footer-notice">当サイトは非公式のファンサイトです。</p>
+</footer>
 
-<section id="songList" class="song-list"></section>
-```
-
-  </main>
-
-  <div id="miniPlayer" class="mini-player">
-    <img id="miniPlayerImage" src="" alt="">
-    <div id="miniPlayerTitle"></div>
-    <button type="button" id="previousButton" aria-label="前の曲">⏮️</button>
-    <button type="button" id="playPauseButton" aria-label="再生・一時停止">▶️</button>
-    <button type="button" id="nextButton" aria-label="次の曲">⏭️</button>
-  </div>
-
-  <script src="menu.js"></script>
-
-  <script src="songs.js"></script>
-
-  <script src="music.js"></script>
-
+  <!-- インフォメーションポップアップ -->
+<div id="infoPopup">
+<div id="infoPopupOverlay"></div>
+<div id="infoPopupContent">
+<button type="button" id="infoPopupClose">×</button>
+<h2>このサイトについて</h2>
+<section>
+<h3>サイトの使い方</h3>
+<p>
+          曲名・アーティスト名などを入力して検索できます。また、歌唱人数・楽曲形態・ユニット・年代などの条件から絞り込むことも可能です。
+</p>
+<p>
+          再生する際は、各楽曲の「再生」ボタンを押してください。再生中は画面下部のミニプレイヤーから曲の切り替えや一時停止ができます。
+</p>
+<p>
+          また、楽曲の「♡ お気に入り登録」からその楽曲をお気に入りリストに追加できます。お気に入りに登録した楽曲は「お気に入り」タブから一覧で確認できます。
+</p>
+<p>
+          「🔀 シャッフル再生」では、現在表示されている楽曲の中からランダムに1曲を再生します。検索・絞り込み中はその結果から、お気に入りタブではお気に入りの楽曲から選ばれます。
+</p>
+<p>
+          プレイヤーの「🔁」ボタンを押すとループ再生の設定を切り替えられます。1回押すと「🔂」で現在再生中の楽曲のみリピート、2回押すと「🔁」でリスト全体をリピートし、3回押すとループが解除されます。
+</p>
+  <p>
+  シャッフル再生・ループ再生がオンになっている場合、各ボタンの背景色が変わります。
+    </p>
+</section>
+<section>
+<h3>制作・管理</h3>
+<p>
+     制作・管理：虚数
+</p>
+<p>
+     連絡先：<a href="https://x.com/imaginary_628" target="_blank" rel="noopener">X（旧Twitter） @Imaginary_628
+</a>
+</p>
+</section>
+<section>
+<h3>参考にしたサイトなど</h3>
+<p>
+<a href="https://speciale-music.netlify.app/" target="_blank" rel="noopener">「すぺしゃーれ みゅーじっく」</a>様<br>
+  <a href="https://docs.google.com/spreadsheets/d/1Ghag7roXXCgbSxANy20R4_0SNDXTRePMIfXc5XcEDJw/htmlview" target="_blank" rel="noopener">「夢追翔今まで歌った曲リスト【非公式】」</a>様
+</p>
+</section>
+<section>
+<h3>注意事項</h3>
+<p>
+     当サイトは夢追翔さんのファンによる非公式のファンサイトです。ANYCOLOR株式会社様及びにじさんじプロジェクト・各種関係会社様とは一切関係ありません。
+</p>
+  <p>
+    また、当サイトはスマートフォンでの閲覧を想定し制作しています。
+    </p>
+<h3>二次創作ガイドライン</h3>
+<p>
+     当サイトは、ANYCOLOR株式会社様の二次創作ガイドラインを確認のうえ制作・運営しています。詳細については、<a href="https://www.anycolor.co.jp/guidelines/" target="_blank" rel="noopener">ANYCOLOR 二次創作ガイドライン</a>をご確認ください。
+</p>
+<h3>YouTubeについて</h3>
+<p>
+     当サイトでは、YouTubeから提供されているIFrame Player APIを利用し、動画を再生しています。また、動画の編集は一切行っておりません。
+</p>
+  <p>
+  広告ブロッカー等の拡張機能や設定によっては、動画が正常に再生されない場合があります。
+</p>
+<h3>掲載楽曲について</h3>
+<p>
+     オリジナル楽曲、歌ってみた動画、歌枠・配信・ライブ等での歌唱、コラボレーションによる歌唱など、YouTubeにおいて一般公開されているものは原則として全て掲載対象としています。ただし、現在削除されている動画・非公開となっている動画、切り抜きが禁止されている動画、YouTube以外のプラットフォーム(ニコニコ動画、TikTokなど)でアップロードされている動画、その他一般に無料で視聴できない動画については掲載していません。
+</p>
+  <p>
+     また、歌唱部分のみの抜粋が難しい場合には、歌唱前後・歌唱中の独り言(？)や会話も曲中に含まれている場合があります。ご了承ください。
+</p>
+<h3>掲載情報について</h3>
+<p>
+     当サイトに掲載している楽曲情報は、公開されている情報をもとに管理者が整理・掲載しています。掲載内容に誤りや不足等がございましたら、管理者までご連絡ください。また、動画の公開状況等により、掲載情報は予告なく変更・削除される場合があります。
+</p>
+<h3>お問い合わせ</h3>
+<p>
+  当サイトに関するお問い合わせは、サイト管理者までお願いいたします。ANYCOLOR株式会社様、各ライバー様、その他関係各所へのお問い合わせはご遠慮ください。
+</p>
+</section>
+  <div class="infoPopupBottom">
+<button type="button" id="infoPopupCloseBottom">×</button>
+</div>
+</div>
+</div>
+  <button type="button" id="backToSearchButton">↑ 検索欄へ</button>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="songs.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
