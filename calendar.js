@@ -54,6 +54,14 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260927151253_j12o5",
+  title: "野島兄弟 2 on 1 オンライントーク会",
+  type: "その他",
+  members: ["野島裕史さん", "野島健児さん"],
+  isRegular: false,
+  date: "2026-10-24",
+},
+  {
   id: "event_20260927144010_fatyz",
   title: "VIVANT",
   type: "ドラマ",
