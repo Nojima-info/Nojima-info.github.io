@@ -811,7 +811,18 @@ function updateSearchResults(){
 }
     const memberMatch = selectedMembers.length === 0 || selectedMembers.some(member => event.members.includes(member));
     const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(event.type);
-   const searchableText = [event.title,event.type,event.members.join(" "),event.venue,event.description,Array.isArray(event.prices) ? event.prices.join(" ") : ""].filter(value => value).join(" ").toLowerCase();
+   const searchableText = [
+  event.title,
+  event.type,
+  event.members.join(" "),
+  event.date,
+  event.startTime,
+  event.endTime,
+  event.venue,
+  event.deliveryPlace,
+  event.description,
+  Array.isArray(event.prices) ? event.prices.join(" ") : ""
+].filter(value => value).join(" ").toLowerCase();
     const keywordMatch = keyword === "" || searchableText.includes(keyword);
     return memberMatch && typeMatch && keywordMatch;
   });
