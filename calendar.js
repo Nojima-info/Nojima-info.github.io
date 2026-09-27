@@ -54,6 +54,23 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260927144010_fatyz",
+  title: "VIVANT",
+  type: "ドラマ",
+  members: ["野島瑠玖さん"],
+  isRegular: false,
+  date: "2026-10-04",
+  startTime: "21:00",
+  episodes: "第19話",
+  station: "TBS",
+  links: [
+    { name: "公式サイト", url: "https://www.tbs.co.jp/VIVANT_tbs/" },
+    { name: "X", url: "https://x.com/tbs_vivant?s=11" },
+    { name: "Instagram", url: "https://www.instagram.com/tbs_vivant?stkn=MXExOWo3aml1MnZzZg==" },
+    { name: "TikTok", url: "https://www.tiktok.com/@vivant_tbs?lang=ja-JP&is_from_webapp=1&sender_device=mobile&sender_web_id=7690085629354673672" }
+  ],
+},
+  {
   id: "event_20260927104252_fkql6",
   title: "声優トークショー＆オリジナル朗読劇 in 野々市",
   type: "イベント",
