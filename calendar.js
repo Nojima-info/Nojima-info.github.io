@@ -499,25 +499,29 @@ function renderRegularSchedules(year,month,lastDate){
   item.className = "event-item";
   item.innerHTML = `<strong>${schedule.title}</strong><span>${schedule.type}</span>`;
   item.addEventListener("click",() => {
-    if(item.classList.contains("selected-search-event")){
-  item.classList.remove("selected-search-event");
-  const detail = wrapper.querySelector(".regular-schedule-detail");
-  if(detail){ detail.remove(); }
-  const nextWrapper=wrapper.nextElementSibling;
-  if(nextWrapper){
-    nextWrapper.style.marginTop="";
+  if(item.classList.contains("selected-search-event")){
+    item.classList.remove("selected-search-event");
+    const detail=wrapper.querySelector(".regular-schedule-detail");
+    if(detail){ detail.remove(); }
+    const spacer=wrapper.nextElementSibling;
+    if(spacer && spacer.classList.contains("regular-schedule-spacer")){
+      spacer.remove();
+    }
+    return;
   }
-  return;
-}
-    item.classList.add("selected-search-event");
-    showRegularScheduleDetail(schedule,wrapper);
-  });
+  item.classList.add("selected-search-event");
+  showRegularScheduleDetail(schedule,wrapper);
+});
   wrapper.appendChild(item);
   regularScheduleList.appendChild(wrapper);
 });
 }
 function showRegularScheduleDetail(schedule,wrapper){
   if(!wrapper){ return; }
+  const oldSpacer=wrapper.nextElementSibling;
+  if(oldSpacer && oldSpacer.classList.contains("regular-schedule-spacer")){
+    oldSpacer.remove();
+  }
   const spacer=document.createElement("div");
   spacer.className="regular-schedule-spacer";
   spacer.style.height="20px";
