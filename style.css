@@ -58,6 +58,8 @@ header h1{font-size:1.4rem}
 }
 .profile-button{display:inline-block;margin-top:12px;padding:9px 16px;border:1px solid var(--main-color);border-radius:8px;background:var(--surface-color);color:var(--text-color);font-size:1rem;cursor:pointer}
 .profile-button:hover{background:var(--main-color-light)}
+.profile-buttons{display:flex;gap:10px;margin-top:12px}
+.profile-buttons .profile-button{flex:1;margin-top:0;text-align:center;text-decoration:none}
 .profile-modal{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.5)}
 .profile-modal[hidden]{display:none}
 .profile-modal-content{position:relative;width:100%;max-width:520px;max-height:80vh;overflow:auto;padding:24px;border-radius:12px;background:var(--surface-color);color:var(--text-color)}
