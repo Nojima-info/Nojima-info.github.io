@@ -54,6 +54,24 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260927104252_fkql6",
+  title: "声優トークショー＆オリジナル朗読劇 in 野々市",
+  type: "イベント",
+  members: ["野島健児さん", "池田秀一さん", "置鮎龍太郎さん", "梶原岳人さん", "多田このみさん"],
+  isRegular: false,
+  date: "2026-10-18",
+  openTime: "12:00",
+  startTime: "13:00",
+  endTime: "14:30",
+  venue: "野々市市文化会館フォルテ(石川県野々市市本町5丁目4-1)",
+  prices: ["5500円(全席指定)"],
+  links: [
+    { name: "X", url: "https://x.com/seiyutalk_?s=11" },
+    { name: "Instagram", url: "https://www.instagram.com/ishikawakoeasobi?stkn=ZTV1NGpscXEwbncx" },
+    { name: "Threads", url: "https://www.threads.com/@ishikawakoeasobi?igshid=NTc4MTIwNjQ2YQ==" }
+  ],
+},
+  {
   id: "event_20260923220815_kvr9o",
   title: "STONE FES. 2026",
   type: "イベント",
