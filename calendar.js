@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260927152113_1rgz1",
+  title: "物語とおいしいの",
+  type: "イベント",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-10-31",
+  startTime: "10:30",
+  endTime: "18:00",
+  venue: "GONZUI (東京都台東区入谷2-3-1)",
+  prices: ["7700円＋1ドリンク(650円から)"],
+  links: [
+    { name: "公式サイト", url: "https://nojicafe.peatix.com/" },
+    { name: "X", url: "https://x.com/nojimakyodai?s=11" }
+  ],
+},
+  {
   id: "event_20260927151253_j12o5",
   title: "野島兄弟 2 on 1 オンライントーク会",
   type: "その他",
