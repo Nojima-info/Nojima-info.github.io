@@ -712,8 +712,8 @@ if(!event.isBirthday){
       <dt>種類</dt><dd>${event.type}</dd>
       <dt>出演者</dt><dd>${event.members.join("、")}</dd>
       ${event.openTime ? `<dt>開場時刻</dt><dd>${event.openTime}</dd>` : ""}
-      ${event.startTime ? `<dt>${event.type === "舞台" ? "開演時間" : event.type === "イベント" ? "開始時間" : "開始時間"}</dt><dd>${event.startTime}</dd>` : ""}
-${event.endTime ? `<dt>${event.type === "舞台" ? "終演時間" : event.type === "イベント" ? "終了時間" : "終了時間"}</dt><dd>${event.endTime}</dd>` : ""}
+      ${event.startTime ? `<dt>${event.type === "舞台" ? "開演時間" : event.type === "イベント" || event.type === "その他" ? "開始時間" : "開始時間"}</dt><dd>${event.startTime}</dd>` : ""}
+${event.endTime ? `<dt>${event.type === "舞台" ? "終演時間" : event.type === "イベント" || event.type === "その他" ? "終了時間" : "終了時間"}</dt><dd>${event.endTime}</dd>` : ""}
 ${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
 ${event.deliveryPlace ? `<dt>配信場所</dt><dd>${event.deliveryPlace}</dd>` : ""}
       ${Array.isArray(event.prices) && event.prices.length ? `<dt>${event.type === "舞台" || event.type === "イベント" ? "価格" : "価格"}</dt><dd>${event.prices.map(price => String(price).replace(/\n/g,"<br>")).join("<br>")}</dd>` : ""}
