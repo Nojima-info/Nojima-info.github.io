@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -11,16 +12,117 @@
     <h1>Nojima-info</h1>
     <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
   </header>
+
   <nav class="menu">
     <a href="index.html">Top</a>
     <a href="calendar.html">Calendar</a>
     <a href="music.html">Music</a>
     <a href="profile.html">Profile</a>
   </nav>
-  <main class="page-content">
+
+  <main class="page-content music-page">
     <h2>Music</h2>
-    <p>楽曲を再生できるページです。</p>
+    <p>野島家の皆さんの楽曲をまとめています。</p>
+
+```
+<section class="music-controls">
+  <div class="song-tabs">
+    <button type="button" id="allSongsTab" class="song-tab active">すべて</button>
+    <button type="button" id="favoriteSongsTab" class="song-tab">お気に入り</button>
+  </div>
+
+  <button type="button" id="pageShuffleButton" class="shuffle-button">
+    🔀 シャッフル再生
+  </button>
+
+  <section class="search-area">
+    <button type="button" id="searchToggle" class="search-toggle">
+      <span>＋</span>
+      <span>検索・絞り込み</span>
+      <span id="searchToggleIcon">＋</span>
+    </button>
+
+    <div class="search-content">
+      <div class="search-keyword">
+        <label for="songSearch">キーワード検索</label>
+        <div class="search-keyword-row">
+          <input type="search" id="songSearch" placeholder="曲名・歌唱者など">
+          <button type="button" id="searchButton">検索</button>
+          <button type="button" id="clearSearchButton">クリア</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-header">
+          <span>歌唱人数</span>
+          <button type="button" class="clear-filter-button" data-filter="memberCount">クリア</button>
+        </div>
+        <label><input type="checkbox" name="memberCount" value="1"> ソロ</label>
+        <label><input type="checkbox" name="memberCount" value="2"> 2人</label>
+        <label><input type="checkbox" name="memberCount" value="3"> 3人</label>
+        <label><input type="checkbox" name="memberCount" value="4"> 4人</label>
+        <label><input type="checkbox" name="memberCount" value="5"> 5人以上</label>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-header">
+          <span>楽曲形態</span>
+          <button type="button" class="clear-filter-button" data-filter="songType">クリア</button>
+        </div>
+        <label><input type="checkbox" name="songType" value="original"> オリジナル</label>
+        <label><input type="checkbox" name="songType" value="cover"> カバー</label>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-header">
+          <span>歌唱ユニット</span>
+          <button type="button" class="clear-filter-button" data-filter="unit">クリア</button>
+        </div>
+        <div id="unitFilters"></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<div id="searchResultCount"></div>
+<div id="activeSearchConditions"></div>
+
+<div class="sort-area">
+  <label for="sortSelect">並べ替え</label>
+  <select id="sortSelect">
+    <option value="date-asc">日付の古い順</option>
+    <option value="date-desc">日付の新しい順</option>
+    <option value="title-asc">曲名順</option>
+    <option value="title-desc">曲名逆順</option>
+  </select>
+</div>
+
+<div id="searchEmptyMessage" class="empty-message" style="display:none;">
+  条件に一致する楽曲がありません。
+</div>
+
+<div id="favoriteEmptyMessage" class="empty-message" style="display:none;">
+  お気に入り登録された楽曲がありません。
+</div>
+
+<section id="songList" class="song-list"></section>
+```
+
   </main>
+
+  <div id="miniPlayer" class="mini-player">
+    <img id="miniPlayerImage" src="" alt="">
+    <div id="miniPlayerTitle"></div>
+    <button type="button" id="previousButton" aria-label="前の曲">⏮️</button>
+    <button type="button" id="playPauseButton" aria-label="再生・一時停止">▶️</button>
+    <button type="button" id="nextButton" aria-label="次の曲">⏭️</button>
+  </div>
+
   <script src="menu.js"></script>
+
+  <script src="songs.js"></script>
+
+  <script src="music.js"></script>
+
 </body>
 </html>
