@@ -924,26 +924,22 @@ const eventLinksHtml =
           dl.appendChild(memberDd);
         }
 
-        if(
-          event.startTime ||
-          event.endTime
-        ){
-
-          const timeDt =
-            document.createElement("dt");
-
-          timeDt.textContent =
-            "時間";
-
-          const timeDd =
-            document.createElement("dd");
-
-          timeDd.textContent =
-            `${event.startTime || ""}${event.startTime || event.endTime ? "〜" : ""}${event.endTime || ""}`;
-
-          dl.appendChild(timeDt);
-          dl.appendChild(timeDd);
-        }
+        if(event.startTime){
+  const timeDt = document.createElement("dt");
+  timeDt.textContent = event.type === "舞台" ? "開演時間" : event.type === "イベント" ? "開始時間" : "開始時間";
+  const timeDd = document.createElement("dd");
+  timeDd.textContent = event.startTime;
+  dl.appendChild(timeDt);
+  dl.appendChild(timeDd);
+}
+if(event.endTime){
+  const timeDt = document.createElement("dt");
+  timeDt.textContent = event.type === "舞台" ? "終演時間" : event.type === "イベント" ? "終了時間" : "終了時間";
+  const timeDd = document.createElement("dd");
+  timeDd.textContent = event.endTime;
+  dl.appendChild(timeDt);
+  dl.appendChild(timeDd);
+}
 
         if(event.venue){
 
