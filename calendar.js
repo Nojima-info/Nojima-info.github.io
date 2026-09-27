@@ -135,6 +135,21 @@ const events = [
 
 const regularSchedules = [
   {
+  id: "event_20260927103620_jfg5z",
+  title: "朱色の仮面",
+  type: "アニメ",
+  members: ["野島健児さん"],
+  isRegular: true,
+  startTime: "17:30",
+  station: "読売テレビ・日本テレビ系全国ネット",
+  startDate: "2026-10-10",
+  links: [
+    { name: "公式サイト", url: "https://the-vermilion-mask.com/" },
+    { name: "X", url: "https://x.com/vermilion_pr?s=11" }
+  ],
+  description: "ヒエン(CV. 野島健児)\nリスブランの統治隊。\nゴウオンを父親のように強く慕っている。\nある出来事をきっかけにペルを憎むようになり、その行方を追う。",
+},
+  {
   id: "event_20260923141315_hc0iv",
   title: "ミヤリサン製薬 ラジオ劇場「下町やぶさか診療所」",
   type: "ラジオ",
