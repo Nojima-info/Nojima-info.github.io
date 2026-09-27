@@ -54,6 +54,38 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260927153929_ml1vf",
+  title: "喫茶しーぷいへようこそ！3周年めぇ～っちゃ感謝祭【10部】",
+  type: "イベント",
+  members: ["野島裕史さん", "野島健児さん", "浅沼晋太郎さん", "小林裕介さん", "豊永利行さん"],
+  isRegular: false,
+  date: "2027-03-14",
+  openTime: "10:30",
+  startTime: "11:00",
+  venue: "メイシアター(吹田市文化会館) 中ホール",
+  prices: ["12000円"],
+  links: [
+    { name: "公式サイト", url: "https://sheepui.com/2026/08/26/20260314e/" },
+    { name: "X", url: "https://x.com/sheepui0110?s=11" }
+  ],
+},
+  {
+  id: "event_20260927153929_ml1vf",
+  title: "喫茶しーぷいへようこそ！3周年めぇ～っちゃ感謝祭【9部】",
+  type: "イベント",
+  members: ["野島裕史さん", "野島健児さん", "浅沼晋太郎さん", "小林裕介さん", "豊永利行さん"],
+  isRegular: false,
+  date: "2027-03-13",
+  openTime: "18:00",
+  startTime: "18:30",
+  venue: "メイシアター(吹田市文化会館) 中ホール",
+  prices: ["12000円"],
+  links: [
+    { name: "公式サイト", url: "https://sheepui.com/2026/08/26/20260314e/" },
+    { name: "X", url: "https://x.com/sheepui0110?s=11" }
+  ],
+},
+  {
   id: "event_20260927153408_ipsvb",
   title: "岸尾だいすけと野島裕史のHalloween Talk Party!",
   type: "イベント",
