@@ -338,6 +338,14 @@ color:var(--text-color);
 .event-detail dd a:last-child{
   margin-bottom:0;
 }
+.profile-modal-content dd a{
+  display:block;
+  margin-bottom:6px;
+}
+
+.profile-modal-content dd a:last-child{
+  margin-bottom:0;
+}
 .calendar-day.today.selected .calendar-today{
   color:#333;
 }
