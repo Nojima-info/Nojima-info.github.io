@@ -54,6 +54,21 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260927153408_ipsvb",
+  title: "岸尾だいすけと野島裕史のHalloween Talk Party!",
+  type: "イベント",
+  members: ["野島裕史さん", "岸尾だいすけさん"],
+  isRegular: false,
+  date: "2026-11-08",
+  startTime: "14:00",
+  endTime: "15:30",
+  venue: "専修大学 生田キャンパス",
+  prices: ["3000円"],
+  links: [
+    { name: "X", url: "https://x.com/senshu_seiyu?s=11" }
+  ],
+},
+  {
   id: "event_20260927152859_8ygff",
   title: "面会",
   type: "イベント",
