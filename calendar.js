@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20260927152859_8ygff",
+  title: "面会",
+  type: "イベント",
+  members: ["野島健児さん", "保志総一朗さん", "増田俊樹さん", "広瀬裕也さん", "服部想之介さん", "望月晶さん"],
+  isRegular: false,
+  date: "2026-11-08",
+  openTime: "14:15",
+  startTime: "15:00",
+  venue: "藤岡市みかぼみらい館 大ホール",
+  prices: ["5500円"],
+  links: [
+    { name: "公式サイト", url: "https://www.seiyuroudokugeki-vorlesen.com/#schedule" },
+    { name: "X", url: "https://x.com/vorlesen_info?s=11" }
+  ],
+},
+  {
   id: "event_20260927152113_1rgz1",
   title: "物語とおいしいの",
   type: "イベント",
