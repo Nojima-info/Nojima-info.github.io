@@ -391,20 +391,29 @@ section > h2:nth-of-type(2) {
 }
 
 /* =========================
-  戻るボタン
+  検索欄へボタン
   ========================= */
-#backToSearchButton {
- position: fixed;
- right: 20px;
- bottom: 140px;
- padding: 10px 16px;
- border: none;
- border-radius: 20px;
- cursor: pointer;
- z-index: 1500;
- font-size: 15px;
+#backToSearchButton{
+position:fixed;
+right:16px;
+bottom:16px;
+z-index:1500;
+width:52px;
+height:52px;
+padding:0;
+border:1px solid var(--main-color-dark);
+border-radius:50%;
+background:var(--main-color);
+color:#333;
+font-size:1.5rem;
+font-weight:bold;
+line-height:1;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
-
+#backToSearchButton:hover{
+background:var(--main-color-light);
+}
 /* =========================
   ミニプレイヤー
   ========================= */
@@ -1086,15 +1095,6 @@ section > h2:nth-of-type(2) {
    height: 44px;
    font-size: 24px;
  }
-
- /* 戻るボタン */
- #backToSearchButton {
-   right: 12px;
-   bottom: 115px;
-   padding: 9px 14px;
-   font-size: 14px;
- }
-
  /* ミニプレイヤー */
  #miniPlayer {
    min-height: 82px;
