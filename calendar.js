@@ -54,6 +54,21 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261007210420_xkfr7",
+  title: "高座を飛び出せ！！ヘロQ落語演劇～落Q語～",
+  type: "イベント",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-11-13",
+  startTime: "19:00",
+  endTime: "20:30",
+  venue: "TACCS1179",
+  links: [
+    { name: "公式サイト", url: "https://heroq.com/" },
+    { name: "X", url: "https://x.com/1heroq?s=11" }
+  ],
+},
+  {
   id: "event_20260927153929_ml1vf",
   title: "喫茶しーぷいへようこそ！3周年めぇ～っちゃ感謝祭【10部】",
   type: "イベント",
