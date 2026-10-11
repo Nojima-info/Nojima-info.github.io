@@ -582,9 +582,12 @@ if(Array.isArray(schedule.prices) && schedule.prices.length){
       const dt = document.createElement("dt");
       dt.textContent = label;
       const dd = document.createElement("dd");
-      dd.textContent = value;
-      dl.appendChild(dt);
-      dl.appendChild(dd);
+dd.textContent = value;
+if(label === "価格"){
+  dd.style.whiteSpace = "pre-line";
+}
+dl.appendChild(dt);
+dl.appendChild(dd);
     });
     info.appendChild(dl);
   }
