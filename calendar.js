@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261011090541_it501",
+  title: "野島健児と阪口大助のプレミアムな応援トークショー",
+  type: "イベント",
+  members: ["野島健児さん", "阪口大助さん"],
+  isRegular: false,
+  date: "2026-10-11",
+  startTime: "13:00",
+  venue: "イオンモール富士宮 さくらコート",
+  links: [
+    { name: "公式サイト", url: "https://www.aeon.jp/sc/fujinomiya/event/event_e92311_as.html" }
+  ],
+},
+  {
   id: "event_20261007210420_xkfr7",
   title: "高座を飛び出せ！！ヘロQ落語演劇～落Q語～",
   type: "イベント",
