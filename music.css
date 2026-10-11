@@ -37,8 +37,8 @@ header {
  position: relative;
  padding: 38px 20px 30px;
  text-align: center;
- background-color: var(--theme-black);
- color: var(--theme-white);
+ background-color: var(--theme-main);
+color: #333333;
  border-bottom: 4px solid var(--theme-main);
 }
 header h2 {
