@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261011092132_sm2wu",
+  title: "JFN系ラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」公開収録ステージ",
+  type: "イベント",
+  members: ["野島裕史さん"],
+  isRegular: false,
+  date: "2026-10-10",
+  startTime: "15:00",
+  venue: "道の駅なみえ・HAMDOORI CIRCLE PROJECTステージ",
+  links: [
+    { name: "公式サイト", url: "https://hamadori-coast.com/about-hamafes2026/" }
+  ],
+},
+  {
   id: "event_20261011090541_it501",
   title: "野島健児と阪口大助のプレミアムな応援トークショー",
   type: "イベント",
