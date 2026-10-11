@@ -1,47 +1,35 @@
 /* =========================
-  基本設定
-  ========================= */
+基本設定
+========================= */
 :root {
- --theme-main: #AC324B;
- --theme-sub: #136DA8;
- --theme-white: #FFFFFF;
- --theme-black: #333333;
- --theme-accent: #AC324B;
+--theme-main: #BED501;
+--theme-sub: #5f6d00;
+--theme-white: #FFFFFF;
+--theme-black: #333333;
+--theme-accent: #BED501;
+--background-color: #f7f7f7;
+--surface-color: #FFFFFF;
+--border-color: #DDDDDD;
+}
+@media (prefers-color-scheme: dark) {
+:root {
+--theme-main: #FFD745;
+--theme-sub: #FFD745;
+--theme-white: #17191D;
+--theme-black: #EEEEEE;
+--theme-accent: #FFD745;
+--background-color: #17191D;
+--surface-color: #24272D;
+--border-color: #454A54;
+}
 }
 body {
- margin: 0;
- font-family: sans-serif;
- background-color: var(--theme-white);
- color: var(--theme-black);
- font-size: 16px;
+margin: 0;
+font-family: sans-serif;
+background-color: var(--background-color);
+color: var(--theme-black);
+font-size: 16px;
 }
-
-/* =========================
-  テーマカラー
-  ========================= */
-/* 貴族テーマ */
-body[data-theme="noble"],
-body.theme-noble {
---theme-main: #564D6A;
---theme-sub: #39383D;
---theme-white: #1E1E22;
---theme-black: #F2EEE8;
---theme-accent: #564D6A;
-}
-/* カジュアルライブテーマ */
-body[data-theme="casual"],
-body.theme-casual {
- --theme-main: #871126;
- --theme-sub: #274730;
- --theme-white: #FFFFFF;
- --theme-black: #102851;
- --theme-accent: #B7802D;
-}
-body[data-theme="casual"],
-body.theme-casual {
-background-color: #AF7828;
-}
-
 /* =========================
   ヘッダー
   ========================= */
