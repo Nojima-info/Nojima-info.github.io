@@ -1266,53 +1266,6 @@ body {
    margin: 20px 0;
    padding: 0 15px;
 }
-/* 貴族テーマ：インフォメーションの閉じるボタン */
-body[data-theme="noble"] #infoPopupClose,
-body[data-theme="noble"] #infoPopupCloseBottom {
-   color: #F2EEE8;
-}
-/* 貴族テーマ：インフォメーション内の文字 */
-body[data-theme="noble"] #infoPopupContent h3 {
-   color: #F2EEE8;
-}
-body[data-theme="noble"] #infoPopupContent a {
-   color: #F2EEE8;
-}
-/* 貴族テーマ：インフォメーション見出し */
-body[data-theme="noble"] #infoPopupContent h2 {
-   color: #F2EEE8;
-}
-/* 貴族テーマ：お気に入り登録済み */
-body[data-theme="noble"] #popupFavorite.is-favorite {
-   color: #F2EEE8;
-}
-/* 貴族テーマ：大きいシャッフル再生ボタンON */
-body[data-theme="noble"] #pageShuffleButton.shuffle-active {
-   background-color: var(--theme-main) !important;
-   color: #F2EEE8 !important;
-}
-/* 通常テーマ：大きいシャッフル再生ボタンOFF */
-body[data-theme="normal"] #pageShuffleButton {
-   border: 1px solid #AC324B;
-}
-/* 通常テーマ：大きいシャッフル再生ボタンON */
-body[data-theme="normal"] #pageShuffleButton.shuffle-active {
-   background-color: #AC324B !important;
-   color: #FFFFFF !important;
-   border: 1px solid #AC324B;
-}
-/* 貴族テーマ：テキスト検索の「検索」ボタン */
-body[data-theme="noble"] #searchButton {
-   color: #F2EEE8;
-}
-/* 通常テーマ：大きいシャッフル再生ボタン */
-body:not([data-theme]) #pageShuffleButton {
-   border: 2px solid #AC324B;
-}
-/* 貴族テーマ：検索条件タグの文字色 */
-body[data-theme="noble"] .active-search-tag {
-   color: #F2EEE8;
-}
 /* =========================
   情報提供のお願い
   ========================= */
@@ -1401,10 +1354,6 @@ body[data-theme="noble"] #informationRequestContent a {
    #informationRequestToggle:hover {
        background-color: var(--theme-white);
        color: var(--theme-main);
-   }
-   body[data-theme="noble"] #informationRequestToggle:hover {
-       background-color: #1E1E22;
-       color: #F2EEE8;
    }
    #informationRequestContent a:hover {
        text-decoration: none;
