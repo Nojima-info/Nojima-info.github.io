@@ -268,6 +268,23 @@ const events = [
 
 const regularSchedules = [
   {
+  id: "event_20261011090849_cy21c",
+  title: "「ミュージカル『忍たま乱太郎』第16弾再演 タソガレドキで忍者修行！」東京公演",
+  type: "舞台",
+  members: ["野島悠生さん"],
+  isRegular: true,
+  startTime: "13:00",
+  venue: "東京ドームシティ シアターGロッソ",
+  startDate: "2026-10-09",
+  endDate: "2026-10-25",
+  prices: ["SS席・13000円", "S席・11000円", "A席・7000円", "U-18限定席・5000円", "親子ペア席・12000円"],
+  links: [
+    { name: "公式サイト", url: "https://www.musical-nintama.jp/" },
+    { name: "X", url: "https://x.com/nin_myu_info?s=11" },
+    { name: "YouTube", url: "https://youtube.com/channel/UCJWzq-AptBY7z4t58v_F1ug?si=ndRlawTmZ4FQ6iBH" }
+  ],
+},
+  {
   id: "event_20261007205529_iz8ed",
   title: "日曜劇場「VIVANT」",
   type: "ドラマ",
