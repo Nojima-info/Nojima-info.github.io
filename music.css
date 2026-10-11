@@ -377,7 +377,6 @@ section > h2:nth-of-type(2) {
 .song-card .favorite-button.is-favorite {
  color: var(--theme-main);
 }
-```css
 /* =========================
   検索欄へボタン
   ========================= */
