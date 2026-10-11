@@ -54,6 +54,20 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261011105450_osdua",
+  title: "キャラクターデュアスロン",
+  type: "イベント",
+  members: ["野島裕史さん"],
+  isRegular: false,
+  date: "2026-10-11",
+  startTime: "11:30",
+  venue: "千葉市稲毛海浜公園周辺",
+  links: [
+    { name: "公式サイト", url: "https://chiba-tra.jp/" },
+    { name: "X", url: "https://x.com/charathlonchiba?s=11" }
+  ],
+},
+  {
   id: "event_20261011092132_sm2wu",
   title: "JFN系ラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」公開収録ステージ",
   type: "イベント",
