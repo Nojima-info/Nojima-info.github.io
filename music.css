@@ -383,7 +383,7 @@ section > h2:nth-of-type(2) {
 #backToSearchButton{
 position:fixed;
 right:16px;
-bottom:100px;
+bottom:110px;
 z-index:1500;
 width:52px;
 height:52px;
