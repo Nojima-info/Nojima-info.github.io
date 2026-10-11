@@ -1326,28 +1326,6 @@ body {
    text-decoration: underline;
 }
 /* =========================
-  情報提供のお願い：貴族テーマ
-  ========================= */
-body[data-theme="noble"] #informationRequest {
-   border-color: #564D6A;
-}
-body[data-theme="noble"] #informationRequestToggle {
-   background-color: #1E1E22;
-   color: #F2EEE8;
-}
-body[data-theme="noble"] #informationRequestToggle:hover {
-   background-color: #39383D;
-   color: #F2EEE8;
-}
-body[data-theme="noble"] #informationRequestContent {
-   background-color: #1E1E22;
-   color: #F2EEE8;
-   border-top-color: #564D6A;
-}
-body[data-theme="noble"] #informationRequestContent a {
-   color: #F2EEE8;
-}
-/* =========================
   情報提供のお願い：タッチ端末
   ========================= */
 @media (hover: none) {
