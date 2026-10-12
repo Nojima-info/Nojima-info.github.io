@@ -881,11 +881,6 @@ function showSelectedDate(dateString){
 }
 function showEventDetail(event,detailContainer){
   detailContainer.innerHTML = "";
-  const title = document.createElement("p");
-  title.textContent = event.title;
-  title.style.fontWeight = "bold";
-  title.style.marginBottom = "16px";
-  detailContainer.appendChild(title);
   if(!event.isBirthday){
     const detail = document.createElement("div");
     detail.className = "event-detail";
