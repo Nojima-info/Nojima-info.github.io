@@ -788,13 +788,11 @@ function renderCalendar(){
   calendarTitle.textContent = `${year}年${month + 1}月`;
   monthPicker.value = `${year}-${String(month + 1).padStart(2,"0")}`;
   calendarDays.innerHTML = "";
-
   const firstDay = new Date(year,month,1).getDay();
   const lastDate = new Date(year,month + 1,0).getDate();
   const previousLastDate = new Date(year,month,0).getDate();
   const today = new Date();
   const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
-
   for(let i = firstDay - 1;i >= 0;i--){
     const day = document.createElement("button");
     day.type = "button";
@@ -803,36 +801,29 @@ function renderCalendar(){
     day.disabled = true;
     calendarDays.appendChild(day);
   }
-
   for(let date = 1;date <= lastDate;date++){
     const day = document.createElement("button");
     day.type = "button";
     day.className = "calendar-day";
     day.dataset.date = `${year}-${String(month + 1).padStart(2,"0")}-${String(date).padStart(2,"0")}`;
     day.innerHTML = `<span class="calendar-day-number">${date}</span>`;
-
     if(day.dataset.date === todayString){
       day.classList.add("today");
       day.innerHTML += `<span class="calendar-today">Today</span>`;
     }
-
     const hasEvent = events.some(event => event.date === day.dataset.date);
-const hasBirthday = birthdayEvents.some(event => event.date === day.dataset.date);
-
-if(hasEvent || hasBirthday){
-  day.classList.add("has-event");
-}
+    const hasBirthday = birthdayEvents.some(event => event.date === day.dataset.date);
+    if(hasEvent || hasBirthday){
+      day.classList.add("has-event");
+    }
     if(day.dataset.date === selectedDateString){
       day.classList.add("selected");
     }
-
     day.addEventListener("click",() => { showSelectedDate(day.dataset.date); });
     calendarDays.appendChild(day);
   }
-
   const totalCells = firstDay + lastDate;
   const remainingCells = (7 - totalCells % 7) % 7;
-
   for(let date = 1;date <= remainingCells;date++){
     const day = document.createElement("button");
     day.type = "button";
@@ -841,125 +832,94 @@ if(hasEvent || hasBirthday){
     day.disabled = true;
     calendarDays.appendChild(day);
   }
-
   renderRegularSchedules(year,month,lastDate);
 }
 function showSelectedDate(dateString){
   selectedDateString = dateString;
   document.querySelectorAll(".calendar-day.selected").forEach(day => day.classList.remove("selected"));
-
   const selectedDay = document.querySelector(`.calendar-day[data-date="${dateString}"]`);
   if(selectedDay){ selectedDay.classList.add("selected"); }
-
   const [year,month,date] = dateString.split("-").map(Number);
-const dayEvents = [
-  ...events.filter(event => event.date === dateString),
-  ...createBirthdayEvents(year).filter(event => event.date === dateString)
-];
-
+  const dayEvents = [
+    ...events.filter(event => event.date === dateString),
+    ...createBirthdayEvents(year).filter(event => event.date === dateString)
+  ];
   selectedDate.hidden = false;
   selectedDate.innerHTML = `<h3>${year}年${month}月${date}日</h3>`;
-
   if(dayEvents.length === 0){
     selectedDate.innerHTML += "<p>この日の予定はありません。</p>";
     return;
   }
-
   const eventList = document.createElement("div");
   eventList.className = "event-list";
-dayEvents.forEach(event => {
-  const eventEntry = document.createElement("div");
-  eventEntry.className = "event-entry";
-
-  const eventItem = document.createElement("button");
-  eventItem.type = "button";
-  eventItem.className = "event-item";
-  eventItem.innerHTML = `<strong>${event.title}</strong><span>${event.type}</span>`;
-
-  const detailContainer = document.createElement("div");
-  detailContainer.className = "event-inline-detail";
-  detailContainer.hidden = true;
-
-  eventItem.addEventListener("click",() => {
-    if(detailContainer.hidden){
+  dayEvents.forEach(event => {
+    const eventEntry = document.createElement("div");
+    eventEntry.className = "event-entry";
+    const eventItem = document.createElement("button");
+    eventItem.type = "button";
+    eventItem.className = "event-item";
+    eventItem.innerHTML = `<strong>${event.title}</strong><span>${event.type}</span>`;
+    const detailContainer = document.createElement("div");
+    detailContainer.className = "event-inline-detail";
+    detailContainer.hidden = true;
+    eventItem.addEventListener("click",() => {
+      if(!detailContainer.hidden){
+        detailContainer.hidden = true;
+        detailContainer.innerHTML = "";
+        eventItem.classList.remove("selected-search-event");
+        return;
+      }
       detailContainer.hidden = false;
-      showEventDetail(event, detailContainer);
-    }else{
-      detailContainer.hidden = true;
-      detailContainer.innerHTML = "";
-    }
+      eventItem.classList.add("selected-search-event");
+      showEventDetail(event,detailContainer);
+    });
+    eventEntry.appendChild(eventItem);
+    eventEntry.appendChild(detailContainer);
+    eventList.appendChild(eventEntry);
   });
-
-  eventEntry.appendChild(eventItem);
-  eventEntry.appendChild(detailContainer);
-  eventList.appendChild(eventEntry);
-});
   selectedDate.appendChild(eventList);
 }
-
-function showEventDetail(event){
-  selectedDate.innerHTML = "";
-
-  const dateTitle = document.createElement("h3");
-  dateTitle.textContent = formatDate(event.date);
-  selectedDate.appendChild(dateTitle);
-
+function showEventDetail(event,detailContainer){
+  detailContainer.innerHTML = "";
   const title = document.createElement("p");
   title.textContent = event.title;
   title.style.fontWeight = "bold";
   title.style.marginBottom = "16px";
-  selectedDate.appendChild(title);
-if(!event.isBirthday){
-  const detail = document.createElement("div");
-  detail.className = "event-detail";
-
-  const eventLinks = getScheduleLinks(event);
-
-  const eventLinksHtml =
-    eventLinks.length
-      ? `
-        <dt>公式リンク</dt>
-        <dd>
-          ${eventLinks.map(link => `
-            <a
-              href="${link.url}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >${link.name}</a>
-          `).join("")}
-        </dd>
-      `
+  detailContainer.appendChild(title);
+  if(!event.isBirthday){
+    const detail = document.createElement("div");
+    detail.className = "event-detail";
+    const eventLinks = getScheduleLinks(event);
+    const eventLinksHtml = eventLinks.length
+      ? `<dt>公式リンク</dt><dd>${eventLinks.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.name}</a>`).join("<br>")}</dd>`
       : "";
-
-  detail.innerHTML = `
-    <dl>
-      <dt>種類</dt><dd>${event.type}</dd>
-      <dt>出演者</dt><dd>${event.members.join("、")}</dd>
-      ${event.openTime ? `<dt>開場時刻</dt><dd>${event.openTime}</dd>` : ""}
-      ${event.startTime ? `<dt>${event.type === "舞台" ? "開演時間" : event.type === "イベント" || event.type === "その他" ? "開始時間" : "開始時間"}</dt><dd>${event.startTime}</dd>` : ""}
-${event.endTime ? `<dt>${event.type === "舞台" ? "終演時間" : event.type === "イベント" || event.type === "その他" ? "終了時間" : "終了時間"}</dt><dd>${event.endTime}</dd>` : ""}
-${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
-${event.deliveryPlace ? `<dt>配信場所</dt><dd>${event.deliveryPlace}</dd>` : ""}
-      ${Array.isArray(event.prices) && event.prices.length ? `<dt>${event.type === "舞台" || event.type === "イベント" ? "価格" : "価格"}</dt><dd>${event.prices.map(price => String(price).replace(/\n/g,"<br>")).join("<br>")}</dd>` : ""}
-      ${eventLinksHtml}
-    </dl>
-    ${event.description ? `<p class="event-description">${event.description}</p>` : ""}
-  `;
-
-  selectedDate.appendChild(detail);
-}
+    detail.innerHTML = `
+      <dl>
+        <dt>種類</dt><dd>${event.type}</dd>
+        <dt>出演者</dt><dd>${(event.members || []).join("、")}</dd>
+        ${event.openTime ? `<dt>開場時刻</dt><dd>${event.openTime}</dd>` : ""}
+        ${event.startTime ? `<dt>${event.type === "舞台" ? "開演時間" : "開始時間"}</dt><dd>${event.startTime}</dd>` : ""}
+        ${event.endTime ? `<dt>${event.type === "舞台" ? "終演時間" : "終了時間"}</dt><dd>${event.endTime}</dd>` : ""}
+        ${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
+        ${event.deliveryPlace ? `<dt>配信場所</dt><dd>${event.deliveryPlace}</dd>` : ""}
+        ${Array.isArray(event.prices) && event.prices.length ? `<dt>価格</dt><dd>${event.prices.map(price => String(price).replace(/\n/g,"<br>")).join("<br>")}</dd>` : ""}
+        ${eventLinksHtml}
+      </dl>
+      ${event.description ? `<p class="event-description">${event.description}</p>` : ""}
+    `;
+    detailContainer.appendChild(detail);
+  }
   const memoLabel = document.createElement("label");
   memoLabel.className = "event-memo-label";
   memoLabel.textContent = "メモ";
-
   const memo = document.createElement("textarea");
   memo.className = "event-memo";
   memo.placeholder = "このメモは自分以外には表示されません";
   memo.rows = 5;
-
   const memoKeys = getEventMemoKeys(event);
   memo.value = loadMemo(memoKeys.primary,memoKeys.legacy);
-
+  memoLabel.htmlFor = `memo-${event.id || event.date}`;
+  memo.id = memoLabel.htmlFor;
   const saveMemoButton = document.createElement("button");
   saveMemoButton.type = "button";
   saveMemoButton.className = "event-memo-save";
@@ -969,17 +929,20 @@ ${event.deliveryPlace ? `<dt>配信場所</dt><dd>${event.deliveryPlace}</dd>` :
     saveMemoButton.textContent = "保存しました";
     setTimeout(() => { saveMemoButton.textContent = "保存"; },1500);
   });
-
-  selectedDate.appendChild(memoLabel);
-  selectedDate.appendChild(memo);
-  selectedDate.appendChild(saveMemoButton);
-
-  const backButton = document.createElement("button");
-  backButton.type = "button";
-  backButton.className = "event-back-button";
-  backButton.textContent = "閉じる";
-  backButton.addEventListener("click",() => { showSelectedDate(event.date); });
-  selectedDate.appendChild(backButton);
+  detailContainer.appendChild(memoLabel);
+  detailContainer.appendChild(memo);
+  detailContainer.appendChild(saveMemoButton);
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "event-back-button";
+  closeButton.textContent = "閉じる";
+  closeButton.addEventListener("click",() => {
+    detailContainer.hidden = true;
+    detailContainer.innerHTML = "";
+    const eventItem = detailContainer.previousElementSibling;
+    if(eventItem){ eventItem.classList.remove("selected-search-event"); }
+  });
+  detailContainer.appendChild(closeButton);
 }
 prevMonthButton.addEventListener("click",() => {
   currentDate.setMonth(currentDate.getMonth() - 1);
