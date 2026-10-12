@@ -54,6 +54,18 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261012092844_9dwcs",
+  title: "劇場版 薬屋のひとりごと 亡妃の秘宝",
+  type: "映画",
+  members: ["野島裕史さん"],
+  isRegular: false,
+  date: "2026-12-11",
+  links: [
+    { name: "公式サイト", url: "https://kusuriyanohitorigoto.jp/movie/" }
+  ],
+  description: "未泉(CV. 野島裕史)\n未の一族の長兄。",
+},
+  {
   id: "event_20261011105450_osdua",
   title: "キャラクターデュアスロン",
   type: "イベント",
