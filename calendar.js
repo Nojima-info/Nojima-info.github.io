@@ -867,16 +867,33 @@ const dayEvents = [
 
   const eventList = document.createElement("div");
   eventList.className = "event-list";
+dayEvents.forEach(event => {
+  const eventEntry = document.createElement("div");
+  eventEntry.className = "event-entry";
 
-  dayEvents.forEach(event => {
-    const eventItem = document.createElement("button");
-    eventItem.type = "button";
-    eventItem.className = "event-item";
-    eventItem.innerHTML = `<strong>${event.title}</strong><span>${event.type}</span>`;
-    eventItem.addEventListener("click",() => { showEventDetail(event); });
-    eventList.appendChild(eventItem);
+  const eventItem = document.createElement("button");
+  eventItem.type = "button";
+  eventItem.className = "event-item";
+  eventItem.innerHTML = `<strong>${event.title}</strong><span>${event.type}</span>`;
+
+  const detailContainer = document.createElement("div");
+  detailContainer.className = "event-inline-detail";
+  detailContainer.hidden = true;
+
+  eventItem.addEventListener("click",() => {
+    if(detailContainer.hidden){
+      detailContainer.hidden = false;
+      showEventDetail(event, detailContainer);
+    }else{
+      detailContainer.hidden = true;
+      detailContainer.innerHTML = "";
+    }
   });
 
+  eventEntry.appendChild(eventItem);
+  eventEntry.appendChild(detailContainer);
+  eventList.appendChild(eventEntry);
+});
   selectedDate.appendChild(eventList);
 }
 
