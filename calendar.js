@@ -511,15 +511,10 @@ function loadMemo(primaryKey,legacyKey){
   }
   return "";
 }
-
 /* レギュラー詳細 */
 function createRegularScheduleDetail(schedule,closeCallback){
   const detail = document.createElement("div");
-  detail.className = "regular-schedule-detail";
-
-  const title = document.createElement("h3");
-  title.textContent = schedule.title;
-  detail.appendChild(title);
+  detail.className = "event-inline-detail";
 
   const info = document.createElement("div");
   info.className = "event-detail";
@@ -543,7 +538,7 @@ function createRegularScheduleDetail(schedule,closeCallback){
       break;
 
     case "映画":
-      if(schedule.releaseDate){ rows.push(["公開日",schedule.releaseDate]); }
+      if(schedule.releaseDate){ rows.push(["公開日",formatDate(schedule.releaseDate)]); }
       if(schedule.startDate){ rows.push(["初回",formatDate(schedule.startDate)]); }
       if(schedule.endDate){ rows.push(["最終回",formatDate(schedule.endDate)]); }
       break;
@@ -574,7 +569,7 @@ function createRegularScheduleDetail(schedule,closeCallback){
       break;
 
     case "配信":
-      if(schedule.deliveryDate){ rows.push(["配信日",schedule.deliveryDate]); }
+      if(schedule.deliveryDate){ rows.push(["配信日",formatDate(schedule.deliveryDate)]); }
       if(schedule.startDate){ rows.push(["初回",formatDate(schedule.startDate)]); }
       if(schedule.endDate){ rows.push(["最終回",formatDate(schedule.endDate)]); }
       if(schedule.startTime){ rows.push(["開始時刻",schedule.startTime]); }
@@ -595,79 +590,64 @@ function createRegularScheduleDetail(schedule,closeCallback){
       if(schedule.endTime){ rows.push(["終了時刻",schedule.endTime]); }
       if(schedule.venue){ rows.push(["場所",schedule.venue]); }
   }
-if(Array.isArray(schedule.prices) && schedule.prices.length){
-  const priceLabel =
-    schedule.type === "舞台" || schedule.type === "イベント"
-      ? "価格"
-      : "価格";
-  rows.push([priceLabel,schedule.prices.join("\n")]);
-}
+
+  if(Array.isArray(schedule.prices) && schedule.prices.length){
+    rows.push(["価格",schedule.prices.join("\n")]);
+  }
+
   if(rows.length){
     const dl = document.createElement("dl");
+
     rows.forEach(([label,value]) => {
       const dt = document.createElement("dt");
       dt.textContent = label;
+
       const dd = document.createElement("dd");
-dd.textContent = value;
-if(label === "価格"){
-  dd.style.whiteSpace = "pre-line";
-}
-dl.appendChild(dt);
-dl.appendChild(dd);
+      dd.textContent = value;
+
+      if(label === "価格"){
+        dd.style.whiteSpace = "pre-line";
+      }
+
+      dl.appendChild(dt);
+      dl.appendChild(dd);
     });
+
     info.appendChild(dl);
   }
 
   const links = getScheduleLinks(schedule);
 
-if(links.length){
+  if(links.length){
+    const dl = info.querySelector("dl") || document.createElement("dl");
+    const dt = document.createElement("dt");
+    dt.textContent = "公式リンク";
 
-  const dl =
-    info.querySelector("dl") ||
-    document.createElement("dl");
+    const dd = document.createElement("dd");
 
-  const dt =
-    document.createElement("dt");
+    links.forEach(linkData => {
+      const link = document.createElement("a");
+      link.href = linkData.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = linkData.name;
+      dd.appendChild(link);
+    });
 
-  dt.textContent =
-    "公式リンク";
+    dl.appendChild(dt);
+    dl.appendChild(dd);
 
-  const dd =
-    document.createElement("dd");
-
-  links.forEach(linkData => {
-
-    const link =
-      document.createElement("a");
-
-    link.href =
-      linkData.url;
-
-    link.target =
-      "_blank";
-
-    link.rel =
-      "noopener noreferrer";
-
-    link.textContent =
-      linkData.name;
-
-    dd.appendChild(link);
-  });
-
-  dl.appendChild(dt);
-  dl.appendChild(dd);
-
-  if(!info.querySelector("dl")){
-    info.appendChild(dl);
+    if(!info.querySelector("dl")){
+      info.appendChild(dl);
+    }
   }
-}
+
   if(schedule.description){
-  const description = document.createElement("p");
-  description.className = "event-description";
-  description.textContent = schedule.description;
-  info.appendChild(description);
-}
+    const description = document.createElement("p");
+    description.className = "event-description";
+    description.textContent = schedule.description;
+    info.appendChild(description);
+  }
 
   detail.appendChild(info);
 
@@ -683,14 +663,20 @@ if(links.length){
   const memoKeys = getRegularMemoKeys(schedule);
   memo.value = loadMemo(memoKeys.primary,memoKeys.legacy);
 
+  memoLabel.htmlFor = `regular-memo-${schedule.id || schedule.title}`;
+  memo.id = memoLabel.htmlFor;
+
   const saveMemoButton = document.createElement("button");
   saveMemoButton.type = "button";
   saveMemoButton.className = "event-memo-save";
   saveMemoButton.textContent = "保存";
+
   saveMemoButton.addEventListener("click",() => {
     localStorage.setItem(memoKeys.primary,memo.value);
     saveMemoButton.textContent = "保存しました";
-    setTimeout(() => { saveMemoButton.textContent = "保存"; },1500);
+    setTimeout(() => {
+      saveMemoButton.textContent = "保存";
+    },1500);
   });
 
   detail.appendChild(memoLabel);
@@ -701,15 +687,19 @@ if(links.length){
   closeButton.type = "button";
   closeButton.className = "event-back-button";
   closeButton.textContent = "閉じる";
+
   closeButton.addEventListener("click",() => {
-    if(typeof closeCallback === "function"){ closeCallback(); }
-    else { detail.remove(); }
+    if(typeof closeCallback === "function"){
+      closeCallback();
+    }else{
+      detail.remove();
+    }
   });
+
   detail.appendChild(closeButton);
 
   return detail;
 }
-
 function getActiveRegularSchedules(year,month,lastDate){
   const currentMonthStart = `${year}-${String(month + 1).padStart(2,"0")}-01`;
   const currentMonthEnd = `${year}-${String(month + 1).padStart(2,"0")}-${String(lastDate).padStart(2,"0")}`;
