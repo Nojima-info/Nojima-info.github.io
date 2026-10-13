@@ -858,9 +858,10 @@ function showSelectedDate(dateString){
         eventItem.classList.remove("selected-search-event");
         return;
       }
-      detailContainer.hidden = false;
-      eventItem.classList.add("selected-search-event");
-      showEventDetail(event,detailContainer);
+    detailContainer.hidden = false;
+detailContainer.style.marginBottom = "20px";
+eventItem.classList.add("selected-search-event");
+showEventDetail(event,detailContainer);  
     });
     eventEntry.appendChild(eventItem);
     eventEntry.appendChild(detailContainer);
