@@ -380,6 +380,10 @@ section > h2:nth-of-type(2) {
 /* =========================
   検索欄へボタン
   ========================= */
+
+/* =========================
+   検索欄へボタン
+   ========================= */
 #backToSearchButton{
 position:fixed;
 right:16px;
@@ -388,10 +392,10 @@ z-index:1500;
 width:52px;
 height:52px;
 padding:0;
-border:1px solid var(--theme-main);
+border:1px solid var(--theme-sub);
 border-radius:50%;
 background:var(--theme-main);
-color:var(--theme-white);
+color:#333;
 font-size:1.5rem;
 font-weight:bold;
 line-height:1;
@@ -399,7 +403,7 @@ cursor:pointer;
 box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 #backToSearchButton:hover{
-background:var(--theme-sub);
+background:var(--main-color-light);
 }
 /* =========================
   ミニプレイヤー
