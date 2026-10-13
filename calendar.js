@@ -514,8 +514,7 @@ function loadMemo(primaryKey,legacyKey){
 /* レギュラー詳細 */
 function createRegularScheduleDetail(schedule,closeCallback){
   const detail = document.createElement("div");
-  detail.className = "event-inline-detail";
-
+  detail.className = "regular-schedule-detail event-inline-detail";
   const info = document.createElement("div");
   info.className = "event-detail";
   const rows = [];
