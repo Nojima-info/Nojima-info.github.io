@@ -403,7 +403,7 @@ cursor:pointer;
 box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 #backToSearchButton:hover{
-background:var(--main-color-light);
+background:#f4f8d6;
 }
 /* =========================
   ミニプレイヤー
@@ -1241,12 +1241,13 @@ cursor: pointer;
 /* =========================
   検索欄へボタン
   ========================= */
+
 #backToSearchButton {
 background-color: var(--theme-main);
-color: var(--theme-white);
+color: #333;
 }
 #backToSearchButton:hover {
-background-color: var(--theme-sub);
+background-color: #f4f8d6;
 }
 @media (hover: none) {
 #backToSearchButton:hover {
