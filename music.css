@@ -390,7 +390,7 @@ section > h2:nth-of-type(2) {
 position:fixed;
 right:16px;
 bottom:120px;
-z-index:1500;
+z-index:900;
 width:52px;
 height:52px;
 padding:0;
