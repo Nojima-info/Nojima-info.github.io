@@ -18,7 +18,7 @@ const profileData={
       {name:"Threads",url:"https://www.threads.com/@nojimahirofumi?igshid=NTc4MTIwNjQ2YQ=="},
       {name:"Facebook",url:"https://www.facebook.com/share/1KNmhMd3Bk/?mibextid=wwXIfr"}
 ],
-    introduction:"温かみのある優しい声で、幅広い年代のキャラクターを演じる。情報番組やバラエティー番組のナレーションなどでも活躍。パーソナリティーを務めるラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」は今年で放送11年目に突入。"
+    introduction:"温かみのある優しい声で、幅広い年代のキャラクターを演じる。情報番組やバラエティー番組のナレーションなどでも活躍。パーソナリティーを務めるラジオ番組「サイクリスト・ステーション ツアー・オブ・ジャパン」は今年で放送12年目に突入。"
   },
   kenji:{
     name:"野島健児",
@@ -55,7 +55,7 @@ const profileData={
     birth:"-",
     agency:"劇団ひまわり",
     sns:"-",
-    introduction:"2026年、24時間テレビのドラマ「幸せはある」にメインキャラクターとして出演。所属事務所の公式プロフィールページにある「特技」欄は空欄になっており、これからなにが入るのかなぁと管理人が勝手にワクワクしている。"
+    introduction:"2026年、「24時間テレビ」内のドラマ「幸せはある」にメインキャラクターとして出演。父の裕史曰く「野島昭生の血をいちばん濃く受け継いでいるのかもしれない」。"
   }
 };
 const profileButtons=document.querySelectorAll(".profile-button");
