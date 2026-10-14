@@ -55,7 +55,7 @@ const profileData={
     birth:"-",
     agency:"劇団ひまわり",
     sns:"-",
-    introduction:"2026年、「24時間テレビ」内のドラマ「幸せはある」にメインキャラクターとして出演。父の裕史曰く「野島昭生の血をいちばん濃く受け継いでいるのかもしれない」。"
+    introduction:"2026年、「24時間テレビ」内のドラマ「幸せはある」にメインキャラクターとして出演。父の裕史曰く「野島昭生の血をいちばん濃く受け継いでいるのかもしれない」とのこと。"
   }
 };
 const profileButtons=document.querySelectorAll(".profile-button");
