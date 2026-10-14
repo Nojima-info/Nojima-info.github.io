@@ -1396,3 +1396,7 @@ main.music-page{
 padding:40px 16px 24px;
 }
 }
+/* ライトモード：タブの文字色を黒にする */
+:root:not([data-theme="dark"]) #songTabs button{
+color:#000000;
+}
