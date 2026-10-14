@@ -399,10 +399,15 @@ const regularSchedules = [
   ]
 }
 ];
-
-let currentDate = new Date();
-let selectedDateString = "";
-
+window.NojimaInfoCalendarData = {
+  birthdays,
+  createBirthdayEvents,
+  events,
+  regularSchedules
+};
+if (calendarTitle && calendarDays && selectedDate && monthPicker && prevMonthButton && nextMonthButton) {
+  let currentDate = new Date();
+  let selectedDateString = "";
 const memberOrder = [
   "野島昭生さん",
   "野島裕史さん",
@@ -1476,3 +1481,4 @@ regularScheduleToggle.addEventListener("click",() => {
   regularScheduleToggle.setAttribute("aria-expanded",String(isOpen));
   regularScheduleToggleIcon.textContent = isOpen ? "－" : "＋";
 });
+}
