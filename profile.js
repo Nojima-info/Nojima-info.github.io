@@ -83,9 +83,6 @@ function createProfileContent(profile){
       link.target="_blank";
       link.rel="noopener noreferrer";
       description.appendChild(link);
-      if(index<value.length-1){
-        description.appendChild(document.createTextNode(" / "));
-      }
     });
   }else{
     description.textContent=value;
