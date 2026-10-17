@@ -54,6 +54,23 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261017211616_pqovf",
+  title: "朗読劇「FGO THE DRAMALOGUE -Cosmos in the Lostbelt-」",
+  type: "イベント",
+  members: ["野島健児さん", "高橋李依さん", "米澤円さん", "川澄綾子さん", "青木志貴さん", "水島大宙さん"],
+  isRegular: false,
+  date: "2026-11-01",
+  openTime: "16:30",
+  startTime: "17:30",
+  endTime: "21:00",
+  venue: "パシフィコ横浜 国立大ホール",
+  prices: ["グッズ付きSS席・14500円", "S席・11000円", "注釈付きS席・10000円", "A席・9500円"],
+  links: [
+    { name: "公式サイト", url: "https://dramalogue.fate-go.jp/" },
+    { name: "X", url: "https://x.com/fgoproject?s=11" }
+  ],
+},
+  {
   id: "event_20261012092844_9dwcs",
   title: "劇場版 薬屋のひとりごと 亡妃の秘宝",
   type: "映画",
