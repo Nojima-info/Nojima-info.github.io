@@ -380,3 +380,80 @@ white-space:pre-wrap;
 .event-description{
 white-space:pre-wrap;
 }
+
+/* トップページ：直近の予定 */
+#upcoming-events{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin:20px 0;
+}
+
+.upcoming-event{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:16px;
+  border:1px solid var(--border-color);
+  border-left:5px solid var(--main-color);
+  border-radius:10px;
+  background:var(--surface-color);
+  color:var(--text-color);
+}
+
+.upcoming-event-date{
+  flex-shrink:0;
+  min-width:88px;
+  margin:0!important;
+  padding:8px;
+  border-radius:8px;
+  background:var(--main-color-light);
+  color:var(--text-color);
+  font-size:.9rem;
+  font-weight:bold;
+  text-align:center;
+  overflow-wrap:anywhere;
+}
+
+.upcoming-event-title{
+  min-width:0;
+  margin:0;
+  font-size:1rem;
+  line-height:1.6;
+  overflow-wrap:anywhere;
+}
+
+.top-page #upcoming-events + a{
+  display:block;
+  width:fit-content;
+  margin-top:16px;
+  padding:10px 16px;
+  border:1px solid var(--main-color);
+  border-radius:8px;
+  background:var(--main-color);
+  color:#333;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.top-page #upcoming-events + a:hover{
+  background:var(--main-color-light);
+}
+
+@media(max-width:480px){
+  .upcoming-event{
+    align-items:flex-start;
+    gap:10px;
+    padding:12px;
+  }
+
+  .upcoming-event-date{
+    min-width:76px;
+    padding:8px 4px;
+    font-size:.8rem;
+  }
+
+  .upcoming-event-title{
+    font-size:.95rem;
+  }
+}
