@@ -340,6 +340,22 @@ const events = [
 
 const regularSchedules = [
   {
+  id: "event_20261017214343_2blxu",
+  title: "「ミュージカル『忍たま乱太郎』第16弾 忍術学園学園祭」東京公演",
+  type: "イベント",
+  members: ["野島悠生さん"],
+  isRegular: true,
+  startTime: "18:30",
+  venue: "Shibuya LOVEZ",
+  startDate: "2027-01-21",
+  endDate: "2027-01-24",
+  prices: ["1階SS席・13000円", "2階S席・11000円", "3階A席(着席)・8000円"],
+  links: [
+    { name: "公式サイト", url: "https://www.musical-nintama.jp/16fes/#wrapper" },
+    { name: "X", url: "https://x.com/nin_myu_info?s=11" }
+  ],
+},
+  {
   id: "event_20261011090849_cy21c",
   title: "「ミュージカル『忍たま乱太郎』第16弾再演 タソガレドキで忍者修行！」大阪公演",
   type: "舞台",
