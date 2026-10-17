@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261017211922_rsysc",
+  title: "弟配信「ハロウィンは、ピザ食べよ」",
+  type: "配信",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-10-25",
+  startTime: "20:00",
+  endTime: "21:30",
+  deliveryPlace: "Peatix",
+  prices: ["配信・1500円", "(先着65個)サイン入り恒例オリジナルグッズ付・5500円"],
+  links: [
+    { name: "公式サイト", url: "https://nojiharo.peatix.com/" },
+    { name: "X", url: "https://x.com/nojimakyodai?s=11" }
+  ],
+},
+  {
   id: "event_20261017211616_pqovf",
   title: "朗読劇「FGO THE DRAMALOGUE -Cosmos in the Lostbelt-」",
   type: "イベント",
