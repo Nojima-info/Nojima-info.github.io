@@ -42,19 +42,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const article = document.createElement("article");
     article.className = "upcoming-event";
 
-    const date = document.createElement("p");
-    date.className = "upcoming-event-date";
-    date.textContent = event.date.replace(/-/g, "/");
+const date = document.createElement("p");
+date.className = "upcoming-event-date";
 
-    if (event.startTime) {
-      date.textContent += ` ${event.startTime}`;
-    }
+const dateText = document.createElement("span");
+dateText.textContent = event.date.replace(/-/g, "/");
 
-    const title = document.createElement("h3");
-    title.className = "upcoming-event-title";
-    title.textContent = event.title;
+const timeText = document.createElement("span");
+timeText.className = "upcoming-event-time";
+timeText.textContent = event.startTime || "\u00a0";
 
-    article.append(date, title);
+date.append(dateText, timeText);
+
+const title = document.createElement("h3");
+title.className = "upcoming-event-title";
+title.textContent = event.title;
+
+article.append(date, title);
     container.appendChild(article);
   });
 });
