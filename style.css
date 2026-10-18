@@ -472,7 +472,7 @@ white-space:pre-wrap;
 
 .top-page-title{
   margin:0 0 24px;
-  font-size:2.2rem;
+  font-size:2.2rem!important;
   line-height:1.3;
   color:var(--text-color);
   border-bottom:4px solid var(--main-color);
