@@ -469,3 +469,13 @@ white-space:pre-wrap;
 .upcoming-event-time{
   min-height:1.3em;
 }
+
+.top-page-title{
+  margin:0 0 24px;
+  font-size:2.2rem;
+  line-height:1.3;
+  color:var(--text-color);
+  border-bottom:4px solid var(--main-color);
+  padding-bottom:8px;
+  display:inline-block;
+}
