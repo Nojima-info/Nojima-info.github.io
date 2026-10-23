@@ -333,7 +333,7 @@ color:var(--text-color);
 }
 .event-detail dd a{
   display:block;
-  margin-bottom:6px;
+  margin-bottom:2px;
 }
 .event-detail dd a:last-child{
   margin-bottom:0;
