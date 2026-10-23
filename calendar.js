@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261023210934_6eon8",
+  title: "CHILL CHILL BOX 15th BLUE BOX 朗読劇「逢魔時コンフュージョン～妖狐繚乱～」",
+  type: "イベント",
+  members: ["野島健児さん", "佐藤拓也さん", "立花慎之介さん", "田丸篤志さん", "高橋英則さん", "岩崎諒太さん", "中澤まさともさん", "波多野和俊さん"],
+  isRegular: false,
+  date: "2026-12-13",
+  startTime: "14:30",
+  venue: "一ツ橋ホール",
+  prices: ["グッズ付き・13500円", "一般・8800円"],
+  links: [
+    { name: "公式サイト", url: "https://chill2box.com/15th/" },
+    { name: "X", url: "https://x.com/chill2box?s=11" }
+  ],
+  description: "天野静馬(CV. 野島健児)\n二十歳。亡き母の後を継ぎ、陰守神社の神主として氏神の鬼・羅叉と結ばれる。理知的でおおらかな青年だが芯の強いところもある。現在は地方公務員として「まちづくり課」の職員として町立図書館＆郷土資料館の管理や、町内で催されるイベントの企画・運営などに携わる。",
+},
+  {
   id: "event_20261017211922_rsysc",
   title: "弟配信「ハロウィンは、ピザ食べよ」",
   type: "配信",
