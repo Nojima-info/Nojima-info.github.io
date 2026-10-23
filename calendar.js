@@ -116,7 +116,7 @@ const events = [
 },
   {
   id: "event_20261012092844_9dwcs",
-  title: "劇場版 薬屋のひとりごと 亡妃の秘宝",
+  title: "「劇場版 薬屋のひとりごと 亡妃の秘宝」公開日",
   type: "映画",
   members: ["野島裕史さん"],
   isRegular: false,
