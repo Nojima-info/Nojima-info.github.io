@@ -54,6 +54,18 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261023211125_wasn2",
+  title: "映画「バッド・ルーテナント：トウキョウ」公開日",
+  type: "映画",
+  members: ["野島裕史さん"],
+  isRegular: false,
+  date: "2026-10-23",
+  links: [
+    { name: "公式サイト", url: "https://blt-movie.jp/" },
+    { name: "X", url: "https://x.com/blt_movie_jp?s=11" }
+  ],
+},
+  {
   id: "event_20261023210934_6eon8",
   title: "CHILL CHILL BOX 15th BLUE BOX 朗読劇「逢魔時コンフュージョン～妖狐繚乱～」",
   type: "イベント",
