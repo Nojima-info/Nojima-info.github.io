@@ -1015,7 +1015,7 @@ function showEventDetail(event,detailContainer){
     detail.className = "event-detail";
     const eventLinks = getScheduleLinks(event);
     const eventLinksHtml = eventLinks.length
-      ? `<dt>公式リンク</dt><dd>${eventLinks.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.name}</a>`).join("<br>")}</dd>`
+      ? `<dt>公式リンク</dt><dd>${eventLinks.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.name}</a>`).join("")}</dd>`
       : "";
     detail.innerHTML = `
       <dl>
