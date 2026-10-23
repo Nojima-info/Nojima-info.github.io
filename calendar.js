@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261023212147_a3dip",
+  title: "魔法の姉妹ルルットリリィ",
+  type: "アニメ",
+  members: ["野島裕史さん"],
+  isRegular: false,
+  date: "2026-10-18",
+  startTime: "22:30",
+  episodes: "Episode15",
+  station: "TOKYO MX",
+  links: [
+    { name: "公式サイト", url: "https://www.luluttolilly.com/" },
+    { name: "X", url: "https://x.com/luluttolilly?s=11" }
+  ],
+  description: "ウメゾウ(CV. 野島裕史)\n魔法の国・フェリックススターの住人。\n変身装置を使って人間の世界へ買い物に訪れる。",
+},
+  {
   id: "event_20261023211650_g2pju",
   title: "「映画 ノーマン・ザ・スノーマン ～こどもたちのひとつ星～」公開日",
   type: "映画",
