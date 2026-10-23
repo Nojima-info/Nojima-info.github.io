@@ -482,6 +482,7 @@ const regularSchedules = [
   startTime: "21:00",
   station: "TBS",
   startDate: "2026-10-04",
+    endDate: "2026-11-08",
   links: [
     { name: "公式サイト", url: "https://www.tbs.co.jp/VIVANT_tbs/" },
     { name: "X", url: "https://x.com/tbs_vivant?s=11" },
