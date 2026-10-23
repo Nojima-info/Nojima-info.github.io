@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261023214045_yrbi2",
+  title: "(秘)衝撃ファイル～動物ハプニング＆時速190キロ！壮絶カーチェイス＆8歳少女殺害",
+  type: "その他",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-10-27",
+  startTime: "18:55",
+  venue: "テレビ東京",
+  links: [
+    { name: "公式サイト", url: "https://www.tv-tokyo.co.jp/shogekifile/" }
+  ],
+},
+  {
   id: "event_20261023212147_a3dip",
   title: "魔法の姉妹ルルットリリィ",
   type: "アニメ",
