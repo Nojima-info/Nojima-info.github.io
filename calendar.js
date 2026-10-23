@@ -61,7 +61,6 @@ const events = [
   isRegular: false,
   date: "2026-10-27",
   startTime: "18:55",
-  venue: "テレビ東京",
   links: [
     { name: "公式サイト", url: "https://www.tv-tokyo.co.jp/shogekifile/" }
   ],
