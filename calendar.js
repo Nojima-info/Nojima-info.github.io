@@ -54,6 +54,18 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261023211650_g2pju",
+  title: "「映画 ノーマン・ザ・スノーマン ～こどもたちのひとつ星～」公開日",
+  type: "映画",
+  members: ["野島昭生さん", "野島裕史さん"],
+  isRegular: false,
+  date: "2027-01-01",
+  links: [
+    { name: "公式サイト", url: "https://tecarat.jp/norman/children/" },
+    { name: "X", url: "https://x.com/norman846?s=11" }
+  ],
+},
+  {
   id: "event_20261023211125_wasn2",
   title: "映画「バッド・ルーテナント：トウキョウ」公開日",
   type: "映画",
