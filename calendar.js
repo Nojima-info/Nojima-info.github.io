@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261026090608_2q5a3",
+  title: "「ディズニー スパークリンク・スターズ」リリース日",
+  type: "その他",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-11-04",
+  links: [
+    { name: "公式サイト", url: "https://colyinc.com/sparklink-stars/" },
+    { name: "X", url: "https://x.com/spalik_jp?s=11" },
+    { name: "YouTube", url: "https://youtube.com/@spalik_jp?si=e9wEIW0kB6O7iRA8" }
+  ],
+},
+  {
   id: "event_20261023214045_yrbi2",
   title: "(秘)衝撃ファイル～動物ハプニング＆時速190キロ！壮絶カーチェイス＆8歳少女殺害",
   type: "その他",
