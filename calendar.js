@@ -54,21 +54,6 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
-  id: "event_20261031092911_7nclx",
-  title: "TVアニメ「新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦」",
-  type: "アニメ",
-  members: ["野島健児さん"],
-  isRegular: true,
-  startTime: "00:00",
-  station: "テレビ東京 ほか",
-  startDate: "2026-10-01",
-  links: [
-    { name: "公式サイト", url: "https://tenipuri.jp/u17/selection-match/" },
-    { name: "X", url: "https://x.com/shintenianime?s=11" }
-  ],
-  description: "毛利寿三郎(CV. 野島健児)\n自身の進退を賭けた試合も楽しむ、日本屈指のダブルスプレイヤー。その余裕は類まれな才能が裏打ちする。彼が努力嫌いを克服すれば、実力は天井知らず。",
-},
-  {
   id: "event_20261031092433_rhof3",
   title: "「Ensamble Stars!! Cast Live Starry Symphony - Superbloom-」Blu-ray発売日",
   type: "DVD",
@@ -448,6 +433,21 @@ const events = [
 ];
 
 const regularSchedules = [
+  {
+  id: "event_20261031092911_7nclx",
+  title: "TVアニメ「新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦」",
+  type: "アニメ",
+  members: ["野島健児さん"],
+  isRegular: true,
+  startTime: "00:00",
+  station: "テレビ東京 ほか",
+  startDate: "2026-10-01",
+  links: [
+    { name: "公式サイト", url: "https://tenipuri.jp/u17/selection-match/" },
+    { name: "X", url: "https://x.com/shintenianime?s=11" }
+  ],
+  description: "毛利寿三郎(CV. 野島健児)\n自身の進退を賭けた試合も楽しむ、日本屈指のダブルスプレイヤー。その余裕は類まれな才能が裏打ちする。彼が努力嫌いを克服すれば、実力は天井知らず。",
+},
   {
   id: "event_20261017215146_u2q63",
   title: "ミュージカル「忍たま乱太郎」第16弾後伝 シリーズタイムワープ ～尼崎を巡って歌って大騒ぎ、入学説明会！の段～",
