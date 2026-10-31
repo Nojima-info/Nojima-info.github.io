@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261031092433_rhof3",
+  title: "「Ensamble Stars!! Cast Live Starry Symphony - Superbloom-」Blu-ray発売日",
+  type: "DVD",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-12-23",
+  prices: ["BOX盤・29700円", "Day2盤・10780円"],
+  links: [
+    { name: "公式サイト", url: "https://stars-starrysymphony.com/#bd" },
+    { name: "X", url: "https://x.com/stars_castlive?s=11" }
+  ],
+},
+  {
   id: "event_20261026090608_2q5a3",
   title: "「ディズニー スパークリンク・スターズ」リリース日",
   type: "その他",
