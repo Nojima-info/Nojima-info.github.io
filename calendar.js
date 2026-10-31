@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261031093421_y2p6m",
+  title: "「✕✕してはいけない」シリーズ第7弾「恋に真っ直ぐな教え子は先生にトクベツ『好き』だと伝えたい」",
+  type: "CD",
+  members: ["野島健児さん", "浦和希さん"],
+  isRegular: false,
+  date: "2026-11-20",
+  prices: ["2640円"],
+  links: [
+    { name: "公式サイト", url: "https://helloplanet-org.com/detail/page07.html" }
+  ],
+  description: "柳英二(CV. 野島健児)\n文学部准教授の38歳。\n身長176cmで着痩せするタイプ。\n落ち着いた雰囲気と醸し出す大人の色気で女子生徒からの人気も高い。",
+},
+  {
   id: "event_20261031092433_rhof3",
   title: "「Ensamble Stars!! Cast Live Starry Symphony - Superbloom-」Blu-ray発売日",
   type: "DVD",
