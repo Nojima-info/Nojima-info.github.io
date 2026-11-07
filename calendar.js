@@ -81,7 +81,7 @@ const events = [
 },
   {
   id: "event_20261026090608_2q5a3",
-  title: "「ディズニー スパークリンク・スターズ」リリース日",
+  title: "「ディズニー スパークリンク・スターズ」リリース",
   type: "その他",
   members: ["野島健児さん"],
   isRegular: false,
