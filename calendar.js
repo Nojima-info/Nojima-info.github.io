@@ -54,6 +54,22 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261107094655_8eot4",
+  title: "オジCOCO with まさし2026",
+  type: "イベント",
+  members: ["野島健児さん", "菅沼久義さん", "五十嵐雅さん"],
+  isRegular: false,
+  date: "2026-12-20",
+  openTime: "11:00",
+  startTime: "11:30",
+  endTime: "20:30",
+  venue: "cafe ＆ bar Blue MOON",
+  prices: ["1回目＋1Drink(500～)・8800円", "2回目＋1Drink(500～)・8800円", "3回目＋1Drink(500～)・8800円", "打ち上げ＋1Drink(500～)・8800円"],
+  links: [
+    { name: "公式サイト", url: "https://ojicoco.peatix.com/" }
+  ],
+},
+  {
   id: "event_20261107094347_zto4l",
   title: "下町やぶさかラジオ",
   type: "その他",
