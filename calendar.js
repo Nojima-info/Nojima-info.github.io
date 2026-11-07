@@ -1333,7 +1333,14 @@ const eventLinksHtml =
           dl.appendChild(memberDt);
           dl.appendChild(memberDd);
         }
-
+if(event.episodes){
+  const episodesDt = document.createElement("dt");
+  episodesDt.textContent = "話数";
+  const episodesDd = document.createElement("dd");
+  episodesDd.textContent = event.episodes;
+  dl.appendChild(episodesDt);
+  dl.appendChild(episodesDd);
+}
         if(event.startTime){
   const timeDt = document.createElement("dt");
   timeDt.textContent = event.type === "舞台" ? "開演時間" : event.type === "イベント" ? "開始時間" : "開始時間";
