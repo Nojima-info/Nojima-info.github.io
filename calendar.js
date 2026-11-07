@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261107102241_fk3of",
+  title: "人気声優 野島健児と置鮎龍太郎のプレミアムなトークショー",
+  type: "イベント",
+  members: ["野島健児さん", "置鮎龍太郎さん"],
+  isRegular: false,
+  date: "2026-11-23",
+  startTime: "11:30",
+  venue: "1F 北コート",
+  links: [
+    { name: "公式サイト", url: "https://toki.aeonmall.jp/event/c37813e8-007d-4fe7-b807-314b6de2d9dc" }
+  ],
+},
+  {
   id: "event_20261107094655_8eot4",
   title: "オジCOCO with まさし2026",
   type: "イベント",
