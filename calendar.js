@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261107094347_zto4l",
+  title: "下町やぶさかラジオ",
+  type: "その他",
+  members: ["野島裕史さん", "吉瀬歩実さん"],
+  isRegular: false,
+  date: "2026-11-02",
+  startTime: "19:00",
+  links: [
+    { name: "配信ページ", url: "https://kbcradio.podcast.sonicbowl.cloud/podcast/89eb72f2-2d11-4e7f-ae4f-33c66a59b08a/" }
+  ],
+  description: "公開時刻は前後する可能性があります。",
+},
+  {
   id: "event_20261107094041_0xh59",
   title: "青二OFAファンミーティング漢祭り～いつも、ありがとう～",
   type: "イベント",
