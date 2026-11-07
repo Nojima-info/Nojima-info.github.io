@@ -54,6 +54,21 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261107094041_0xh59",
+  title: "青二OFAファンミーティング漢祭り～いつも、ありがとう～",
+  type: "イベント",
+  members: ["野島裕史さん", "野島健児さん", "川島零士さん", "近藤孝行さん"],
+  isRegular: false,
+  date: "2027-01-23",
+  openTime: "12:00",
+  startTime: "13:00",
+  venue: "科学技術館サイエンスホール",
+  prices: ["OAF有料会員限定・7000円", "一般・7700円"],
+  links: [
+    { name: "X", url: "https://x.com/aoni_official?s=11" }
+  ],
+},
+  {
   id: "event_20261031093421_y2p6m",
   title: "「✕✕してはいけない」シリーズ第7弾「恋に真っ直ぐな教え子は先生にトクベツ『好き』だと伝えたい」",
   type: "CD",
