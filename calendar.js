@@ -1074,8 +1074,9 @@ function showEventDetail(event,detailContainer){
     detail.innerHTML = `
       <dl>
         <dt>種類</dt><dd>${event.type}</dd>
-        <dt>出演者</dt><dd>${(event.members || []).join("、")}</dd>
-        ${event.openTime ? `<dt>開場時刻</dt><dd>${event.openTime}</dd>` : ""}
+<dt>出演者</dt><dd>${(event.members || []).join("、")}</dd>
+${event.episodes ? `<dt>話数</dt><dd>${event.episodes}</dd>` : ""}
+${event.openTime ? `<dt>開場時刻</dt><dd>${event.openTime}</dd>` : ""}
         ${event.startTime ? `<dt>${event.type === "舞台" ? "開演時間" : "開始時間"}</dt><dd>${event.startTime}</dd>` : ""}
         ${event.endTime ? `<dt>${event.type === "舞台" ? "終演時間" : "終了時間"}</dt><dd>${event.endTime}</dd>` : ""}
         ${event.venue ? `<dt>会場</dt><dd>${event.venue}</dd>` : ""}
