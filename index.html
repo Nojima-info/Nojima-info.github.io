@@ -55,8 +55,15 @@ if(infoButton&&infoModal&&infoCloseButton){
     infoButton.setAttribute("aria-expanded","false");
     infoButton.focus();
   });
-  infoModal.addEventListener("click",(event)=>{
+    infoModal.addEventListener("click",(event)=>{
     if(event.target===infoModal){
+      infoModal.hidden=true;
+      infoButton.setAttribute("aria-expanded","false");
+      infoButton.focus();
+    }
+  });
+  document.addEventListener("keydown",(event)=>{
+    if(event.key==="Escape"&&!infoModal.hidden){
       infoModal.hidden=true;
       infoButton.setAttribute("aria-expanded","false");
       infoButton.focus();
