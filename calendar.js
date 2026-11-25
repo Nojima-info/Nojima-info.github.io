@@ -54,6 +54,15 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261125191700_ev2vz",
+  title: "「レスレリアーナのアトリエ」サービス終了",
+  type: "その他",
+  members: ["野島裕史さん"],
+  isRegular: false,
+  date: "2026-11-25",
+  endTime: "16:00",
+},
+  {
   id: "event_20261107102241_fk3of",
   title: "人気声優 野島健児と置鮎龍太郎のプレミアムなトークショー",
   type: "イベント",
