@@ -513,6 +513,22 @@ const events = [
 
 const regularSchedules = [
   {
+  id: "event_20261125192346_aesdz",
+  title: "りゅうみこラジオ ～龍宮放送局～",
+  type: "ラジオ",
+  members: ["野島健児さん"],
+  isRegular: true,
+  startTime: "21:45",
+  endTime: "21:55",
+  station: "文化放送「エジソン」",
+  startDate: "2026-12-05",
+  endDate: "2026-12-25",
+  links: [
+    { name: "X", url: "https://x.com/haruka_ryugu?s=11" }
+  ],
+  description: "開始・終了時刻は前後する可能性があります。",
+},
+  {
   id: "event_20261031092911_7nclx",
   title: "TVアニメ「新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦」",
   type: "アニメ",
