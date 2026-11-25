@@ -50,7 +50,7 @@ dateText.textContent = event.date.replace(/-/g, "/");
 
 const timeText = document.createElement("span");
 timeText.className = "upcoming-event-time";
-timeText.textContent = event.startTime || "\u00a0";
+timeText.textContent = event.startTime || event.endTime || "\u00a0";
 
 date.append(dateText, timeText);
 
