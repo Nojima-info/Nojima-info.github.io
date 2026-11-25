@@ -54,6 +54,19 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261125192617_kmbyd",
+  title: "サンカクヘッドちゃんねる生放送",
+  type: "配信",
+  members: ["野島健児さん", "サンカクヘッドさん"],
+  isRegular: false,
+  date: "2026-11-26",
+  startTime: "20:00",
+  deliveryPlace: "ニコニコ生放送",
+  links: [
+    { name: "公式サイト", url: "https://nicochannel.jp/sankakuhead/articles/news/arhMTTcfcYX2PqgWKCtif8c9" }
+  ],
+},
+  {
   id: "event_20261125191700_ev2vz",
   title: "「レスレリアーナのアトリエ」サービス終了",
   type: "その他",
