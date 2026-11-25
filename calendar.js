@@ -54,6 +54,18 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261125192947_lbf0q",
+  title: "「君には届かない。」11巻発売日",
+  type: "その他",
+  members: ["野島裕史さん"],
+  isRegular: false,
+  date: "2027-01-27",
+  prices: ["通常版・979円", "ドラマCD付き特装版・3300円"],
+  links: [
+    { name: "X", url: "https://x.com/kimi_nai?s=11" }
+  ],
+},
+  {
   id: "event_20261125192617_kmbyd",
   title: "サンカクヘッドちゃんねる生放送",
   type: "配信",
