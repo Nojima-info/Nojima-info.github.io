@@ -54,6 +54,17 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261126202729_m319j",
+  title: "「Dr.STONE」音声ガイダンス搭載ワイヤレスイヤホン＆充電器 受注販売開始日",
+  type: "その他",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-11-27",
+  startTime: "15:00",
+  prices: ["イヤホン・22000円", "充電器・8800円"],
+  description: "予約終了日時は2027年1月22日15時。",
+},
+  {
   id: "event_20261125192947_lbf0q",
   title: "「君には届かない。」11巻発売日",
   type: "その他",
