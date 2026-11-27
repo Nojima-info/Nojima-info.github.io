@@ -54,6 +54,15 @@ function createBirthdayEvents(year){
 }
 const events = [
   {
+  id: "event_20261127193643_dfu88",
+  title: "「あやかし恋廻り」サービス終了",
+  type: "その他",
+  members: ["野島健児さん"],
+  isRegular: false,
+  date: "2026-11-27",
+  endTime: "14:00",
+},
+  {
   id: "event_20261126202729_m319j",
   title: "「Dr.STONE」音声ガイダンス搭載ワイヤレスイヤホン＆充電器 受注販売開始日",
   type: "その他",
