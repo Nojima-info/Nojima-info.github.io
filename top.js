@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const dateDifference = a.date.localeCompare(b.date);
 
       if (dateDifference !== 0) return dateDifference;
+const aTime = a.startTime || a.endTime || "99:99";
+const bTime = b.startTime || b.endTime || "99:99";
 
-      return (a.startTime || "99:99").localeCompare(
-        b.startTime || "99:99"
-      );
+return aTime.localeCompare(bTime);
     })
     .slice(0, 3);
 
